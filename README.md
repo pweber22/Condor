@@ -9,5 +9,7 @@ Small scale test
 - Autonomous
 - Vibe engineered
 
-<img src="Condor 0/condor0_1.JPG" width="500" />
-<img src="Condor 0/condor0_2.JPG" width="500" />
+<p float="left">
+    <img src="Condor 0/condor0_1.JPG" width="400" />
+    <img src="Condor 0/condor0_2.JPG" width="400" />
+</p>
