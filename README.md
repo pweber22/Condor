@@ -4,6 +4,7 @@ The greatest airplane ever conceived
 
 ## Condor 0
 Small scale test
+- First flight 4/24/26
 - Built and flown within 8 hours
 - Excellent
 - Autonomous

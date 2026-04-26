@@ -166,7 +166,7 @@ Transmit critical aircraft state.
 struct TelemetryPayload {
     int32_t latitude;         // degrees * 1e7
     int32_t longitude;        // degrees * 1e7
-    int16_t altitude_m;       // meters AGL/MSL
+    int16_t altitude_m;       // meters MSL
     uint16_t groundspeed_cms; // cm/s
     uint16_t battery_cV;      // centivolts
     uint8_t flight_mode;
