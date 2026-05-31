@@ -21,4 +21,6 @@ Medium scale test
 - Large
 - Pepsecco
 
-<img src="Condor 1/Condor1_1.jpg" width="400" alt="Condor 1 during takeoff" />  <img src="Condor 1/Condor1_2.jpg" width="400" alt="Condor 1 aircraft soaring gracefully through clear sky above transmission lines, demonstrating elegant aerodynamic design with long slender wings" />
+![Condor 1 during takeoff](Condor%201/Condor1_1.JPG)
+
+![Condor 1 aircraft soaring gracefully through clear sky above transmission lines, demonstrating elegant aerodynamic design with long slender wings](Condor%201/Condor1_2.JPG)
