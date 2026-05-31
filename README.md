@@ -10,7 +10,7 @@ Small scale test
 - Autonomous
 - Vibe engineered
 
-<img src="Condor 0/condor0_1.JPG" height="275" alt="Condor 0 flying low" />  <img src="Condor 0/condor0_2.JPG" height="275" alt="Condor 0 flying" />
+<img src="Condor 0/condor0_1.JPG" height="250" alt="Condor 0 flying low" />  <img src="Condor 0/condor0_2.JPG" height="250" alt="Condor 0 flying" />
 
 
 ## Condor 1
