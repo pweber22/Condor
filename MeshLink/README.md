@@ -141,7 +141,7 @@ struct HeartbeatPayload {
     uint32_t timestamp;
     uint8_t system_status;
     uint8_t flight_mode;
-    uint8_t battery_percent;
+    uint8_t battery_cV;
 };
 ```
 
