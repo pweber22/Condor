@@ -9,6 +9,7 @@ Small scale test
 - Excellent
 - Autonomous
 - Vibe engineered
+- Top speed 90 mph
 - Condor 0b is a reconstruction of Condor 0 after the flight 7 anomaly
 <img src="Condor 0/condor0_1.JPG" height="250" alt="Condor 0 flying low" />  <img src="Condor 0/condor0_2.JPG" height="250" alt="Condor 0 flying" />
 
