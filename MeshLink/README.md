@@ -1,10 +1,10 @@
 # MeshLink
 
-## Meshtastic ↔ MAVLink Long-Endurance UAV Communications Protocol
+## Native MeshLink Ground Control Station Protocol
 
-**Version:** 1.0
-**Date:** April 26, 2026
-**Purpose:** Define the communications protocol between ground control software and airborne systems for low-bandwidth UAV command, telemetry, and mission transfer over Meshtastic/LoRa.
+**Version:** 2.0
+**Date:** July 10, 2026
+**Purpose:** Define the native MeshLink protocol between a ground control station and airborne systems for long-range, low-bandwidth UAV fleet operations.
 
 ---
 
@@ -13,33 +13,29 @@
 ## 1.1 Architecture
 
 ```text
-Mission Planner
-    ↕ UDP MAVLink
-Python Ground Bridge
+MeshLink Ground Control Station
     ↕ Meshtastic Serial/API
 Ground Meshtastic Node
-    ↕ LoRa MeshLink via Meshtastic
+    ↕ LoRa MeshLink
 Airborne Meshtastic Node
     ↕ UART
-Teensy Bridge MCU
+Airborne Bridge
     ↕ UART MAVLink
 ArduPilot Flight Controller
 ```
 
----
-
 ## 1.2 Design Goals
 
-* Support ultra-low-bandwidth telemetry (~1 msg/minute baseline)
+* Support ultra-low-bandwidth telemetry and control
 * Enable:
-
-  * Telemetry downlink
-  * Command uplink
-  * Mission upload/update
-* Maintain compatibility with stock Meshtastic firmware
-* Avoid full MAVLink-over-LoRa inefficiency
-* Ensure robust fragmentation/reassembly
-* Minimize power consumption and airtime
+  * Telemetry display
+  * Guided loiter commands
+  * Mission upload
+  * Fleet management
+* Keep MeshLink supervisory, not transparent MAVLink
+* Use compact, deterministic packet formats
+* Ensure reliable command and mission delivery
+* Minimize airtime and retransmission
 
 ---
 
@@ -47,31 +43,31 @@ ArduPilot Flight Controller
 
 ## 2.1 MAVLink Layer
 
-Used locally only:
+Used only on the aircraft:
 
-* Ground: Mission Planner ↔ Python bridge
-* Air: Teensy ↔ Flight Controller
+* Airborne Bridge ↔ ArduPilot Flight Controller
 
----
+The ground station never sends or receives MAVLink directly, and MAVLink packets are never transmitted over Meshtastic.
 
-## 2.2 Custom Bridge Protocol Layer
+## 2.2 MeshLink Control Layer
 
-Purpose:
+Used for all ground-to-air and air-to-ground exchanges:
 
-* Convert MAVLink data into compact UAV-specific packets
-* Fragment large data
-
----
+* Vehicle tracking
+* Command intent
+* Telemetry state
+* Mission payload transfer
+* Acknowledgements and status
 
 ## 2.3 Meshtastic Transport Layer
 
-Used only for packet transport.
+Used for packet transport only.
 
 Responsibilities:
 
 * Radio transmission
 * Routing
-* Encryption (optional)
+* Optional encryption
 * Delivery metadata
 
 ---
@@ -81,12 +77,12 @@ Responsibilities:
 | Type ID | Name           | Direction     | Reliability      |
 | ------- | -------------- | ------------- | ---------------- |
 | 0x01    | HEARTBEAT      | Air → Ground  | Optional repeat  |
-| 0x02    | TELEMETRY      | Air → Ground  | No retry         |
-| 0x03    | COMMAND        | Ground → Air  | Repeat + ACK     |
+| 0x02    | TELEMETRY      | Air → Ground  | Best-effort      |
+| 0x03    | COMMAND        | Ground → Air  | Reliable + ACK   |
 | 0x04    | MISSION_UPLOAD | Ground → Air  | Fragmented + ACK |
-| 0x05    | GUIDED_LOITER  | Ground → Air  | Repeat + ACK     |
+| 0x05    | GUIDED_LOITER  | Ground → Air  | Reliable + ACK   |
 | 0x06    | ACK            | Bidirectional | Reliable         |
-| 0x07    | STATUS/ERROR   | Bidirectional | Optional         |
+| 0x07    | STATUS         | Bidirectional | Optional         |
 
 ---
 
@@ -94,146 +90,213 @@ Responsibilities:
 
 ## 4.1 Standard Packet Header
 
+All MeshLink packets use the same header format:
+
 ```c
-struct PacketHeader {
-    uint8_t protocol_version;   // Current version = 1
-    uint8_t message_type;       // Type ID
-    uint8_t sequence_id;        // Message sequence number
-    uint8_t total_parts;        // Total fragments
-    uint8_t part_number;        // Current fragment index
-    uint16_t payload_length;    // Bytes in payload
-    uint16_t checksum;          // CRC16
+struct PacketHeader
+{
+    uint8_t version;
+    uint8_t source;
+    uint8_t destination;
+    uint8_t type;
+    uint8_t sequence;
+    uint8_t total_parts;
+    uint8_t part;
+    uint16_t payload_length;
+    uint16_t crc16;
 };
 ```
 
-### Header Size:
+## 4.2 Header Field Definitions
 
-**9 bytes**
+* `version`: MeshLink protocol version. Current value = 2.
+* `source`: logical sender Vehicle ID.
+* `destination`: logical recipient Vehicle ID.
+* `type`: packet type identifier.
+* `sequence`: packet sequence number.
+* `total_parts`: number of fragments in the sequence.
+* `part`: current fragment index (0-based).
+* `payload_length`: length of payload in bytes.
+* `crc16`: CRC-16 over header and payload.
+
+## 4.3 Packet Size
+
+Header size: **11 bytes**
+
+Maximum payload: **120 bytes**
+
+Total maximum wire size: **131 bytes**
 
 ---
 
-## 4.2 Maximum Payload Size
+# 5. Network Rules
 
-**120 bytes max payload per Meshtastic transmission**
+## 5.1 Vehicle Addressing
 
-### Reasoning:
+* `0x00` = Ground Control Station
+* `0x01`–`0xEF` = Aircraft
+* `0xF0`–`0xFD` = Reserved
+* `0xFE` = Broadcast
+* `0xFF` = Invalid
 
-* Avoids exceeding practical LoRa limits
-* Preserves reliability margin
-* Reduces transmission latency
+Aircraft must process packets only when `destination` is their own Vehicle ID or `0xFE`.
+
+## 5.2 Broadcast Rules
+
+* Broadcast packets may be used for heartbeat and status polling.
+* Broadcast must never command flight-critical behavior.
+* Command, mission upload, and guided loiter packets MUST be unicast.
+
+## 5.3 ACK Routing
+
+* ACK packets use `source` and `destination` to return to the original sender.
+* ACK payloads include the acknowledged sequence number.
+* Airborne Bridge must ACK command and mission upload packets.
+
+## 5.4 Sequence ID Handling
+
+* `sequence` is an 8-bit counter per source/destination pair.
+* Wrap-around is allowed.
+* A new command or mission upload should use a new `sequence` value.
+
+## 5.5 Duplicate Suppression
+
+* Receivers must suppress duplicate packets by `source`, `destination`, `type`, and `sequence`.
+* Fragments are reassembled once per unique packet sequence.
+* Duplicate ACKs may be ignored if the original ACK was already processed.
 
 ---
 
-# 5. Message Definitions
+# 6. Message Definitions
 
----
+## 6.1 HEARTBEAT Packet
 
-# 5.1 HEARTBEAT Packet
+### Purpose
 
-## Purpose:
+* Provide alive indication
+* Report link and power state
+* Monitor aircraft health
 
-* Link monitoring
-* Connection health
-* Vehicle alive indicator
+### Payload
 
 ```c
-struct HeartbeatPayload {
+struct HeartbeatPayload
+{
     uint32_t timestamp;
+    uint8_t vehicle_id;
     uint8_t system_status;
     uint8_t flight_mode;
-    uint8_t battery_cV;
+    uint16_t battery_cV;
 };
 ```
 
-### Size:
+### Size
 
-7 bytes
+10 bytes
 
-### Frequency:
+### Reliability
 
-* Normal: every 60 sec
-* Optional failsafe: every 15 sec
+* Periodic
+* Best-effort
+* Repeated when link quality degrades
 
----
+### Notes
 
-# 5.2 TELEMETRY Packet
+* `vehicle_id` must match packet `source`.
+* `battery_cV` is centivolts.
 
-## Purpose:
+## 6.2 TELEMETRY Packet
 
-Transmit critical aircraft state.
+### Purpose
+
+* Report aircraft state
+* Support tracking and mission progress
+
+### Payload
 
 ```c
-struct TelemetryPayload {
-    int32_t latitude;         // degrees * 1e7
-    int32_t longitude;        // degrees * 1e7
-    int16_t altitude_m;       // meters MSL
-    uint16_t groundspeed_cms; // cm/s
-    uint16_t battery_cV;      // centivolts
+struct TelemetryPayload
+{
+    int32_t latitude;          // degrees * 1e7
+    int32_t longitude;         // degrees * 1e7
+    int16_t altitude_m;        // meters MSL
+    uint16_t groundspeed_cms;  // cm/s
+    uint16_t battery_cV;       // centivolts
     uint8_t flight_mode;
     uint16_t current_waypoint;
+    int8_t rssi;               // optional, dBm or 0x7F if unavailable
+    uint8_t link_quality;      // optional, 0–100 or 0xFF if unavailable
 };
 ```
 
-### Size:
+### Size
 
-17 bytes
+22 bytes
 
-### Required Fields:
+### Reliability
 
-* Position
-* Altitude
-* Battery
-* Mode
+* Best-effort
+* No retransmission
 
----
+### Notes
 
-# 5.3 COMMAND Packet
+* `current_waypoint` indicates mission progress.
+* Optional link metrics may be omitted or set to reserved values.
 
-## Purpose:
+## 6.3 COMMAND Packet
 
-Ground-issued aircraft control commands.
+### Purpose
+
+* Convey operator intent
+* Trigger high-level aircraft action
+
+### Payload
 
 ```c
-struct CommandPayload {
+struct CommandPayload
+{
     uint8_t command_id;
     uint8_t parameter;
     uint16_t reserved;
 };
 ```
 
----
+### Size
 
-## Command IDs
+4 bytes
 
-| ID   | Command       |
-| ---- | ------------- |
-| 0x01 | RTL           |
-| 0x02 | LOITER        |
-| 0x03 | AUTO          |
-| 0x04 | REBOOT BRIDGE |
+### Reliability
 
----
+* Reliable
+* Requires ACK
 
-## Reliability:
+### Notes
 
-* Sent 3 times?
-* Sequence deduplication required
-* ACK strongly recommended
+* Commands are abstract and not raw MAVLink commands.
+* Commands MUST be unicast.
 
----
+### Command IDs
 
-# 5.4 MISSION_UPLOAD Packet
+| ID   | Command           |
+| ---- | ----------------- |
+| 0x01 | RTL               |
+| 0x02 | LOITER            |
+| 0x03 | AUTO              |
+| 0x04 | REQUEST_STATUS    |
+| 0x05 | REQUEST_TELEMETRY|
+| 0x06 | REBOOT_BRIDGE     |
 
-## Purpose:
+## 6.4 MISSION_UPLOAD Packet
 
-Transmit waypoint sets or mission blobs.
+### Purpose
 
-### Format:
+* Upload mission or waypoint data to the aircraft
 
-Binary serialized mission blob.
+### Payload
 
 ```c
-struct MissionWaypoint {
+struct MissionWaypoint
+{
     int32_t latitude;
     int32_t longitude;
     int16_t altitude_m;
@@ -241,63 +304,85 @@ struct MissionWaypoint {
 };
 ```
 
-### Fragmentation:
+### Size
 
-* Required when >120 bytes
-* Full mission reassembled before FC upload
+Variable. Each waypoint is 11 bytes.
 
----
+### Reliability
 
-## Airborne Reassembly Requirements
+* Reliable
+* Fragmented
+* Requires ACK
 
-* Cache by sequence_id
-* Verify all fragments
-* Validate checksum
-* Reject incomplete missions after timeout
-* ACK successful reconstruction
+### Notes
 
----
+* Entire mission must be reassembled before forwarding to the flight controller.
+* Mission data is treated as opaque payload by the airborne bridge until reassembly completes.
 
-# 5.5 GUIDED_LOITER Packet
-## Purpose:
-Command aircraft to move to a specified location and loiter (orbit/hold) at that point using guided control semantics.
+## 6.5 GUIDED_LOITER Packet
 
-This is a single-shot guided intent, not a continuous control stream.
+### Purpose
+
+* Command the aircraft to loiter at a specified point
+
+### Payload
 
 ```c
-struct GuidedLoiterPayload {
+struct GuidedLoiterPayload
+{
     int32_t latitude;     // degrees * 1e7
     int32_t longitude;    // degrees * 1e7
     int16_t altitude_m;   // meters
-    uint16_t radius_m;    // loiter radius
+    uint16_t radius_m;    // meters
 };
 ```
 
-## Size:
+### Size
+
 14 bytes
 
-## Behavior:
-On reception, the bridge shall:
-1. Switch Ardupilot mode to GUIDED
-2. Send position target to aircraft
-3. Optinally transition to LOITER after arrival 
-4. Maintain hold until new command received
+### Reliability
 
-## Reliability:
-* Sent 3–5 times for redundancy
-* Requires ACK confirmation (recommended)
-* Must be deduplicated using sequence_id
+* Reliable
+* Requires ACK
 
-# 5.6 ACK Packet
+### Notes
+
+* The airborne bridge translates this packet into MAVLink guided/loiter behavior.
+* Packet must be unicast.
+
+## 6.6 ACK Packet
+
+### Purpose
+
+* Confirm receipt of reliable packets
+* Report success or error conditions
+
+### Payload
 
 ```c
-struct AckPayload {
-    uint8_t acked_sequence_id;
+struct AckPayload
+{
+    uint8_t acked_sequence;
     uint8_t status_code;
+    uint16_t reserved;
 };
 ```
 
-### Status Codes:
+### Size
+
+4 bytes
+
+### Reliability
+
+* Reliable
+
+### Notes
+
+* ACK must be sent from the packet recipient back to the sender.
+* `acked_sequence` references the original packet sequence field.
+
+### Status Codes
 
 | Code | Meaning          |
 | ---- | ---------------- |
@@ -305,221 +390,190 @@ struct AckPayload {
 | 0x01 | Missing fragment |
 | 0x02 | CRC failure      |
 | 0x03 | Invalid command  |
+| 0x04 | Invalid packet   |
 
----
+## 6.7 STATUS Packet
 
-# 6. Fragmentation Rules
+### Purpose
 
-## 6.1 Trigger Condition
+* Report subsystem state
+* Signal non-critical alerts or diagnostics
 
-If:
+### Payload
 
-```text
-payload_length > MAX_PAYLOAD
+```c
+struct StatusPayload
+{
+    uint8_t status_code;
+    uint8_t subsystem;
+    uint16_t reserved;
+};
 ```
 
-Then:
+### Size
 
-* Split into multiple fragments
-* Maintain identical sequence_id
-* Set total_parts accordingly
+4 bytes
 
----
+### Reliability
 
-## 6.2 Receiver Logic
+* Optional
 
-```text
-Receive fragment
-→ Validate checksum
-→ Store by sequence_id + part_number
-→ If all parts present:
-    Reassemble
-    Validate full payload
-    Process
-```
+### Notes
 
----
-
-## 6.3 Timeout
-
-Recommended:
-
-* 5–10 minutes for mission packets
-* 2 minutes for commands
-
-Incomplete sequences discarded after timeout.
+* STATUS may be sent from either aircraft or ground station.
+* It is suitable for link health, mode transitions, or diagnostic alerts.
 
 ---
 
 # 7. Reliability Strategy
 
----
+## 7.1 Telemetry
 
-## Telemetry
-
-* Stateless
-* No retransmission
+* Best-effort delivery
 * Latest packet wins
+* No guaranteed retransmission
+
+## 7.2 Commands
+
+* Reliable delivery
+* Retransmit until ACK received or limit reached
+* Deduplicate by `source`/`destination`/`type`/`sequence`
+
+## 7.3 Missions
+
+* Fragmented transfer
+* Reassemble before flight controller handoff
+* ACK each complete upload
+* Retry missing fragments
+
+## 7.4 Heartbeat
+
+* Periodic status reports
+* Repeated during degraded link conditions
 
 ---
 
-## Commands
+# 8. MeshLink Ground Control Station Responsibilities
 
-* Repeat send
-* Deduplicate by sequence_id
-* Optional ACK
+## 8.1 Fleet Management
 
----
+* Maintain vehicle list
+* Track vehicle status and last-seen time
+* Assign logical Vehicle IDs
 
-## Missions
+## 8.2 Mission Planning
 
-* Fragment ACK
-* Missing fragment retry
-* Full validation required
+* Build mission payloads
+* Fragment mission uploads
+* Confirm full delivery via ACK
 
----
+## 8.3 Vehicle Tracking
 
-# 8. Python Ground Bridge Responsibilities
+* Display telemetry and waypoint progress
+* Monitor heartbeat status
+* Detect link degradation
 
-## 8.1 MAVLink Input
+## 8.4 Logging
 
-Receives:
+* Record received telemetry
+* Log command dispatch and acknowledgements
+* Archive mission uploads and status events
 
-* HEARTBEAT
-* GPS
-* SYS_STATUS
-* COMMANDS
-* MISSION_ITEMS
+## 8.5 Reliable Retransmission
 
----
+* Resend unacknowledged commands
+* Resend mission fragments when missing
+* Use sequence IDs for retransmission state
 
-## 8.2 Translation
+## 8.6 Link Monitoring
 
-* Extract required state only
-* Compress to bridge protocol
-* Fragment as needed
-
----
-
-## 8.3 Meshtastic Output
-
-* Send packets via Meshtastic serial/API
-* Track acknowledgments
-* Retry commands/missions
+* Evaluate RSSI/link quality if available
+* Generate alerts for lost aircraft
+* Use heartbeat and status packets for health checks
 
 ---
 
-## 8.4 Mission Planner Output
+# 9. Airborne Bridge Responsibilities
 
-* Reconstruct MAVLink-compatible telemetry
-* Forward via UDP
-* Maintain heartbeat continuity
+## 9.1 Packet Translation
 
----
+* Translate MeshLink packets to MAVLink for ArduPilot
+* Translate MAVLink state into MeshLink telemetry and heartbeat
 
-# 9. Airborne Teensy Responsibilities
+## 9.2 Downlink
 
-## 9.1 Downlink
+* Collect aircraft state from ArduPilot
+* Compress state into MeshLink telemetry
+* Send heartbeat and telemetry to the ground station
 
-* Parse MAVLink from FC
-* Generate telemetry packets
-* Forward to Meshtastic node
+## 9.3 Uplink
 
----
+* Receive command, mission, and guided loiter packets
+* Reassemble fragmented missions
+* Validate packet CRC and sequence
+* Forward valid commands to ArduPilot
 
-## 9.2 Uplink
+## 9.4 Mission Handling
 
-* Receive Meshtastic packets
-* Reassemble
-* Translate to MAVLink
-* Inject into ArduPilot
+* Buffer complete mission payloads
+* Perform local MAVLink mission upload
+* Manage flight controller mission handshake
 
----
+## 9.5 Implementation Independence
 
-## 9.3 Mission Handling
-
-* Buffer full mission
-* Perform MAVLink mission upload locally
-* Manage FC handshake
+* The airborne bridge is generic and not tied to a specific MCU.
+* Any platform able to bridge UART MAVLink and Meshtastic may implement this section.
 
 ---
 
 # 10. Recommended Data Rates
 
-| Data Type             | Rate           |
-| --------------------- | -------------- |
-| Heartbeat             | 1/min          |
-| Telemetry             | 1/min baseline |
-| Critical mode changes | Immediate      |
-| Mission upload        | On demand      |
+| Data Type             | Rate                |
+| --------------------- | ------------------- |
+| Heartbeat             | 1/min               |
+| Telemetry             | 1/min baseline      |
+| Guided loiter         | On demand           |
+| Mission upload        | On demand           |
+| Command delivery      | Immediate retry     |
 
 ---
 
 # 11. Security Considerations
 
-* Use Meshtastic encryption where possible
-* Validate all command IDs
-* Reject malformed packets
-* CRC mandatory
-* Optional command authorization layer recommended
+* Use Meshtastic encryption when available
+* Validate all packet fields and CRC
+* Reject malformed or invalid destination packets
+* Ensure broadcast packets do not trigger flight-critical actions
+* Keep Vehicle IDs stable across radio hardware changes
 
 ---
 
-# 12. Future Expansion
+# 12. Failure Modes
 
-Potential additions:
-
-* Delta encoding
-* Adaptive telemetry rates
-* Sensor payload extensions
-* Forward error correction
-* Lightweight compression
-
----
-
-# 13. Failure Modes
-
-| Failure               | Response               |
-| --------------------- | ---------------------- |
-| Lost telemetry        | Ground timeout alert   |
-| Lost command          | Retry                  |
-| Lost mission fragment | Request resend         |
-| CRC error             | Reject packet          |
-| Bridge MCU reset      | Reinitialize heartbeat |
+| Failure               | Response                                |
+| --------------------- | --------------------------------------- |
+| Lost telemetry        | Ground timeout alert                    |
+| Lost command          | Retransmit, alert if retries fail       |
+| Lost mission fragment | Request resend or abort mission upload  |
+| CRC error             | Reject packet                            |
+| Missing ACK           | Retransmit reliable packet              |
+| Link degradation      | Increase heartbeat frequency            |
 
 ---
 
-# 14. Development Priorities
+# 13. Summary
 
-## Prototype Phase
+## MeshLink Philosophy
 
-* Telemetry
-* Heartbeats
-* Basic commands
+MeshLink is not a transparent MAVLink radio. It is a supervisory control protocol optimized for extremely low-bandwidth long-range autonomous aircraft.
 
-## Intermediate Phase
+## Core Protocol Tenets
 
-* Reliable command ACK
-* Fragmentation
-* Mission uploads
-
-## Advanced Phase
-
-* Compression
-* Dynamic routing
-* Power optimization
-
----
-
-# 15. Summary
-
-## Core Philosophy:
-
-### Do NOT send:
-
-* Full MAVLink streams
-* High-rate telemetry
-* Unbounded data
+* Send compact state and operator intent only
+* Avoid full autopilot stream forwarding
+* Use logical Vehicle IDs, not radio hardware IDs
+* Keep mission uploads reliable and bounded
+* Keep telemetry best-effort and low-rate
 
 ### DO send:
 
