@@ -62,7 +62,7 @@ plt.savefig("Condor 0\\Flight Data\\Flight 06\\Data Reduction\\Z_Acceleration_Fu
 
 plt.close()  # Close the full plot
 
-imu_takeoff = dataframes["IMU"][(dataframes["IMU"]["Timestamp"] >= 365) & (dataframes["IMU"]["Timestamp"] <= 370)]
+imu_takeoff = dataframes["IMU"][(dataframes["IMU"]["Timestamp"] >= 50) & (dataframes["IMU"]["Timestamp"] <= 70)]
 plt.figure(figsize=(16, 9))
 plt.plot(imu_takeoff["Timestamp"], imu_takeoff["AccelZ"].astype(float))  # Zoomed-in plot
 plt.xlabel("Time Since Power On (s)")
