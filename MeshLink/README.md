@@ -2,7 +2,7 @@
 
 ## Native MeshLink Ground Control Station Protocol
 
-**Version:** 2.0
+**Version:** 2.1
 **Date:** July 10, 2026
 **Purpose:** Define the native MeshLink protocol between a ground control station and airborne systems for long-range, low-bandwidth UAV fleet operations.
 
@@ -63,12 +63,17 @@ Used for all ground-to-air and air-to-ground exchanges:
 
 Used for packet transport only.
 
+MeshLink packets are encoded as hex ASCII and transmitted as Meshtastic text messages.
+This ensures the payload is visible on the Meshtastic text channel and avoids raw binary
+receive/decode issues on the primary text path.
+
 Responsibilities:
 
 * Radio transmission
 * Routing
 * Optional encryption
 * Delivery metadata
+* Text-channel transport for MeshLink hex packets
 
 ---
 
@@ -109,7 +114,7 @@ struct PacketHeader
 
 ## 4.2 Header Field Definitions
 
-* `version`: MeshLink protocol version. Current value = 2.
+* `version`: MeshLink protocol version. Current value = 3.
 * `source`: logical sender Vehicle ID.
 * `destination`: logical recipient Vehicle ID.
 * `type`: packet type identifier.
@@ -126,6 +131,9 @@ Header size: **11 bytes**
 Maximum payload: **120 bytes**
 
 Total maximum wire size: **131 bytes**
+
+> Note: When sent as Meshtastic text messages, the binary packet is encoded as
+> hex ASCII, which roughly doubles the payload size on the wire.
 
 ---
 
