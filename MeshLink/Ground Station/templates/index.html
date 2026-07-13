@@ -25,41 +25,43 @@
 </div>
 <div class="container">
     <div class="sidebar">
-        <div class="section">
-            <h2>Commands</h2>
-            <button onclick="sendCommand(1)">RTL</button>
-            <button onclick="sendCommand(2)">LOITER</button>
-            <button onclick="sendCommand(3)">AUTO</button>
-            <button onclick="sendCommand(4)">REQUEST STATUS</button>
-            <button onclick="sendCommand(5)">REQUEST TELEMETRY</button>
-            <button onclick="sendCommand(6)">REBOOT BRIDGE</button>
-        </div>
-        <div class="section">
-            <h2>Mode</h2>
-            <label><input type="radio" name="mode" value="waypoint" checked> Add waypoint</label><br>
-            <label><input type="radio" name="mode" value="loiter"> Guided loiter</label>
-        </div>
-        <div class="section">
-            <h2>Vehicles</h2>
-            <div id="vehicle-list">Loading vehicles...</div>
-        </div>
-        <div class="section">
-            <h2>Selected Vehicle</h2>
-            <div id="vehicle-info">Loading vehicle status...</div>
-        </div>
-        <div class="section">
-            <h2>Mission</h2>
-            <button onclick="uploadMission()">Upload Mission</button>
-            <button onclick="clearMission()">Clear Mission</button>
-            <div id="waypoint-list"></div>
-        </div>
-        <div class="section">
-            <h2>Debug</h2>
-            <button onclick="sendTestText()">Send Test Text</button>
-        </div>
-        <div class="section">
-            <h2>Log</h2>
-            <textarea id="log" readonly></textarea>
+        <div class="sidebar-grid">
+            <div class="section">
+                <h2>Commands</h2>
+                <button onclick="sendCommand(1)">RTL</button>
+                <button onclick="sendCommand(2)">LOITER</button>
+                <button onclick="sendCommand(3)">AUTO</button>
+                <button onclick="sendCommand(4)">REQUEST STATUS</button>
+                <button onclick="sendCommand(5)">REQUEST TELEMETRY</button>
+                <button onclick="sendCommand(6)">REBOOT BRIDGE</button>
+            </div>
+            <div class="section">
+                <h2>Mode</h2>
+                <label><input type="radio" name="mode" value="waypoint" checked> Add waypoint</label><br>
+                <label><input type="radio" name="mode" value="loiter"> Guided loiter</label>
+            </div>
+            <div class="section">
+                <h2>Vehicles</h2>
+                <div id="vehicle-list">Loading vehicles...</div>
+            </div>
+            <div class="section">
+                <h2>Selected Vehicle</h2>
+                <div id="vehicle-info">Loading vehicle status...</div>
+            </div>
+            <div class="section sidebar-fullwidth">
+                <h2>Mission</h2>
+                <button onclick="uploadMission()">Upload Mission</button>
+                <button onclick="clearMission()">Clear Mission</button>
+                <div id="waypoint-list"></div>
+            </div>
+            <div class="section sidebar-fullwidth">
+                <h2>Debug</h2>
+                <button onclick="sendTestText()">Send Test Text</button>
+            </div>
+            <div class="section sidebar-fullwidth">
+                <h2>Log</h2>
+                <textarea id="log" readonly></textarea>
+            </div>
         </div>
     </div>
     <div class="map-panel">

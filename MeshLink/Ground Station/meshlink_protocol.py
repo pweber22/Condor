@@ -4,7 +4,7 @@ import struct
 
 PROTOCOL_VERSION = 3
 MAX_PAYLOAD = 120
-HEADER_FMT = "<BBBBBBHHH"
+HEADER_FMT = "<BBBBBBBHH"
 HEADER_SIZE = struct.calcsize(HEADER_FMT)
 
 class MessageType(IntEnum):
@@ -137,6 +137,26 @@ def crc16(data: bytes, poly: int = 0x1021, init: int = 0xFFFF) -> int:
 
 def build_command_payload(command_id: int, parameter: int = 0) -> bytes:
     return struct.pack("<BBH", command_id, parameter, 0)
+
+
+def parse_telemetry_payload(payload: bytes) -> dict:
+    if len(payload) != 19:
+        raise ValueError(f"Telemetry payload must be 19 bytes, got {len(payload)}")
+    latitude, longitude, altitude_m, groundspeed_cms, battery_cV, flight_mode, current_waypoint, rssi, link_quality = struct.unpack(
+        "<iiHHHBHbB",
+        payload,
+    )
+    return {
+        'latitude': latitude / 1e7,
+        'longitude': longitude / 1e7,
+        'altitude_m': altitude_m,
+        'groundspeed_cms': groundspeed_cms,
+        'battery_cV': battery_cV,
+        'flight_mode': flight_mode,
+        'current_waypoint': current_waypoint,
+        'rssi': rssi,
+        'link_quality': link_quality,
+    }
 
 
 def build_guided_loiter_payload(latitude: int, longitude: int, altitude_m: int, radius_m: int) -> bytes:

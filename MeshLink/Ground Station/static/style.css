@@ -1,23 +1,31 @@
+/* Page background and default text styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #1e1e2f;
     color: #f5f5f5;
 }
+
+/* Top bar container for title, COM port selector, and connection status */
 .top-bar {
-    padding: 16px;
+    padding: 12px;
     background: #11121d;
     border-bottom: 1px solid #333;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
 }
+
+/* Group for status indicators and controls in the top bar */
 .status-block {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
+/* Badge for connection state labels */
 .status-badge {
+    min-width: 180px;
     padding: 8px 12px;
     border-radius: 999px;
     font-size: 13px;
@@ -25,26 +33,36 @@ body {
     letter-spacing: 0.02em;
     text-transform: uppercase;
 }
+
+/* Connected status badge color */
 .status-badge.connected {
     background: #2ed573;
     color: #071c07;
 }
+
+/* Disconnected status badge color */
 .status-badge.disconnected {
     background: #ff4757;
     color: white;
 }
+
+/* Warning or error status badge color */
 .status-badge.warning {
     background: #ffb142;
     color: #2f2a02;
 }
+
+/* COM port dropdown select styling */
 .status-select {
-    min-width: 120px;
+    min-width: 100px;
     padding: 8px 10px;
     border-radius: 6px;
     border: 1px solid #333;
     background: #191a2d;
     color: #f5f5f5;
 }
+
+/* Label styling for top bar controls */
 .status-label {
     display: inline-flex;
     align-items: center;
@@ -52,6 +70,8 @@ body {
     font-size: 13px;
     color: #aaa;
 }
+
+/* Top bar reconnect button styling */
 .status-button {
     padding: 8px 14px;
     border: none;
@@ -64,25 +84,59 @@ body {
 .status-button:hover {
     background: #51557f;
 }
+
+/* Main app layout: left sidebar and right map panel */
 .container {
     display: flex;
     height: calc(100vh - 72px);
 }
+
+/* Left sidebar containing command panels and logs */
 .sidebar {
-    width: 320px;
-    padding: 16px;
+    width: 460px;
+    padding: 10px;
     background: #16162c;
     overflow-y: auto;
 }
+
+/* Two-column grid inside the sidebar */
+.sidebar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* Full-width sidebar sections such as mission, debug, and log */
+.sidebar-fullwidth {
+    grid-column: 1 / -1;
+}
+
+/* Individual sidebar card styling */
 .section {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #333;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #141426;
 }
 .section h2 {
     margin-top: 0;
     font-size: 16px;
 }
+
+/* Log area inside the sidebar */
+#log {
+    width: 100%;
+    min-height: 280px;
+    max-height: 320px;
+    background: #0f1120;
+    border: 1px solid #333;
+    color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    resize: none;
+}
+
+/* Buttons used throughout the sidebar */
 button {
     width: 100%;
     margin: 4px 0;
@@ -96,18 +150,24 @@ button {
 button:hover {
     background: #1f6cd4;
 }
+
+/* Mission waypoint list styling */
 #waypoint-list {
     background: #0f1120;
     padding: 10px;
     border-radius: 4px;
-    min-height: 120px;
+    min-height: 80px;
     font-size: 14px;
 }
+
+/* Custom marker container for vehicles on the map */
 .vehicle-div-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
+
+/* Vehicle marker style on the map */
 .vehicle-icon {
     width: 24px;
     height: 24px;
@@ -120,6 +180,8 @@ button:hover {
     line-height: 24px;
     text-align: center;
 }
+
+/* Vehicle list item in the sidebar */
 .vehicle-item {
     padding: 8px;
     border: 1px solid #333;
@@ -140,6 +202,8 @@ button:hover {
     font-size: 13px;
     line-height: 1.4;
 }
+
+/* Active vehicle details panel */
 .vehicle-summary {
     font-size: 14px;
     line-height: 1.5;
@@ -148,15 +212,8 @@ button:hover {
     font-weight: bold;
     margin-bottom: 8px;
 }
-#log {
-    width: 100%;
-    height: 220px;
-    background: #0f1120;
-    border: 1px solid #333;
-    color: #f5f5f5;
-    padding: 10px;
-    border-radius: 4px;
-}
+
+/* Map panel container */
 .map-panel {
     flex: 1;
     position: relative;
