@@ -107,7 +107,7 @@ class MeshtasticTransport:
         self.iface.sendData(
             data,
             destinationId=destination,
-            portNum=256,
+            portNum=256, # type: ignore
             channelIndex=0,
             wantAck=True,
         )
@@ -525,7 +525,7 @@ def api_command():
     command_id = data.get('command_id')
     destination = data.get('destination', int(active_vehicle))
     try:
-        payload = build_command_payload(command_id, 0)
+        payload = build_command_payload(command_id, 0) # type: ignore
         send_packet(destination, MessageType.COMMAND, payload)
         return jsonify({'status': 'ok'})
     except Exception as exc:
