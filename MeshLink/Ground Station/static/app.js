@@ -8,6 +8,8 @@
 let map;
 let markers = {};
 let vehicleMarkers = {};
+let vehiclePaths = {};
+let vehicleLines = {};
 let waypointMarkers = [];
 let waypointLine = null;
 let waypoints = [];
@@ -24,6 +26,11 @@ function createVehicleIcon(id) {
         iconSize: [32, 32],
         iconAnchor: [16, 16],
     });
+}
+
+function getVehicleColor(id) {
+    const colors = ['#ff4757', '#1e90ff', '#2ed573', '#ffa502', '#eccc68', '#ff6b81'];
+    return colors[(parseInt(id, 10) - 1) % colors.length];
 }
 
 const waypointIcon = L.icon({
@@ -185,15 +192,37 @@ function fetchState() {
 function updateVehicles(vehicleData) {
     Object.keys(vehicleData).forEach(id => {
         const v = vehicleData[id];
-        const markerText = `Vehicle ${id}\nBattery: ${v.battery_cV / 100} V\nAltitude: ${v.altitude_m} m\nStatus: ${v.status}`;
+        const groundspeed = v.groundspeed_cms != null ? (v.groundspeed_cms / 100).toFixed(1) : 'N/A';
+        const rssi = v.rssi != null ? `${v.rssi} dBm` : 'N/A';
+        const linkQuality = v.link_quality != null ? `${v.link_quality}%` : 'N/A';
+        const markerText = `Vehicle ${id}\nBattery: ${v.battery_cV / 100} V\nAltitude: ${v.altitude_m} m\nGroundspeed: ${groundspeed} m/s\nRSSI: ${rssi}\nLink: ${linkQuality}\nStatus: ${v.status}`;
+            const coords = [v.lat, v.lon];
+        if (Array.isArray(v.flight_path) && v.flight_path.length > 0) {
+            vehiclePaths[id] = v.flight_path.map(point => [point[0], point[1]]);
+        } else if (!vehiclePaths[id]) {
+            vehiclePaths[id] = [];
+        }
+
         if (vehicleMarkers[id]) {
-            vehicleMarkers[id].setLatLng([v.lat, v.lon]);
+            vehicleMarkers[id].setLatLng(coords);
             vehicleMarkers[id].setPopupContent(markerText);
             vehicleMarkers[id].setIcon(createVehicleIcon(parseInt(id, 10)));
         } else {
-            vehicleMarkers[id] = L.marker([v.lat, v.lon], { icon: createVehicleIcon(parseInt(id, 10)) })
+            vehicleMarkers[id] = L.marker(coords, { icon: createVehicleIcon(parseInt(id, 10)) })
                 .addTo(map)
                 .bindPopup(markerText);
+        }
+
+        const path = vehiclePaths[id];
+        if (path.length === 0 || path[path.length - 1][0] !== coords[0] || path[path.length - 1][1] !== coords[1]) {
+            path.push(coords);
+        }
+        if (path.length > 1) {
+            if (vehicleLines[id]) {
+                vehicleLines[id].setLatLngs(path);
+            } else {
+                vehicleLines[id] = L.polyline(path, { color: getVehicleColor(id), weight: 3, opacity: 0.8 }).addTo(map);
+            }
         }
     });
 }
@@ -205,11 +234,17 @@ function updateVehicleInfo(vehicleData, activeId) {
         container.textContent = 'No active vehicle data';
         return;
     }
+    const groundspeed = info.groundspeed_cms != null ? (info.groundspeed_cms / 100).toFixed(1) : 'N/A';
+    const rssi = info.rssi != null ? `${info.rssi} dBm` : 'N/A';
+    const linkQuality = info.link_quality != null ? `${info.link_quality}%` : 'N/A';
     container.innerHTML = `
         <div class="vehicle-summary">
             <div class="vehicle-summary-title">Vehicle ${activeId}</div>
             <div>Battery: ${info.battery_cV / 100} V</div>
             <div>Altitude: ${info.altitude_m} m</div>
+            <div>Groundspeed: ${groundspeed} m/s</div>
+            <div>RSSI: ${rssi}</div>
+            <div>Link quality: ${linkQuality}</div>
             <div>Status: ${info.status}</div>
             <div>Lat: ${info.lat.toFixed(5)}</div>
             <div>Lon: ${info.lon.toFixed(5)}</div>

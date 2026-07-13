@@ -32,6 +32,7 @@ from meshlink_protocol import (
     build_command_payload,
     build_guided_loiter_payload,
     build_mission_upload_fragment,
+    parse_telemetry_payload,
     PacketHeader,
     MeshLinkPacket,
     PROTOCOL_VERSION,
@@ -77,6 +78,7 @@ vehicles = {
         'status': 'OK',
         'battery_cV': 1203,
         'altitude_m': 100,
+        'flight_path': [[34.7540, -118.3540]],
     }
 }
 
@@ -223,9 +225,15 @@ def parse_meshlink_text(text):
     if not isinstance(text, str):
         return None
     stripped = text.strip()
-    if not stripped.upper().startswith(MESHLINK_TEXT_PREFIX):
+    prefixes = ('LINK:', 'MESH:')
+    matched_prefix = None
+    for prefix in prefixes:
+        if stripped.upper().startswith(prefix):
+            matched_prefix = prefix
+            break
+    if matched_prefix is None:
         return None
-    hex_payload = stripped[len(MESHLINK_TEXT_PREFIX):].strip()
+    hex_payload = stripped[len(matched_prefix):].strip()
     if not hex_payload:
         return None
     try:
@@ -237,6 +245,46 @@ def parse_meshlink_text(text):
         return packet
     except Exception:
         return None
+
+
+def update_vehicle_telemetry(meshlink_packet):
+    """Update the local vehicle state from an incoming telemetry packet."""
+    try:
+        telemetry = parse_telemetry_payload(meshlink_packet.payload)
+    except Exception as exc:
+        print(f"Failed to parse telemetry payload: {exc}")
+        return
+
+    source = meshlink_packet.header.source
+    if source == int(VehicleID.GCS):
+        return
+
+    vehicle = vehicles.setdefault(source, {
+        'id': source,
+        'lat': 0.0,
+        'lon': 0.0,
+        'battery_cV': 0,
+        'altitude_m': 0,
+        'flight_path': [],
+        'status': 'TELEMETRY',
+    })
+    new_position = [telemetry['latitude'], telemetry['longitude']]
+    flight_path = vehicle.setdefault('flight_path', [])
+    if not flight_path or flight_path[-1] != new_position:
+        flight_path.append(new_position)
+    vehicle.update({
+        'id': source,
+        'lat': telemetry['latitude'],
+        'lon': telemetry['longitude'],
+        'altitude_m': telemetry['altitude_m'],
+        'battery_cV': telemetry['battery_cV'],
+        'groundspeed_cms': telemetry['groundspeed_cms'],
+        'flight_mode': telemetry['flight_mode'],
+        'current_waypoint': telemetry['current_waypoint'],
+        'rssi': telemetry['rssi'],
+        'link_quality': telemetry['link_quality'],
+        'status': 'TELEMETRY',
+    })
 
 
 def summarize_meshtastic_packet(packet):
@@ -283,6 +331,19 @@ def summarize_meshtastic_packet(packet):
 
     meshlink_packet = parse_meshlink_text(text) if text is not None else None
     if meshlink_packet is not None:
+        if meshlink_packet.header.type == MessageType.TELEMETRY:
+            update_vehicle_telemetry(meshlink_packet)
+            try:
+                telemetry = parse_telemetry_payload(meshlink_packet.payload)
+                return (
+                    f"telemetry src={meshlink_packet.header.source} "
+                    f"lat={telemetry['latitude']:.5f} lon={telemetry['longitude']:.5f} "
+                    f"alt={telemetry['altitude_m']}m gs={telemetry['groundspeed_cms']/100:.1f}m/s "
+                    f"bat={telemetry['battery_cV']/100:.2f}V "
+                    f"rssi={telemetry['rssi']}dBm link={telemetry['link_quality']}%"
+                )
+            except Exception:
+                pass
         return (
             f"meshlink type={MessageType(meshlink_packet.header.type).name} "
             f"src={meshlink_packet.header.source} dst={meshlink_packet.header.destination} "
