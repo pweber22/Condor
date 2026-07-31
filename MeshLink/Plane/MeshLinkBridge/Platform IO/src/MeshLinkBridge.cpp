@@ -345,7 +345,7 @@ telemetryPayload getTM() {
   tm.altitude_m = (int16_t)(vehicle.relativeAltitude / 1000);
   tm.groundspeed_cms = (uint16_t)(vehicle.groundspeed * 100);
   tm.battery_cV = (uint16_t)(vehicle.batteryVoltage / 10);
-  tm.flight_mode = vehicle.baseMode;
+  tm.flight_mode = vehicle.customMode;
   tm.current_waypoint = 0;
   tm.rssi = 0;
   tm.link_quality = 0;
