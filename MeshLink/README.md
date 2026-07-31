@@ -120,7 +120,7 @@ struct PacketHeader
 * `type`: packet type identifier.
 * `sequence`: packet sequence number.
 * `total_parts`: number of fragments in the sequence.
-* `part`: current fragment index (0-based).
+* `part`: current fragment index (1-based).
 * `payload_length`: length of payload in bytes.
 * `crc16`: CRC-16 over header and payload.
 

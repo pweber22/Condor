@@ -1,57 +1,96 @@
+#include <Arduino.h>
 #include "MeshLink.h"
+#include "MeshLinkConfig.h"
+#include "MAVLink_Mesh.h"
 #include <string.h>
 #include <stdlib.h>
+#include <MAVLink_minimal.h>
 
-const unsigned int MAX_BUF_SIZE = 256;
-static char buff[MAX_BUF_SIZE];
+const unsigned int MESH_BUF_SIZE = 256;
+const unsigned int MAV_BUF_SIZE = 280;
+static char meshBuf[MESH_BUF_SIZE];
+static char mavBuf[MAV_BUF_SIZE];
 
-const uint8_t MY_VEHICLE_ID = 0x01;
+const uint8_t MY_VEHICLE_ID = MESHLINK_VEHICLE_ID;
 const uint8_t GROUND_STATION_ID = 0x00;
-const uint8_t PROTOCOL_VERSION = 0x03;
-const unsigned long TELEMETRY_PERIOD_MS = 60000;
+const uint8_t PROTOCOL_VERSION = 0x03; 
+long base_latitude = 347000000;
+long base_longitude = -1184000000;
 
 uint8_t g_sequence = 0;
 unsigned long lastTM = 0;
+unsigned long lastHB = 0;
+
+VehicleStatus vehicle;
+
+int byteCount();
+void printPacketSummary(const uint8_t*, size_t);
+telemetryPayload generateTM();
+telemetryPayload getTM();
+mavlink_message_t mavMsg;
+mavlink_status_t mavStatus;
+void sendTM(telemetryPayload);
+bool meshSerialToBuffer();
+void processMeshBuffer();
+bool mavSerialToBuffer();
+void processMavBuffer();
+int hexStringToBytes(const char*, uint8_t*, size_t);
+void rebootBridge();
+void RTL();
+void loiter();
+void FMAuto();
+void sendHeartbeat();
+
 
 void setup() {
   Serial.begin(115200);
-  Serial2.begin(115200);
+  MESHTASTIC_SERIAL.begin(115200);
+  MAVLINK_SERIAL.begin(115200);
   delay(100);
   Serial.println(F("MeshLink bridge boot"));
-  Serial.println(F("Telemetry and command bridge initialized"));
+  Serial.println(F("Telemetry, flight controller, and command bridge initialized"));
   randomSeed(analogRead(0));
   lastTM = millis();
 }
 
 void loop() {
-  if (readSerialToBuffer()) {
-    processBuffer();
+  if (meshSerialToBuffer()) {
+    processMeshBuffer();
+  }
+
+  if (mavSerialToBuffer()) {
+    processMavBuffer();
   }
 
   if (millis() - lastTM >= TELEMETRY_PERIOD_MS) {
-    telemetryPayload tm = generateTM();
+    telemetryPayload tm = getTM();
     sendTM(tm);
     lastTM = millis();
   }
+
+  if (millis() - lastHB >= 1000) {
+    sendHeartbeat();
+    lastHB = millis();
+  }
 }
 
-bool readSerialToBuffer() {
+bool meshSerialToBuffer() {
   static unsigned int currentIndex = 0;
 
-  while (Serial2.available() > 0) {
-    char incomingByte = (char)Serial2.read();
+  while (MESHTASTIC_SERIAL.available() > 0) {
+    char incomingByte = (char)MESHTASTIC_SERIAL.read();
 
     if (incomingByte == '\n' || incomingByte == '\r') {
       if (currentIndex > 0) {
-        buff[currentIndex] = '\0';
+        meshBuf[currentIndex] = '\0';
         currentIndex = 0;
         return true;
       }
       continue;
     }
 
-    if (currentIndex < MAX_BUF_SIZE - 1) {
-      buff[currentIndex++] = incomingByte;
+    if (currentIndex < MAX_MESHLINK_BUF_SIZE - 1) {
+      meshBuf[currentIndex++] = incomingByte;
     } else {
       Serial.println(F("Buffer overflow, clearing message"));
       currentIndex = 0;
@@ -60,8 +99,23 @@ bool readSerialToBuffer() {
   return false;
 }
 
-void processBuffer() {
-  char *line = buff;
+bool mavSerialToBuffer() {
+
+  while (MAVLINK_SERIAL.available() > 0) {
+    char c = (char)MAVLINK_SERIAL.read();
+
+    if (mavlink_parse_char(MAVLINK_COMM_0, c, &mavMsg, &mavStatus)) {
+        Serial.print(F("MAVLink message received: ID "));
+        Serial.println(mavMsg.msgid);
+        return true;
+      }
+    }
+
+  return false;
+}
+
+void processMeshBuffer() {
+  char *line = meshBuf;
   while (*line == ' ' || *line == '\t') {
     ++line;
   }
@@ -89,6 +143,7 @@ void processBuffer() {
     Serial.println(F("Ignoring non-MeshLink text"));
     return;
   }
+
 
   while (*hexPayload == ' ' || *hexPayload == '\t') {
     ++hexPayload;
@@ -135,20 +190,48 @@ void processBuffer() {
     Serial.println(F("UNKNOWN"));
   }
 
+  if (packet.destination != MY_VEHICLE_ID && packet.destination != 0xFE) {
+    Serial.print(F("Packet not for this vehicle (dest: "));
+    Serial.print(packet.destination);
+    Serial.print(F(", my id: "));
+    Serial.print(MY_VEHICLE_ID);
+    Serial.println(F(")"));
+    return;
+  }
+
+  
+  if (packet.type == MESHLINK_MSG_GUIDED_LOITER) {
+    Serial.println(F("Guided loiter command received"));
+    base_latitude = (uint16_t)packetBytes[11] | ((uint16_t)packetBytes[12] << 8) | ((uint16_t)packetBytes[13] << 16) | ((uint16_t)packetBytes[14] << 24);
+    base_longitude = (uint16_t)packetBytes[15] | ((uint16_t)packetBytes[16] << 8) | ((uint16_t)packetBytes[17] << 16) | ((uint16_t)packetBytes[18] << 24);
+  }
+
   if (packet.type == MESHLINK_MSG_COMMAND) {
     if (byteCount > 11) {
       uint8_t commandId = packetBytes[11];
       Serial.print(F("Command id: "));
       Serial.println(commandId);
+      if (commandId == MESHLINK_CMD_RTL) RTL();
+      if (commandId == MESHLINK_CMD_LOITER) loiter();
+      if (commandId == MESHLINK_CMD_AUTO) FMAuto();
       if (commandId == MESHLINK_CMD_REQUEST_TELEMETRY) {
         Serial.println(F("Telemetry request received, replying"));
-        telemetryPayload tm = generateTM();
+        telemetryPayload tm = getTM();
         sendTM(tm);
       }
+      if (commandId == MESHLINK_CMD_REBOOT_BRIDGE) {
+        Serial.println(F("Reboot bridge command received"));
+        rebootBridge();
+      }
+
     } else {
       Serial.println(F("Command packet had no payload"));
     }
   }
+}
+
+void processMavBuffer(){
+      vehicle.update(mavMsg);
 }
 
 void printPacketSummary(const uint8_t *data, size_t len) {
@@ -243,15 +326,29 @@ uint16_t crc16(const uint8_t *data, size_t len) {
 
 telemetryPayload generateTM() {
   telemetryPayload tm;
-  tm.latitude = 340000000 + (int32_t)(millis() / 3);
-  tm.longitude = -1184000000 + (int32_t)(millis() / 5);
+  tm.latitude = base_latitude + (int32_t)(millis() / random(8));
+  tm.longitude = base_longitude + (int32_t)(millis() / random(6));
   tm.altitude_m = (int16_t)(200 + (millis() / 1000) % 100);
   tm.groundspeed_cms = (uint16_t)(800 + (millis() / 1000) % 400);
-  tm.battery_cV = (uint16_t)(1180 + (millis() / 1000) % 50);
+  tm.battery_cV = (uint16_t)(1380 - (millis() / 1000) % 50);
   tm.flight_mode = 4;
   tm.current_waypoint = 7;
   tm.rssi = -55;
   tm.link_quality = 92;
+  return tm;
+}
+
+telemetryPayload getTM() {
+  telemetryPayload tm;
+  tm.latitude = vehicle.latitude;
+  tm.longitude = vehicle.longitude;
+  tm.altitude_m = (int16_t)(vehicle.relativeAltitude / 1000);
+  tm.groundspeed_cms = (uint16_t)(vehicle.groundspeed * 100);
+  tm.battery_cV = (uint16_t)(vehicle.batteryVoltage / 10);
+  tm.flight_mode = vehicle.baseMode;
+  tm.current_waypoint = 0;
+  tm.rssi = 0;
+  tm.link_quality = 0;
   return tm;
 }
 
@@ -301,6 +398,35 @@ void sendTM(telemetryPayload tm) {
 
   Serial.print(F("TX telemetry packet: "));
   Serial.println(hexString);
-  Serial2.print(F("LINK:"));
-  Serial2.println(hexString);
+  MESHTASTIC_SERIAL.print(F("LINK:"));
+  MESHTASTIC_SERIAL.println(hexString);
+}
+
+void rebootBridge(){
+  Serial.println("Rebooting bridge..."); 
+  USB1_USBCMD = 0;  // disconnect USB
+  delay(50);
+  SCB_AIRCR = 0x05FA0004; // Reboot
+  delay(100);
+}
+
+void RTL(){     // Return to launch
+  Serial.println("Return To Launch");
+}
+
+void loiter(){  // Start loiter
+  Serial.println("Loiter");
+}
+
+void FMAuto(){  // Auto flight mode
+  Serial.println("Flight Mode Auto");
+}
+
+
+void sendHeartbeat(){
+  mavlink_message_t msg;
+  mavlink_msg_heartbeat_pack(MAVLINK_BRIDGE_SYS_ID, MAV_COMP_ID_AUTOPILOT1, &msg, MAV_TYPE_QUADROTOR, MAV_AUTOPILOT_GENERIC, MAV_MODE_FLAG_MANUAL_INPUT_ENABLED, 0, MAV_STATE_STANDBY);
+  uint16_t len = mavlink_msg_to_send_buffer(mavBuf, &msg);
+
+  MAVLINK_SERIAL.write(mavBuf, len);
 }

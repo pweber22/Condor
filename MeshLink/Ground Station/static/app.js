@@ -240,14 +240,15 @@ function updateVehicleInfo(vehicleData, activeId) {
     container.innerHTML = `
         <div class="vehicle-summary">
             <div class="vehicle-summary-title">Vehicle ${activeId}</div>
+            <div>Status: ${info.status}</div>
+            <div>Flight Mode: ${info.flight_mode}</div>
             <div>Battery: ${info.battery_cV / 100} V</div>
             <div>Altitude: ${info.altitude_m} m</div>
             <div>Groundspeed: ${groundspeed} m/s</div>
             <div>RSSI: ${rssi}</div>
-            <div>Link quality: ${linkQuality}</div>
-            <div>Status: ${info.status}</div>
             <div>Lat: ${info.lat.toFixed(5)}</div>
             <div>Lon: ${info.lon.toFixed(5)}</div>
+            <div>Last Update: ${((Date.now()/1000 - info.last_update)).toFixed(0)} s ago</div>
         </div>
     `;
 }
@@ -423,7 +424,7 @@ function sendTestText() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text })
-    })
+})
         .then(r => r.json())
         .then(data => {
             if (data.status === 'ok') {

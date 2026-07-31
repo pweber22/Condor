@@ -1,5 +1,6 @@
 import os
 import json
+import logging
 from datetime import datetime
 
 """MeshLink Ground Station backend.
@@ -38,12 +39,30 @@ from meshlink_protocol import (
     PROTOCOL_VERSION,
 )
 
+os.makedirs("MeshLink\\Ground Station\\logs", exist_ok=True)
+log_filename = datetime.now().strftime("MeshLink\\Ground Station\\logs/meshtastic_%Y-%m-%d.log")
+
+telemetry_log = logging.getLogger("telemetry")
+telemetry_log.setLevel(logging.INFO)
+
+
+handler = logging.FileHandler(log_filename)
+
+formatter = logging.Formatter(
+    "%(asctime)s | %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+
+handler.setFormatter(formatter)
+
+telemetry_log.addHandler(handler)
+
 app = Flask(__name__, template_folder='templates', static_folder='static')
 CORS(app)
 
 # Default serial port and baud rate for the local Meshtastic radio.
 # These can be overridden with environment variables if needed.
-SERIAL_PORT = os.getenv('MESHTASTIC_PORT', 'COM3')
+SERIAL_PORT = os.getenv('MESHTASTIC_PORT', 'COM8')
 SERIAL_BAUD = int(os.getenv('MESHTASTIC_BAUD', '115200'))
 
 # Shared runtime state for the Flask app.
@@ -63,23 +82,6 @@ MESH_LINK_VERSION = '3'
 # Prefix applied to text messages carrying MeshLink hex packets.
 MESHLINK_TEXT_PREFIX = 'LINK:'
 vehicles = {
-    1: {
-        'id': 1,
-        'lat': 34.7535,
-        'lon': -118.3442,
-        'status': 'OK',
-        'battery_cV': 1150,
-        'altitude_m': 120,
-    },
-    2: {
-        'id': 2,
-        'lat': 34.7540,
-        'lon': -118.3540,
-        'status': 'OK',
-        'battery_cV': 1203,
-        'altitude_m': 100,
-        'flight_path': [[34.7540, -118.3540]],
-    }
 }
 
 
@@ -140,7 +142,7 @@ def connect_serial(port=None):
     global transport, meshtastic_error, selected_port, subscribed
     if SerialInterface is None:
         meshtastic_error = 'meshtastic library is not installed'
-        print(meshtastic_error)
+        telemetry_log.info(meshtastic_error)
         return None
 
     if port is not None:
@@ -154,28 +156,28 @@ def connect_serial(port=None):
             pub.subscribe(on_connection_lost, 'meshtastic.connection.lost')
             subscribed = True
         except Exception as exc:
-            print(f'Failed to subscribe to Meshtastic events: {exc}')
+            telemetry_log.info(f'Failed to subscribe to Meshtastic events: {exc}')
 
     port_to_use = selected_port
     if transport is not None:
         if transport.port == port_to_use:
-            print(f"Meshtastic transport already open on {port_to_use}")
+            telemetry_log.info(f"Meshtastic transport already open on {port_to_use}")
             return transport
         try:
-            print(f"Closing existing Meshtastic transport on {transport.port}")
+            telemetry_log.info(f"Closing existing Meshtastic transport on {transport.port}")
             transport.close()
         except Exception as exc:
-            print(f"Error closing existing transport: {exc}")
+            telemetry_log.info(f"Error closing existing transport: {exc}")
         transport = None
 
     try:
         transport = MeshtasticTransport(port_to_use)
         meshtastic_error = None
-        print(f"Opened Meshtastic node on {port_to_use}")
+        telemetry_log.info(f"Opened Meshtastic node on {port_to_use}")
         return transport
     except Exception as exc:
         meshtastic_error = str(exc)
-        print(f"Unable to open Meshtastic transport on {port_to_use}: {meshtastic_error}")
+        telemetry_log.info(f"Unable to open Meshtastic transport on {port_to_use}: {meshtastic_error}")
         return None
 
 
@@ -252,7 +254,7 @@ def update_vehicle_telemetry(meshlink_packet):
     try:
         telemetry = parse_telemetry_payload(meshlink_packet.payload)
     except Exception as exc:
-        print(f"Failed to parse telemetry payload: {exc}")
+        telemetry_log.info(f"Failed to parse telemetry payload: {exc}")
         return
 
     source = meshlink_packet.header.source
@@ -284,6 +286,7 @@ def update_vehicle_telemetry(meshlink_packet):
         'rssi': telemetry['rssi'],
         'link_quality': telemetry['link_quality'],
         'status': 'TELEMETRY',
+        'last_update': datetime.now().timestamp(),
     })
 
 
@@ -296,6 +299,7 @@ def summarize_meshtastic_packet(packet):
     if not isinstance(packet, dict):
         return str(packet)
     decoded = packet.get('decoded')
+    telemetry_log.info(packet)
     if not decoded:
         return ''
 
@@ -333,6 +337,7 @@ def summarize_meshtastic_packet(packet):
     if meshlink_packet is not None:
         if meshlink_packet.header.type == MessageType.TELEMETRY:
             update_vehicle_telemetry(meshlink_packet)
+
             try:
                 telemetry = parse_telemetry_payload(meshlink_packet.payload)
                 return (
@@ -399,6 +404,8 @@ def add_meshtastic_message(packet, topic='meshtastic.receive'):
     if not text:
         return
 
+    telemetry_log.info(f"TM Received: {text}")
+
     incoming_messages.append({
         'id': len(incoming_messages) + 1,
         'timestamp': datetime.now().isoformat(timespec='seconds'),
@@ -417,14 +424,14 @@ def on_meshtastic_receive(packet, interface=None):
 def on_connection_established(interface=None, topic=pub.AUTO_TOPIC):
     """Meshtastic pubsub callback when the radio connects."""
     global meshtastic_error
-    print('Meshtastic connection established')
+    telemetry_log.info('Meshtastic connection established')
     meshtastic_error = None
 
 
 def on_connection_lost(interface=None, topic=pub.AUTO_TOPIC):
     """Meshtastic pubsub callback when the radio disconnects."""
     global transport, meshtastic_error
-    print('Meshtastic connection lost')
+    telemetry_log.info('Meshtastic connection lost')
     meshtastic_error = 'Meshtastic connection lost'
     if transport is not None:
         try:
@@ -447,13 +454,13 @@ def list_ports():
                 })
             return ports
         except Exception as exc:
-            print(f'Error listing COM ports: {exc}')
+            telemetry_log.info(f'Error listing COM ports: {exc}')
     if findPorts is not None:
         try:
             for device in findPorts(True):
                 ports.append({'device': device, 'description': '', 'hwid': ''})
         except Exception as exc:
-            print(f'Error listing Meshtastic ports: {exc}')
+            telemetry_log.info(f'Error listing Meshtastic ports: {exc}')
     return ports
 
 
@@ -474,7 +481,7 @@ def next_sequence():
     return sequence
 
 
-def send_packet(destination, type_, payload, total_parts=1, part=0):
+def send_packet(destination, type_, payload, total_parts=1, part=1):
     """Build and send a MeshLink packet using Meshtastic text messages.
 
     The MeshLink packet still uses the same binary header and payload.
@@ -507,13 +514,13 @@ def send_packet(destination, type_, payload, total_parts=1, part=0):
     )
     packet = MeshLinkPacket(header, payload)
     text_payload = MESHLINK_TEXT_PREFIX + packet.pack().hex()
-    print("attempting to send text payload:", text_payload)
+    telemetry_log.info("attempting to send text payload:", text_payload)
     try:
         transport.send_text(text_payload, transport_destination)
     except Exception as exc:
-        print(f"Failed to send MeshLink text packet via Meshtastic: {exc}")
+        telemetry_log.info(f"Failed to send MeshLink text packet via Meshtastic: {exc}")
         raise
-    print(f"TX TEXT-MESHLINK {type_.name} dst={transport_destination} seq={header.sequence} part={part}/{total_parts}")
+    telemetry_log.info(f"TX TEXT-MESHLINK {type_.name} dst={transport_destination} seq={header.sequence} part={part}/{total_parts}")
 
 
 def send_text_message(text, destination=None):
@@ -526,9 +533,9 @@ def send_text_message(text, destination=None):
     try:
         transport.send_text(text, '^all')
     except Exception as exc:
-        print(f"Failed to send text via Meshtastic: {exc}")
+        telemetry_log.info(f"Failed to send text via Meshtastic: {exc}")
         raise
-    print(f"TX TEXT dst=^all len={len(text)}")
+    telemetry_log.info(f"TX TEXT dst=^all len={len(text)}")
 
 
 @app.route('/')
@@ -539,6 +546,10 @@ def index():
 
 @app.route('/api/state')
 def state():
+    # for vehicle in vehicles:
+    #     if (vehicle.last_update-datetime.now().timestamp() > 180):
+    #        vehicle.update({'status':'STALE'})
+
     return jsonify({
         'active_vehicle': int(active_vehicle),
         'vehicles': vehicles,
@@ -639,7 +650,7 @@ def api_mission():
         chunk = waypoints[first_idx:first_idx + 4]
         fragments.append(build_mission_upload_fragment(total_waypoints, first_idx, chunk))
     for part, payload in enumerate(fragments, start=1):
-        send_packet(destination, MessageType.MISSION_UPLOAD, payload, total_parts=len(fragments), part=part)
+        send_packet(destination, MessageType.MISSION_UPLOAD, payload, total_parts=len(fragments), part=part+1)
     mission_waypoints.clear()
     mission_waypoints.extend([
         {

@@ -7,7 +7,7 @@ A native MeshLink Ground Control Station GUI application.
 * Map-based vehicle tracking
 * Click-to-add mission waypoints
 * Click-to-send guided loiter commands
-* Buttons for RTL, LOITER, AUTO, status/telemetry requests, and bridge reboot
+* Buttons for RTL, LOITER, AUTO, telemetry requests, and bridge reboot
 * Deterministic mission upload fragmenting
 * Logical Vehicle ID support
 
