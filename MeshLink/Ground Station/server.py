@@ -342,6 +342,7 @@ def summarize_meshtastic_packet(packet):
                 telemetry = parse_telemetry_payload(meshlink_packet.payload)
                 return (
                     f"telemetry src={meshlink_packet.header.source} "
+                    f"flight_mode={telemetry['flight_mode']} wp={telemetry['current_waypoint']} "
                     f"lat={telemetry['latitude']:.5f} lon={telemetry['longitude']:.5f} "
                     f"alt={telemetry['altitude_m']}m gs={telemetry['groundspeed_cms']/100:.1f}m/s "
                     f"bat={telemetry['battery_cV']/100:.2f}V "

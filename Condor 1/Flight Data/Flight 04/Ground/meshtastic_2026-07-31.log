@@ -1,0 +1,2847 @@
+2026-07-31 01:00:07 | Unable to open Meshtastic transport on COM3: could not open port 'COM3': OSError(22, 'The semaphore timeout period has expired.', None, 121)
+2026-07-31 01:00:21 | Opened Meshtastic node on COM8
+2026-07-31 01:00:22 | Meshtastic connection established
+2026-07-31 01:00:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002310100130066FC4161A914FCB78EB900000600CD045100000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002310100130066FC4161A914FCB78EB900000600CD045100000000\r\n'}, 'id': 95363050, 'rxSnr': 6.5, 'hopLimit': 3, 'rxRssi': -54, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002310100130066FC4161A914FCB78EB900000600CD045100000000\r\n"
+  bitfield: 0
+}
+id: 95363050
+rx_snr: 6.5
+hop_limit: 3
+rx_rssi: -54
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 01:01:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002320100130045C65261A914CAB78EB900000200CC045100000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002320100130045C65261A914CAB78EB900000200CC045100000000\r\n'}, 'id': 3821410284, 'rxSnr': 6.25, 'hopLimit': 3, 'rxRssi': -56, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002320100130045C65261A914CAB78EB900000200CC045100000000\r\n"
+  bitfield: 0
+}
+id: 3821410284
+rx_snr: 6.25
+hop_limit: 3
+rx_rssi: -56
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 01:01:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000233010013009202EB60A91400B88EB900000200CC045100000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000233010013009202EB60A91400B88EB900000200CC045100000000\r\n'}, 'id': 2426808302, 'rxSnr': 6.25, 'hopLimit': 3, 'rxRssi': -55, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000233010013009202EB60A91400B88EB900000200CC045100000000\r\n"
+  bitfield: 0
+}
+id: 2426808302
+rx_snr: 6.25
+hop_limit: 3
+rx_rssi: -55
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 01:02:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023401001300FBBC9E60A914D7B78EB900000800CC045100000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023401001300FBBC9E60A914D7B78EB900000800CC045100000000\r\n'}, 'id': 174509040, 'rxSnr': 7.25, 'hopLimit': 3, 'rxRssi': -60, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023401001300FBBC9E60A914D7B78EB900000800CC045100000000\r\n"
+  bitfield: 0
+}
+id: 174509040
+rx_snr: 7.25
+hop_limit: 3
+rx_rssi: -60
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 01:02:41 | Unable to open Meshtastic transport on COM3: could not open port 'COM3': OSError(22, 'The semaphore timeout period has expired.', None, 121)
+2026-07-31 01:02:58 | Opened Meshtastic node on COM8
+2026-07-31 01:02:59 | Meshtastic connection established
+2026-07-31 01:03:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023601001300C63E6361A91434B78EB900000800CB045100000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023601001300C63E6361A91434B78EB900000800CB045100000000\r\n'}, 'id': 3366483956, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -55, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023601001300C63E6361A91434B78EB900000800CB045100000000\r\n"
+  bitfield: 0
+}
+id: 3366483956
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -55
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 01:03:10 | TM Received: telemetry src=1 lat=34.66448 lon=-118.18293 alt=0m gs=0.1m/s bat=12.27V rssi=0dBm link=0%
+2026-07-31 01:03:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023701001300D6FC5961A91405B98EB900000300CB045100000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023701001300D6FC5961A91405B98EB900000300CB045100000000\r\n'}, 'id': 3677720566, 'rxSnr': 7.25, 'hopLimit': 3, 'rxRssi': -55, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023701001300D6FC5961A91405B98EB900000300CB045100000000\r\n"
+  bitfield: 0
+}
+id: 3677720566
+rx_snr: 7.25
+hop_limit: 3
+rx_rssi: -55
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 01:03:40 | TM Received: telemetry src=1 lat=34.66448 lon=-118.18289 alt=0m gs=0.0m/s bat=12.27V rssi=0dBm link=0%
+2026-07-31 01:04:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002380100130044131F62A914E6B88EB900000700CB045100000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002380100130044131F62A914E6B88EB900000700CB045100000000\r\n'}, 'id': 2855318520, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -53, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002380100130044131F62A914E6B88EB900000700CB045100000000\r\n"
+  bitfield: 0
+}
+id: 2855318520
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -53
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 01:04:10 | TM Received: telemetry src=1 lat=34.66450 lon=-118.18289 alt=0m gs=0.1m/s bat=12.27V rssi=0dBm link=0%
+2026-07-31 09:13:53 | Meshtastic connection lost
+2026-07-31 09:14:02 | Opened Meshtastic node on COM8
+2026-07-31 09:14:03 | Meshtastic connection established
+2026-07-31 09:18:09 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002010100130075938813B714A3EC77B9000000009F040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002010100130075938813B714A3EC77B9000000009F040000000000\r\n'}, 'id': 4234881384, 'rxSnr': 7.25, 'hopLimit': 3, 'rxRssi': -38, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002010100130075938813B714A3EC77B9000000009F040000000000\r\n"
+  bitfield: 0
+}
+id: 4234881384
+rx_snr: 7.25
+hop_limit: 3
+rx_rssi: -38
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:18:09 | TM Received: telemetry src=1 lat=34.75424 lon=-118.33230 alt=0m gs=0.0m/s bat=11.83V rssi=0dBm link=0%
+2026-07-31 09:18:39 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020201001300FEFB8A13B71459EC77B9000006009F040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020201001300FEFB8A13B71459EC77B9000006009F040000000000\r\n'}, 'id': 4105011563, 'rxSnr': 7.5, 'hopLimit': 3, 'rxRssi': -36, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020201001300FEFB8A13B71459EC77B9000006009F040000000000\r\n"
+  bitfield: 0
+}
+id: 4105011563
+rx_snr: 7.5
+hop_limit: 3
+rx_rssi: -36
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:18:39 | TM Received: telemetry src=1 lat=34.75424 lon=-118.33230 alt=0m gs=0.1m/s bat=11.83V rssi=0dBm link=0%
+2026-07-31 09:19:09 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020301001300799CD013B71463EC77B9000002009E040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020301001300799CD013B71463EC77B9000002009E040000000000\r\n'}, 'id': 3003598189, 'rxSnr': 7.5, 'hopLimit': 3, 'rxRssi': -39, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020301001300799CD013B71463EC77B9000002009E040000000000\r\n"
+  bitfield: 0
+}
+id: 3003598189
+rx_snr: 7.5
+hop_limit: 3
+rx_rssi: -39
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:19:09 | TM Received: telemetry src=1 lat=34.75425 lon=-118.33230 alt=0m gs=0.0m/s bat=11.82V rssi=0dBm link=0%
+2026-07-31 09:26:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020101001300D3ED00000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020101001300D3ED00000000000000000000000000000000000000\r\n'}, 'id': 3213768761, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -45, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020101001300D3ED00000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 3213768761
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -45
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:26:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:26:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020201001300D6B400000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020201001300D6B400000000000000000000000000000000000000\r\n'}, 'id': 2668638268, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -48, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020201001300D6B400000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 2668638268
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -48
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:26:55 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:27:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020301001300D58300000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020301001300D58300000000000000000000000000000000000000\r\n'}, 'id': 2547159102, 'rxSnr': 6.25, 'hopLimit': 3, 'rxRssi': -44, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020301001300D58300000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 2547159102
+rx_snr: 6.25
+hop_limit: 3
+rx_rssi: -44
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:27:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:27:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020401001300DC0600000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020401001300DC0600000000000000000000000000000000000000\r\n'}, 'id': 271208512, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -42, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020401001300DC0600000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 271208512
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -42
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:27:55 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:28:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020501001300DF3100000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020501001300DF3100000000000000000000000000000000000000\r\n'}, 'id': 3880714306, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -43, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020501001300DF3100000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 3880714306
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -43
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:28:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:28:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020601001300DA6800000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020601001300DA6800000000000000000000000000000000000000\r\n'}, 'id': 1155642436, 'rxSnr': 5.25, 'hopLimit': 3, 'rxRssi': -43, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020601001300DA6800000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 1155642436
+rx_snr: 5.25
+hop_limit: 3
+rx_rssi: -43
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:28:55 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:29:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020701001300D95F00000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020701001300D95F00000000000000000000000000000000000000\r\n'}, 'id': 583368774, 'rxSnr': 7.0, 'hopLimit': 3, 'rxRssi': -44, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020701001300D95F00000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 583368774
+rx_snr: 7
+hop_limit: 3
+rx_rssi: -44
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:29:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:29:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020801001300E97200000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020801001300E97200000000000000000000000000000000000000\r\n'}, 'id': 2539483208, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -56, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020801001300E97200000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 2539483208
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -56
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:29:55 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:30:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020901001300EA4500000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020901001300EA4500000000000000000000000000000000000000\r\n'}, 'id': 2303594570, 'rxSnr': 7.0, 'hopLimit': 3, 'rxRssi': -55, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020901001300EA4500000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 2303594570
+rx_snr: 7
+hop_limit: 3
+rx_rssi: -55
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:30:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:30:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020A01001300EF1C00000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020A01001300EF1C00000000000000000000000000000000000000\r\n'}, 'id': 2182896716, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -54, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020A01001300EF1C00000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 2182896716
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -54
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:30:55 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:31:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020B01001300EC2B00000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020B01001300EC2B00000000000000000000000000000000000000\r\n'}, 'id': 1460193358, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -54, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020B01001300EC2B00000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 1460193358
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -54
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:31:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:31:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020C01001300E5AE00000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020C01001300E5AE00000000000000000000000000000000000000\r\n'}, 'id': 3629952080, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -55, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020C01001300E5AE00000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 3629952080
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -55
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:31:55 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:32:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020D01001300E69900000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020D01001300E69900000000000000000000000000000000000000\r\n'}, 'id': 3696801874, 'rxSnr': 7.25, 'hopLimit': 3, 'rxRssi': -55, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020D01001300E69900000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 3696801874
+rx_snr: 7.25
+hop_limit: 3
+rx_rssi: -55
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:32:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:32:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020E01001300E3C000000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020E01001300E3C000000000000000000000000000000000000000\r\n'}, 'id': 4157028436, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -54, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020E01001300E3C000000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 4157028436
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -54
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:32:55 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:33:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020F01001300E0F700000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020F01001300E0F700000000000000000000000000000000000000\r\n'}, 'id': 1795635286, 'rxSnr': 7.5, 'hopLimit': 3, 'rxRssi': -54, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020F01001300E0F700000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 1795635286
+rx_snr: 7.5
+hop_limit: 3
+rx_rssi: -54
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:33:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:33:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021001001300839A00000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021001001300839A00000000000000000000000000000000000000\r\n'}, 'id': 4248793176, 'rxSnr': 6.5, 'hopLimit': 3, 'rxRssi': -56, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021001001300839A00000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 4248793176
+rx_snr: 6.5
+hop_limit: 3
+rx_rssi: -56
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:33:55 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:34:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002110100130080AD00000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002110100130080AD00000000000000000000000000000000000000\r\n'}, 'id': 4036349018, 'rxSnr': 5.5, 'hopLimit': 3, 'rxRssi': -56, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002110100130080AD00000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 4036349018
+rx_snr: 5.5
+hop_limit: 3
+rx_rssi: -56
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:34:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:34:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002120100130085F400000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002120100130085F400000000000000000000000000000000000000\r\n'}, 'id': 750757980, 'rxSnr': 7.25, 'hopLimit': 3, 'rxRssi': -55, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002120100130085F400000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 750757980
+rx_snr: 7.25
+hop_limit: 3
+rx_rssi: -55
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:34:55 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:35:25 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002130100130086C300000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002130100130086C300000000000000000000000000000000000000\r\n'}, 'id': 2011868254, 'rxSnr': 7.5, 'hopLimit': 3, 'rxRssi': -54, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002130100130086C300000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 2011868254
+rx_snr: 7.5
+hop_limit: 3
+rx_rssi: -54
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:35:25 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:35:30 | Meshtastic connection lost
+2026-07-31 09:35:43 | Meshtastic connection lost
+2026-07-31 09:35:53 | Opened Meshtastic node on COM8
+2026-07-31 09:35:54 | Meshtastic connection established
+2026-07-31 09:36:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020101001300D3ED00000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020101001300D3ED00000000000000000000000000000000000000\r\n'}, 'id': 3926534054, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -50, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020101001300D3ED00000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 3926534054
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -50
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:36:10 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:36:39 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020201001300D6B400000000000000000000000000000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020201001300D6B400000000000000000000000000000000000000\r\n'}, 'id': 3092645801, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -49, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020201001300D6B400000000000000000000000000000000000000\r\n"
+  bitfield: 0
+}
+id: 3092645801
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -49
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:36:39 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 09:37:46 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020101001300736C8E14B71486EE77B90000040032000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020101001300736C8E14B71486EE77B90000040032000000000000\r\n'}, 'id': 3416719519, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -21, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020101001300736C8E14B71486EE77B90000040032000000000000\r\n"
+  bitfield: 0
+}
+id: 3416719519
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -21
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:37:46 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33225 alt=0m gs=0.0m/s bat=0.50V rssi=0dBm link=0%
+2026-07-31 09:38:15 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020201001300AFA9BF14B7145BEE77B900000C0035000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020201001300AFA9BF14B7145BEE77B900000C0035000000000000\r\n'}, 'id': 1175513250, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -42, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020201001300AFA9BF14B7145BEE77B900000C0035000000000000\r\n"
+  bitfield: 0
+}
+id: 1175513250
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -42
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:38:15 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33225 alt=0m gs=0.1m/s bat=0.53V rssi=0dBm link=0%
+2026-07-31 09:38:45 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020301001300B83DD914B71405EE77B90000020035000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020301001300B83DD914B71405EE77B90000020035000000000000\r\n'}, 'id': 1569359012, 'rxSnr': 5.25, 'hopLimit': 3, 'rxRssi': -65, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020301001300B83DD914B71405EE77B90000020035000000000000\r\n"
+  bitfield: 0
+}
+id: 1569359012
+rx_snr: 5.25
+hop_limit: 3
+rx_rssi: -65
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:38:45 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33226 alt=0m gs=0.0m/s bat=0.53V rssi=0dBm link=0%
+2026-07-31 09:39:15 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000204010013000DAC6115B71468EE77B90000030003000000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000204010013000DAC6115B71468EE77B90000030003000000000000\r\n'}, 'id': 1663456422, 'rxSnr': 6.25, 'hopLimit': 3, 'rxRssi': -44, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000204010013000DAC6115B71468EE77B90000030003000000000000\r\n"
+  bitfield: 0
+}
+id: 1663456422
+rx_snr: 6.25
+hop_limit: 3
+rx_rssi: -44
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:39:15 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33225 alt=0m gs=0.0m/s bat=0.03V rssi=0dBm link=0%
+2026-07-31 09:39:44 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002050100130059795715B71482EE77B90000010004000000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002050100130059795715B71482EE77B90000010004000000000000\r\n'}, 'id': 1274461352, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -42, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002050100130059795715B71482EE77B90000010004000000000000\r\n"
+  bitfield: 0
+}
+id: 1274461352
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -42
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:39:44 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33225 alt=0m gs=0.0m/s bat=0.04V rssi=0dBm link=0%
+2026-07-31 09:40:14 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020601001300262E7115B7147AEE77B90000010004000000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020601001300262E7115B7147AEE77B90000010004000000000000\r\n'}, 'id': 2028040362, 'rxSnr': 5.5, 'hopLimit': 3, 'rxRssi': -56, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020601001300262E7115B7147AEE77B90000010004000000000000\r\n"
+  bitfield: 0
+}
+id: 2028040362
+rx_snr: 5.5
+hop_limit: 3
+rx_rssi: -56
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:40:14 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33225 alt=0m gs=0.0m/s bat=0.04V rssi=0dBm link=0%
+2026-07-31 09:40:44 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000207010013009CF66D15B71464EE77B90000010005000000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000207010013009CF66D15B71464EE77B90000010005000000000000\r\n'}, 'id': 1017272492, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -54, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000207010013009CF66D15B71464EE77B90000010005000000000000\r\n"
+  bitfield: 0
+}
+id: 1017272492
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -54
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:40:44 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33225 alt=0m gs=0.0m/s bat=0.05V rssi=0dBm link=0%
+2026-07-31 09:41:15 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000208010013002DE29F15B7148FEE77B90000060005000000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000208010013002DE29F15B7148FEE77B90000060005000000000000\r\n'}, 'id': 1197598894, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -49, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000208010013002DE29F15B7148FEE77B90000060005000000000000\r\n"
+  bitfield: 0
+}
+id: 1197598894
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -49
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:41:15 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33225 alt=0m gs=0.1m/s bat=0.05V rssi=0dBm link=0%
+2026-07-31 09:41:44 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002090100130039185B15B71451EE77B900000E008D040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002090100130039185B15B71451EE77B900000E008D040000000000\r\n'}, 'id': 739630256, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -49, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002090100130039185B15B71451EE77B900000E008D040000000000\r\n"
+  bitfield: 0
+}
+id: 739630256
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -49
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:41:44 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33225 alt=0m gs=0.1m/s bat=11.65V rssi=0dBm link=0%
+2026-07-31 09:42:43 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020101001300F5A91C15B7148BED77B90000000091040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020101001300F5A91C15B7148BED77B90000000091040500000000\r\n'}, 'id': 3235527109, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -46, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020101001300F5A91C15B7148BED77B90000000091040500000000\r\n"
+  bitfield: 0
+}
+id: 3235527109
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -46
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:42:43 | TM Received: telemetry src=1 lat=34.75428 lon=-118.33227 alt=0m gs=0.0m/s bat=11.69V rssi=0dBm link=0%
+2026-07-31 09:43:14 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002020100130013840215B714C1ED77B90000010090040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002020100130013840215B714C1ED77B90000010090040000000000\r\n'}, 'id': 443588040, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -46, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002020100130013840215B714C1ED77B90000010090040000000000\r\n"
+  bitfield: 0
+}
+id: 443588040
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -46
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:43:14 | TM Received: telemetry src=1 lat=34.75428 lon=-118.33227 alt=0m gs=0.0m/s bat=11.68V rssi=0dBm link=0%
+2026-07-31 09:43:28 | Meshtastic connection lost
+2026-07-31 09:48:20 | Unable to open Meshtastic transport on COM8: could not open port 'COM8': PermissionError(13, 'Access is denied.', None, 5)
+2026-07-31 09:48:31 | Unable to open Meshtastic transport on COM8: could not open port 'COM8': PermissionError(13, 'Access is denied.', None, 5)
+2026-07-31 09:49:04 | Unable to open Meshtastic transport on COM8: could not open port 'COM8': PermissionError(13, 'Access is denied.', None, 5)
+2026-07-31 09:49:12 | Unable to open Meshtastic transport on COM8: could not open port 'COM8': PermissionError(13, 'Access is denied.', None, 5)
+2026-07-31 09:49:32 | Unable to open Meshtastic transport on COM13: could not open port 'COM13': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2026-07-31 09:49:35 | Unable to open Meshtastic transport on COM8: could not open port 'COM8': PermissionError(13, 'Access is denied.', None, 5)
+2026-07-31 09:49:40 | Meshtastic connection lost
+2026-07-31 09:49:51 | Opened Meshtastic node on COM14
+2026-07-31 09:49:52 | Meshtastic connection established
+2026-07-31 09:49:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020F01001300C7967015B71492EE77B9000002009B040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020F01001300C7967015B71492EE77B9000002009B040000000000\r\n'}, 'id': 660557282, 'rxSnr': 6.25, 'hopLimit': 3, 'rxRssi': -42, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020F01001300C7967015B71492EE77B9000002009B040000000000\r\n"
+  bitfield: 0
+}
+id: 660557282
+rx_snr: 6.25
+hop_limit: 3
+rx_rssi: -42
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:49:55 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33225 alt=0m gs=0.0m/s bat=11.79V rssi=0dBm link=0%
+2026-07-31 09:50:13 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000210010013006D4D4215B714B1EE77B9000001009C040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000210010013006D4D4215B714B1EE77B9000001009C040000000000\r\n'}, 'id': 4234191332, 'rxSnr': 5.25, 'hopLimit': 3, 'rxRssi': -42, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000210010013006D4D4215B714B1EE77B9000001009C040000000000\r\n"
+  bitfield: 0
+}
+id: 4234191332
+rx_snr: 5.25
+hop_limit: 3
+rx_rssi: -42
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:50:13 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33224 alt=0m gs=0.0m/s bat=11.80V rssi=0dBm link=0%
+2026-07-31 09:50:43 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021101001300137DC314B71475EE77B900000C009C040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021101001300137DC314B71475EE77B900000C009C040000000000\r\n'}, 'id': 2048242150, 'rxSnr': 7.25, 'hopLimit': 3, 'rxRssi': -42, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021101001300137DC314B71475EE77B900000C009C040000000000\r\n"
+  bitfield: 0
+}
+id: 2048242150
+rx_snr: 7.25
+hop_limit: 3
+rx_rssi: -42
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:50:43 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33225 alt=0m gs=0.1m/s bat=11.80V rssi=0dBm link=0%
+2026-07-31 09:51:13 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002120100130019CB0015B71448EE77B9000001009A040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002120100130019CB0015B71448EE77B9000001009A040000000000\r\n'}, 'id': 2875845096, 'rxSnr': 6.25, 'hopLimit': 3, 'rxRssi': -43, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002120100130019CB0015B71448EE77B9000001009A040000000000\r\n"
+  bitfield: 0
+}
+id: 2875845096
+rx_snr: 6.25
+hop_limit: 3
+rx_rssi: -43
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:51:13 | TM Received: telemetry src=1 lat=34.75428 lon=-118.33226 alt=0m gs=0.0m/s bat=11.78V rssi=0dBm link=0%
+2026-07-31 09:51:43 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021301001300BFB52115B7143CEE77B9000002009B040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021301001300BFB52115B7143CEE77B9000002009B040000000000\r\n'}, 'id': 809870826, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -41, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021301001300BFB52115B7143CEE77B9000002009B040000000000\r\n"
+  bitfield: 0
+}
+id: 809870826
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -41
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:51:43 | TM Received: telemetry src=1 lat=34.75428 lon=-118.33226 alt=0m gs=0.0m/s bat=11.79V rssi=0dBm link=0%
+2026-07-31 09:52:14 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021401001300236C0815B71429EE77B9000005009A040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021401001300236C0815B71429EE77B9000005009A040000000000\r\n'}, 'id': 2270061036, 'rxSnr': 7.25, 'hopLimit': 3, 'rxRssi': -44, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021401001300236C0815B71429EE77B9000005009A040000000000\r\n"
+  bitfield: 0
+}
+id: 2270061036
+rx_snr: 7.25
+hop_limit: 3
+rx_rssi: -44
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:52:14 | TM Received: telemetry src=1 lat=34.75428 lon=-118.33226 alt=0m gs=0.1m/s bat=11.78V rssi=0dBm link=0%
+2026-07-31 09:52:43 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021501001300F962F414B7143EEE77B9000001009B040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021501001300F962F414B7143EEE77B9000001009B040000000000\r\n'}, 'id': 2571825646, 'rxSnr': 6.5, 'hopLimit': 3, 'rxRssi': -45, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021501001300F962F414B7143EEE77B9000001009B040000000000\r\n"
+  bitfield: 0
+}
+id: 2571825646
+rx_snr: 6.5
+hop_limit: 3
+rx_rssi: -45
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:52:43 | TM Received: telemetry src=1 lat=34.75428 lon=-118.33226 alt=0m gs=0.0m/s bat=11.79V rssi=0dBm link=0%
+2026-07-31 09:53:13 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021601001300818D3015B71443EE77B9000002009A040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021601001300818D3015B71443EE77B9000002009A040500000000\r\n'}, 'id': 588904944, 'rxSnr': 3.75, 'hopLimit': 3, 'rxRssi': -61, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021601001300818D3015B71443EE77B9000002009A040500000000\r\n"
+  bitfield: 0
+}
+id: 588904944
+rx_snr: 3.75
+hop_limit: 3
+rx_rssi: -61
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:53:13 | TM Received: telemetry src=1 lat=34.75428 lon=-118.33226 alt=0m gs=0.0m/s bat=11.78V rssi=0dBm link=0%
+2026-07-31 09:53:43 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021701001300C1165D15B7144AEE77B90000040099040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021701001300C1165D15B7144AEE77B90000040099040500000000\r\n'}, 'id': 2183251442, 'rxSnr': 3.5, 'hopLimit': 3, 'rxRssi': -60, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021701001300C1165D15B7144AEE77B90000040099040500000000\r\n"
+  bitfield: 0
+}
+id: 2183251442
+rx_snr: 3.5
+hop_limit: 3
+rx_rssi: -60
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:53:43 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33226 alt=0m gs=0.0m/s bat=11.77V rssi=0dBm link=0%
+2026-07-31 09:54:13 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000218010013004DB34515B7143AEE77B9000003009B040500000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000218010013004DB34515B7143AEE77B9000003009B040500000000\r\n'}, 'id': 1375280628, 'rxSnr': 5.5, 'hopLimit': 3, 'rxRssi': -52, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000218010013004DB34515B7143AEE77B9000003009B040500000000\r\n"
+  bitfield: 0
+}
+id: 1375280628
+rx_snr: 5.5
+hop_limit: 3
+rx_rssi: -52
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:54:13 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33226 alt=0m gs=0.0m/s bat=11.79V rssi=0dBm link=0%
+2026-07-31 09:54:43 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021901001300D1AF0C15B71410EE77B9000002009A040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021901001300D1AF0C15B71410EE77B9000002009A040500000000\r\n'}, 'id': 164924918, 'rxSnr': 5.25, 'hopLimit': 3, 'rxRssi': -51, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021901001300D1AF0C15B71410EE77B9000002009A040500000000\r\n"
+  bitfield: 0
+}
+id: 164924918
+rx_snr: 5.25
+hop_limit: 3
+rx_rssi: -51
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:54:43 | TM Received: telemetry src=1 lat=34.75428 lon=-118.33226 alt=0m gs=0.0m/s bat=11.78V rssi=0dBm link=0%
+2026-07-31 09:55:13 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021A01001300F61D3515B714F2ED77B90000010099040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021A01001300F61D3515B714F2ED77B90000010099040000000000\r\n'}, 'id': 740932088, 'rxSnr': 5.0, 'hopLimit': 3, 'rxRssi': -51, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021A01001300F61D3515B714F2ED77B90000010099040000000000\r\n"
+  bitfield: 0
+}
+id: 740932088
+rx_snr: 5
+hop_limit: 3
+rx_rssi: -51
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 09:55:13 | TM Received: telemetry src=1 lat=34.75428 lon=-118.33226 alt=0m gs=0.0m/s bat=11.77V rssi=0dBm link=0%
+2026-07-31 09:57:27 | Unable to open Meshtastic transport on COM8: could not open port 'COM8': PermissionError(13, 'Access is denied.', None, 5)
+2026-07-31 09:57:42 | Opened Meshtastic node on COM14
+2026-07-31 09:57:43 | Meshtastic connection established
+2026-07-31 10:02:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000201010013008A2FBE15B71478EE77B900000100AE040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000201010013008A2FBE15B71478EE77B900000100AE040000000000\r\n'}, 'id': 1641788001, 'rxSnr': 3.0, 'hopLimit': 3, 'rxRssi': -64, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000201010013008A2FBE15B71478EE77B900000100AE040000000000\r\n"
+  bitfield: 0
+}
+id: 1641788001
+rx_snr: 3
+hop_limit: 3
+rx_rssi: -64
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:02:47 | TM Received: telemetry src=1 lat=34.75430 lon=-118.33225 alt=0m gs=0.0m/s bat=11.98V rssi=0dBm link=0%
+2026-07-31 10:05:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000201010013003213C715B714B5EE77B900000100BF040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000201010013003213C715B714B5EE77B900000100BF040000000000\r\n'}, 'id': 3168927017, 'rxSnr': 4.0, 'hopLimit': 3, 'rxRssi': -62, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000201010013003213C715B714B5EE77B900000100BF040000000000\r\n"
+  bitfield: 0
+}
+id: 3168927017
+rx_snr: 4
+hop_limit: 3
+rx_rssi: -62
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:05:47 | TM Received: telemetry src=1 lat=34.75430 lon=-118.33224 alt=0m gs=0.0m/s bat=12.15V rssi=0dBm link=0%
+2026-07-31 10:06:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002020100130073F1F815B7149FEE77B900000400BB040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002020100130073F1F815B7149FEE77B900000400BB040000000000\r\n'}, 'id': 1110502700, 'rxSnr': 2.0, 'hopLimit': 3, 'rxRssi': -65, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002020100130073F1F815B7149FEE77B900000400BB040000000000\r\n"
+  bitfield: 0
+}
+id: 1110502700
+rx_snr: 2
+hop_limit: 3
+rx_rssi: -65
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:06:17 | TM Received: telemetry src=1 lat=34.75430 lon=-118.33225 alt=0m gs=0.0m/s bat=12.11V rssi=0dBm link=0%
+2026-07-31 10:06:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020301001300BC510D16B71494EE77B900000300C1040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020301001300BC510D16B71494EE77B900000300C1040000000000\r\n'}, 'id': 3209695534, 'rxSnr': -1.0, 'hopLimit': 3, 'rxRssi': -68, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020301001300BC510D16B71494EE77B900000300C1040000000000\r\n"
+  bitfield: 0
+}
+id: 3209695534
+rx_snr: -1
+hop_limit: 3
+rx_rssi: -68
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:06:47 | TM Received: telemetry src=1 lat=34.75431 lon=-118.33225 alt=0m gs=0.0m/s bat=12.17V rssi=0dBm link=0%
+2026-07-31 10:07:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002040100130002796D12B714D2EE77B900001200C0040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002040100130002796D12B714D2EE77B900001200C0040000000000\r\n'}, 'id': 2465958192, 'rxSnr': 0.75, 'hopLimit': 3, 'rxRssi': -67, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002040100130002796D12B714D2EE77B900001200C0040000000000\r\n"
+  bitfield: 0
+}
+id: 2465958192
+rx_snr: 0.75
+hop_limit: 3
+rx_rssi: -67
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:07:17 | TM Received: telemetry src=1 lat=34.75421 lon=-118.33224 alt=0m gs=0.2m/s bat=12.16V rssi=0dBm link=0%
+2026-07-31 10:07:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020501001300DA943812B714C4ED77B900000100BC040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020501001300DA943812B714C4ED77B900000100BC040000000000\r\n'}, 'id': 4130406706, 'rxSnr': -4.5, 'hopLimit': 3, 'rxRssi': -73, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020501001300DA943812B714C4ED77B900000100BC040000000000\r\n"
+  bitfield: 0
+}
+id: 4130406706
+rx_snr: -4.5
+hop_limit: 3
+rx_rssi: -73
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:07:47 | TM Received: telemetry src=1 lat=34.75421 lon=-118.33227 alt=0m gs=0.0m/s bat=12.12V rssi=0dBm link=0%
+2026-07-31 10:08:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000206010013000D3B5112B71429ED77B900000900B8040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000206010013000D3B5112B71429ED77B900000900B8040000000000\r\n'}, 'id': 2959536436, 'rxSnr': 3.25, 'hopLimit': 3, 'rxRssi': -64, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000206010013000D3B5112B71429ED77B900000900B8040000000000\r\n"
+  bitfield: 0
+}
+id: 2959536436
+rx_snr: 3.25
+hop_limit: 3
+rx_rssi: -64
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:08:17 | TM Received: telemetry src=1 lat=34.75421 lon=-118.33228 alt=0m gs=0.1m/s bat=12.08V rssi=0dBm link=0%
+2026-07-31 10:08:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000207010013009F7E6711B714D8ED77B900000200BC040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000207010013009F7E6711B714D8ED77B900000200BC040000000000\r\n'}, 'id': 4168149302, 'rxSnr': 2.75, 'hopLimit': 3, 'rxRssi': -65, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000207010013009F7E6711B714D8ED77B900000200BC040000000000\r\n"
+  bitfield: 0
+}
+id: 4168149302
+rx_snr: 2.75
+hop_limit: 3
+rx_rssi: -65
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:08:47 | TM Received: telemetry src=1 lat=34.75419 lon=-118.33227 alt=0m gs=0.0m/s bat=12.12V rssi=0dBm link=0%
+2026-07-31 10:09:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020801001300D4FDF910B714E3EE77B900000D00B3040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020801001300D4FDF910B714E3EE77B900000D00B3040000000000\r\n'}, 'id': 4025681208, 'rxSnr': -6.25, 'hopLimit': 3, 'rxRssi': -76, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020801001300D4FDF910B714E3EE77B900000D00B3040000000000\r\n"
+  bitfield: 0
+}
+id: 4025681208
+rx_snr: -6.25
+hop_limit: 3
+rx_rssi: -76
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:09:17 | TM Received: telemetry src=1 lat=34.75418 lon=-118.33224 alt=0m gs=0.1m/s bat=12.03V rssi=0dBm link=0%
+2026-07-31 10:09:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020901001300C8337212B71472EE77B900002300B4040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020901001300C8337212B71472EE77B900002300B4040000000000\r\n'}, 'id': 1856929082, 'rxSnr': -10.75, 'hopLimit': 3, 'rxRssi': -78, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020901001300C8337212B71472EE77B900002300B4040000000000\r\n"
+  bitfield: 0
+}
+id: 1856929082
+rx_snr: -10.75
+hop_limit: 3
+rx_rssi: -78
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:09:47 | TM Received: telemetry src=1 lat=34.75421 lon=-118.33225 alt=0m gs=0.3m/s bat=12.04V rssi=0dBm link=0%
+2026-07-31 10:10:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020A01001300CC7A7D12B714E1EE77B900000600BC040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020A01001300CC7A7D12B714E1EE77B900000600BC040000000000\r\n'}, 'id': 2885335356, 'rxSnr': -2.25, 'hopLimit': 3, 'rxRssi': -70, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020A01001300CC7A7D12B714E1EE77B900000600BC040000000000\r\n"
+  bitfield: 0
+}
+id: 2885335356
+rx_snr: -2.25
+hop_limit: 3
+rx_rssi: -70
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:10:17 | TM Received: telemetry src=1 lat=34.75421 lon=-118.33224 alt=0m gs=0.1m/s bat=12.12V rssi=0dBm link=0%
+2026-07-31 10:10:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020B01001300C17D9412B71463EE77B900000500B9040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020B01001300C17D9412B71463EE77B900000500B9040000000000\r\n'}, 'id': 1254012222, 'rxSnr': 3.75, 'hopLimit': 3, 'rxRssi': -62, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020B01001300C17D9412B71463EE77B900000500B9040000000000\r\n"
+  bitfield: 0
+}
+id: 1254012222
+rx_snr: 3.75
+hop_limit: 3
+rx_rssi: -62
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:10:47 | TM Received: telemetry src=1 lat=34.75422 lon=-118.33225 alt=0m gs=0.1m/s bat=12.09V rssi=0dBm link=0%
+2026-07-31 10:10:55 | Meshtastic connection lost
+2026-07-31 10:12:34 | Unable to open Meshtastic transport on COM14: could not open port 'COM14': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2026-07-31 10:12:39 | Meshtastic connection lost
+2026-07-31 10:12:47 | Opened Meshtastic node on COM8
+2026-07-31 10:12:48 | Meshtastic connection established
+2026-07-31 10:12:50 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020F01001300FFACF311B7142AED77B900000000C2040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020F01001300FFACF311B7142AED77B900000000C2040000000000\r\n'}, 'id': 2666796358, 'rxSnr': 2.5, 'hopLimit': 3, 'rxRssi': -61, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020F01001300FFACF311B7142AED77B900000000C2040000000000\r\n"
+  bitfield: 0
+}
+id: 2666796358
+rx_snr: 2.5
+hop_limit: 3
+rx_rssi: -61
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:12:50 | TM Received: telemetry src=1 lat=34.75420 lon=-118.33228 alt=0m gs=0.0m/s bat=12.18V rssi=0dBm link=0%
+2026-07-31 10:13:16 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021001001300B173DA11B7144FED77B900000200C1040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021001001300B173DA11B7144FED77B900000200C1040000000000\r\n'}, 'id': 2095222088, 'rxSnr': 2.25, 'hopLimit': 3, 'rxRssi': -59, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021001001300B173DA11B7144FED77B900000200C1040000000000\r\n"
+  bitfield: 0
+}
+id: 2095222088
+rx_snr: 2.25
+hop_limit: 3
+rx_rssi: -59
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:13:16 | TM Received: telemetry src=1 lat=34.75420 lon=-118.33228 alt=0m gs=0.0m/s bat=12.17V rssi=0dBm link=0%
+2026-07-31 10:13:46 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000211010013004412C211B7145DED77B900000100C2040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000211010013004412C211B7145DED77B900000100C2040000000000\r\n'}, 'id': 4123638090, 'rxSnr': 3.5, 'hopLimit': 3, 'rxRssi': -59, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000211010013004412C211B7145DED77B900000100C2040000000000\r\n"
+  bitfield: 0
+}
+id: 4123638090
+rx_snr: 3.5
+hop_limit: 3
+rx_rssi: -59
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:13:46 | TM Received: telemetry src=1 lat=34.75420 lon=-118.33228 alt=0m gs=0.0m/s bat=12.18V rssi=0dBm link=0%
+2026-07-31 10:14:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021201001300503C000000000000000000000000C1040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021201001300503C000000000000000000000000C1040000000000\r\n'}, 'id': 2838717772, 'rxSnr': 3.0, 'hopLimit': 3, 'rxRssi': -61, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021201001300503C000000000000000000000000C1040000000000\r\n"
+  bitfield: 0
+}
+id: 2838717772
+rx_snr: 3
+hop_limit: 3
+rx_rssi: -61
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:14:17 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=12.17V rssi=0dBm link=0%
+2026-07-31 10:14:46 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002130100130000730F12B71443ED77B900001100BC040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002130100130000730F12B71443ED77B900001100BC040000000000\r\n'}, 'id': 2008298830, 'rxSnr': 4.25, 'hopLimit': 3, 'rxRssi': -73, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002130100130000730F12B71443ED77B900001100BC040000000000\r\n"
+  bitfield: 0
+}
+id: 2008298830
+rx_snr: 4.25
+hop_limit: 3
+rx_rssi: -73
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:14:46 | TM Received: telemetry src=1 lat=34.75420 lon=-118.33228 alt=0m gs=0.2m/s bat=12.12V rssi=0dBm link=0%
+2026-07-31 10:15:19 | Opened Meshtastic node on COM8
+2026-07-31 10:15:20 | Meshtastic connection established
+2026-07-31 10:15:20 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002140100130010BF2212B71433ED77B900001100C0040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002140100130010BF2212B71433ED77B900001100C0040000000000\r\n'}, 'id': 2388319568, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -67, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002140100130010BF2212B71433ED77B900001100C0040000000000\r\n"
+  bitfield: 0
+}
+id: 2388319568
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -67
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:15:20 | TM Received: telemetry src=1 lat=34.75420 lon=-118.33228 alt=0m gs=0.2m/s bat=12.16V rssi=0dBm link=0%
+2026-07-31 10:15:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021501001300756BDF11B71419ED77B900000300B0040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021501001300756BDF11B71419ED77B900000300B0040000000000\r\n'}, 'id': 327219538, 'rxSnr': 2.5, 'hopLimit': 3, 'rxRssi': -64, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021501001300756BDF11B71419ED77B900000300B0040000000000\r\n"
+  bitfield: 0
+}
+id: 327219538
+rx_snr: 2.5
+hop_limit: 3
+rx_rssi: -64
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:15:47 | TM Received: telemetry src=1 lat=34.75420 lon=-118.33229 alt=0m gs=0.0m/s bat=12.00V rssi=0dBm link=0%
+2026-07-31 10:16:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021601001300C52D85E5B614771C78B916009307E7030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021601001300C52D85E5B614771C78B916009307E7030A00000000\r\n'}, 'id': 683736404, 'rxSnr': 2.5, 'hopLimit': 3, 'rxRssi': -81, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021601001300C52D85E5B614771C78B916009307E7030A00000000\r\n"
+  bitfield: 0
+}
+id: 683736404
+rx_snr: 2.5
+hop_limit: 3
+rx_rssi: -81
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:16:17 | TM Received: telemetry src=1 lat=34.75306 lon=-118.33107 alt=22m gs=19.4m/s bat=9.99V rssi=0dBm link=0%
+2026-07-31 10:16:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000217010013009C1BBAFDB614F5FA77B934008B04DE030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000217010013009C1BBAFDB614F5FA77B934008B04DE030A00000000\r\n'}, 'id': 2774552918, 'rxSnr': -10.5, 'hopLimit': 3, 'rxRssi': -77, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000217010013009C1BBAFDB614F5FA77B934008B04DE030A00000000\r\n"
+  bitfield: 0
+}
+id: 2774552918
+rx_snr: -10.5
+hop_limit: 3
+rx_rssi: -77
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:16:47 | TM Received: telemetry src=1 lat=34.75368 lon=-118.33193 alt=52m gs=11.6m/s bat=9.90V rssi=0dBm link=0%
+2026-07-31 10:17:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021801001300737D03F1B6145EDB77B93C007A07DF030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021801001300737D03F1B6145EDB77B93C007A07DF030A00000000\r\n'}, 'id': 1065510232, 'rxSnr': -1.0, 'hopLimit': 3, 'rxRssi': -65, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021801001300737D03F1B6145EDB77B93C007A07DF030A00000000\r\n"
+  bitfield: 0
+}
+id: 1065510232
+rx_snr: -1
+hop_limit: 3
+rx_rssi: -65
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:17:17 | TM Received: telemetry src=1 lat=34.75336 lon=-118.33274 alt=60m gs=19.1m/s bat=9.91V rssi=0dBm link=0%
+2026-07-31 10:17:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021901001300D88325E2B614C7CB77B93C008907E0030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021901001300D88325E2B614C7CB77B93C008907E0030A00000000\r\n'}, 'id': 3570146650, 'rxSnr': 3.0, 'hopLimit': 3, 'rxRssi': -76, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021901001300D88325E2B614C7CB77B93C008907E0030A00000000\r\n"
+  bitfield: 0
+}
+id: 3570146650
+rx_snr: 3
+hop_limit: 3
+rx_rssi: -76
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:17:47 | TM Received: telemetry src=1 lat=34.75298 lon=-118.33314 alt=60m gs=19.3m/s bat=9.92V rssi=0dBm link=0%
+2026-07-31 10:18:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021A010013000260F7BFB61460CE77B93C00A107D9030000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021A010013000260F7BFB61460CE77B93C00A107D9030000000000\r\n'}, 'id': 893882716, 'rxSnr': 1.75, 'hopLimit': 3, 'rxRssi': -81, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021A010013000260F7BFB61460CE77B93C00A107D9030000000000\r\n"
+  bitfield: 0
+}
+id: 893882716
+rx_snr: 1.75
+hop_limit: 3
+rx_rssi: -81
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:18:17 | TM Received: telemetry src=1 lat=34.75210 lon=-118.33307 alt=60m gs=19.5m/s bat=9.85V rssi=0dBm link=0%
+2026-07-31 10:18:46 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021B010013003176F5FBB61411D377B96200C0050D040B00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021B010013003176F5FBB61411D377B96200C0050D040B00000000\r\n'}, 'id': 4284719454, 'rxSnr': 1.0, 'hopLimit': 3, 'rxRssi': -87, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021B010013003176F5FBB61411D377B96200C0050D040B00000000\r\n"
+  bitfield: 0
+}
+id: 4284719454
+rx_snr: 1
+hop_limit: 3
+rx_rssi: -87
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:18:46 | TM Received: telemetry src=1 lat=34.75364 lon=-118.33295 alt=98m gs=14.7m/s bat=10.37V rssi=0dBm link=0%
+2026-07-31 10:19:16 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021C010013001D1C04F5B61495EE77B963009D0523040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021C010013001D1C04F5B61495EE77B963009D0523040000000000\r\n'}, 'id': 2725468512, 'rxSnr': 5.0, 'hopLimit': 3, 'rxRssi': -78, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021C010013001D1C04F5B61495EE77B963009D0523040000000000\r\n"
+  bitfield: 0
+}
+id: 2725468512
+rx_snr: 5
+hop_limit: 3
+rx_rssi: -78
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:19:16 | TM Received: telemetry src=1 lat=34.75346 lon=-118.33225 alt=99m gs=14.4m/s bat=10.59V rssi=0dBm link=0%
+2026-07-31 10:19:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021D01001300F5972130B714EB1F78B95100D70386040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021D01001300F5972130B714EB1F78B95100D70386040000000000\r\n'}, 'id': 3814728034, 'rxSnr': 2.25, 'hopLimit': 3, 'rxRssi': -82, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021D01001300F5972130B714EB1F78B95100D70386040000000000\r\n"
+  bitfield: 0
+}
+id: 3814728034
+rx_snr: 2.25
+hop_limit: 3
+rx_rssi: -82
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:19:47 | TM Received: telemetry src=1 lat=34.75497 lon=-118.33098 alt=81m gs=9.8m/s bat=11.58V rssi=0dBm link=0%
+2026-07-31 10:20:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021E010013001DA13E28B714D59778B93500EB0390040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021E010013001DA13E28B714D59778B93500EB0390040000000000\r\n'}, 'id': 962777444, 'rxSnr': 1.25, 'hopLimit': 3, 'rxRssi': -84, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021E010013001DA13E28B714D59778B93500EB0390040000000000\r\n"
+  bitfield: 0
+}
+id: 962777444
+rx_snr: 1.25
+hop_limit: 3
+rx_rssi: -84
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:20:17 | TM Received: telemetry src=1 lat=34.75477 lon=-118.32791 alt=53m gs=10.0m/s bat=11.68V rssi=0dBm link=0%
+2026-07-31 10:20:54 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021F01001300FA55D909B714912078B91700A10391040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021F01001300FA55D909B714912078B91700A10391040000000000\r\n'}, 'id': 3547874662, 'rxSnr': 4.0, 'hopLimit': 3, 'rxRssi': -79, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021F01001300FA55D909B714912078B91700A10391040000000000\r\n"
+  bitfield: 0
+}
+id: 3547874662
+rx_snr: 4
+hop_limit: 3
+rx_rssi: -79
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:20:54 | TM Received: telemetry src=1 lat=34.75399 lon=-118.33097 alt=23m gs=9.3m/s bat=11.69V rssi=0dBm link=0%
+2026-07-31 10:21:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002200100130078F8DBECB614F6FC77B92E00BE04D8030000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002200100130078F8DBECB614F6FC77B92E00BE04D8030000000000\r\n'}, 'id': 1696345448, 'rxSnr': 5.25, 'hopLimit': 3, 'rxRssi': -77, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002200100130078F8DBECB614F6FC77B92E00BE04D8030000000000\r\n"
+  bitfield: 0
+}
+id: 1696345448
+rx_snr: 5.25
+hop_limit: 3
+rx_rssi: -77
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:21:17 | TM Received: telemetry src=1 lat=34.75325 lon=-118.33188 alt=46m gs=12.1m/s bat=9.84V rssi=0dBm link=0%
+2026-07-31 10:21:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000221010013002B194DEAB6140CD977B93D006906E2030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000221010013002B194DEAB6140CD977B93D006906E2030A00000000\r\n'}, 'id': 1590364522, 'rxSnr': -3.75, 'hopLimit': 3, 'rxRssi': -70, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000221010013002B194DEAB6140CD977B93D006906E2030A00000000\r\n"
+  bitfield: 0
+}
+id: 1590364522
+rx_snr: -3.75
+hop_limit: 3
+rx_rssi: -70
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:21:47 | TM Received: telemetry src=1 lat=34.75319 lon=-118.33280 alt=61m gs=16.4m/s bat=9.94V rssi=0dBm link=0%
+2026-07-31 10:22:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000222010013005C13D61FB7147CCE77B90F000306D2030000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000222010013005C13D61FB7147CCE77B90F000306D2030000000000\r\n'}, 'id': 1874652524, 'rxSnr': 1.75, 'hopLimit': 3, 'rxRssi': -68, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000222010013005C13D61FB7147CCE77B90F000306D2030000000000\r\n"
+  bitfield: 0
+}
+id: 1874652524
+rx_snr: 1.75
+hop_limit: 3
+rx_rssi: -68
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:22:17 | TM Received: telemetry src=1 lat=34.75456 lon=-118.33307 alt=15m gs=15.4m/s bat=9.78V rssi=0dBm link=0%
+2026-07-31 10:22:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000223010013008D3A30B8B614BC0078B93C005506C3030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000223010013008D3A30B8B614BC0078B93C005506C3030A00000000\r\n'}, 'id': 3774303598, 'rxSnr': 2.0, 'hopLimit': 3, 'rxRssi': -85, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000223010013008D3A30B8B614BC0078B93C005506C3030A00000000\r\n"
+  bitfield: 0
+}
+id: 3774303598
+rx_snr: 2
+hop_limit: 3
+rx_rssi: -85
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:22:47 | TM Received: telemetry src=1 lat=34.75190 lon=-118.33178 alt=60m gs=16.2m/s bat=9.63V rssi=0dBm link=0%
+2026-07-31 10:23:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022401001300AC5647DAB614981578B93B003D05FB030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022401001300AC5647DAB614981578B93B003D05FB030A00000000\r\n'}, 'id': 3487958384, 'rxSnr': 2.25, 'hopLimit': 3, 'rxRssi': -84, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022401001300AC5647DAB614981578B93B003D05FB030A00000000\r\n"
+  bitfield: 0
+}
+id: 3487958384
+rx_snr: 2.25
+hop_limit: 3
+rx_rssi: -84
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:23:17 | TM Received: telemetry src=1 lat=34.75278 lon=-118.33125 alt=59m gs=13.4m/s bat=10.19V rssi=0dBm link=0%
+2026-07-31 10:23:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002250100130089EEC0EEB6141BFF77B93C00240515040A00000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002250100130089EEC0EEB6141BFF77B93C00240515040A00000000\r\n'}, 'id': 3067976050, 'rxSnr': 4.0, 'hopLimit': 3, 'rxRssi': -81, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002250100130089EEC0EEB6141BFF77B93C00240515040A00000000\r\n"
+  bitfield: 0
+}
+id: 3067976050
+rx_snr: 4
+hop_limit: 3
+rx_rssi: -81
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:23:47 | TM Received: telemetry src=1 lat=34.75330 lon=-118.33182 alt=60m gs=13.2m/s bat=10.45V rssi=0dBm link=0%
+2026-07-31 10:24:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022601001300E81535EBB614DED977B93D00110610040A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022601001300E81535EBB614DED977B93D00110610040A00000000\r\n'}, 'id': 79837556, 'rxSnr': 3.0, 'hopLimit': 3, 'rxRssi': -68, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022601001300E81535EBB614DED977B93D00110610040A00000000\r\n"
+  bitfield: 0
+}
+id: 79837556
+rx_snr: 3
+hop_limit: 3
+rx_rssi: -68
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:24:17 | TM Received: telemetry src=1 lat=34.75321 lon=-118.33278 alt=61m gs=15.5m/s bat=10.40V rssi=0dBm link=0%
+2026-07-31 10:24:46 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000227010013001B4E10C9B61400CF77B93C00EB06F2030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000227010013001B4E10C9B61400CF77B93C00EB06F2030A00000000\r\n'}, 'id': 3379305846, 'rxSnr': 1.0, 'hopLimit': 3, 'rxRssi': -88, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000227010013001B4E10C9B61400CF77B93C00EB06F2030A00000000\r\n"
+  bitfield: 0
+}
+id: 3379305846
+rx_snr: 1
+hop_limit: 3
+rx_rssi: -88
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:24:46 | TM Received: telemetry src=1 lat=34.75233 lon=-118.33306 alt=60m gs=17.7m/s bat=10.10V rssi=0dBm link=0%
+2026-07-31 10:25:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000228010013008A87E2C1B614362C78B92D00470369040500000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000228010013008A87E2C1B614362C78B92D00470369040500000000\r\n'}, 'id': 1037651320, 'rxSnr': 1.5, 'hopLimit': 3, 'rxRssi': -87, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000228010013008A87E2C1B614362C78B92D00470369040500000000\r\n"
+  bitfield: 0
+}
+id: 1037651320
+rx_snr: 1.5
+hop_limit: 3
+rx_rssi: -87
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:25:17 | TM Received: telemetry src=1 lat=34.75215 lon=-118.33067 alt=45m gs=8.4m/s bat=11.29V rssi=0dBm link=0%
+2026-07-31 10:25:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002290100130080644DB3B614415178B91400B0046A040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002290100130080644DB3B614415178B91400B0046A040000000000\r\n'}, 'id': 4139124090, 'rxSnr': 1.0, 'hopLimit': 3, 'rxRssi': -86, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002290100130080644DB3B614415178B91400B0046A040000000000\r\n"
+  bitfield: 0
+}
+id: 4139124090
+rx_snr: 1
+hop_limit: 3
+rx_rssi: -86
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:25:47 | TM Received: telemetry src=1 lat=34.75178 lon=-118.32972 alt=20m gs=12.0m/s bat=11.30V rssi=0dBm link=0%
+2026-07-31 10:26:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022A01001300B3F83701B714D0D577B937003A05F8030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022A01001300B3F83701B714D0D577B937003A05F8030A00000000\r\n'}, 'id': 2076010876, 'rxSnr': -0.25, 'hopLimit': 3, 'rxRssi': -84, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022A01001300B3F83701B714D0D577B937003A05F8030A00000000\r\n"
+  bitfield: 0
+}
+id: 2076010876
+rx_snr: -0.25
+hop_limit: 3
+rx_rssi: -84
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:26:17 | TM Received: telemetry src=1 lat=34.75377 lon=-118.33288 alt=55m gs=13.4m/s bat=10.16V rssi=0dBm link=0%
+2026-07-31 10:26:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022B01001300C21DFCB9B61495FE77B93D00640511040A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022B01001300C21DFCB9B61495FE77B93D00640511040A00000000\r\n'}, 'id': 4061973886, 'rxSnr': 0.25, 'hopLimit': 3, 'rxRssi': -85, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022B01001300C21DFCB9B61495FE77B93D00640511040A00000000\r\n"
+  bitfield: 0
+}
+id: 4061973886
+rx_snr: 0.25
+hop_limit: 3
+rx_rssi: -85
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:26:47 | TM Received: telemetry src=1 lat=34.75195 lon=-118.33184 alt=61m gs=13.8m/s bat=10.41V rssi=0dBm link=0%
+2026-07-31 10:27:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022C010013006F64CAD1B614B11378B93C00130455040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022C010013006F64CAD1B614B11378B93C00130455040500000000\r\n'}, 'id': 333476224, 'rxSnr': 1.25, 'hopLimit': 3, 'rxRssi': -79, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022C010013006F64CAD1B614B11378B93C00130455040500000000\r\n"
+  bitfield: 0
+}
+id: 333476224
+rx_snr: 1.25
+hop_limit: 3
+rx_rssi: -79
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:27:17 | TM Received: telemetry src=1 lat=34.75256 lon=-118.33130 alt=60m gs=10.4m/s bat=11.09V rssi=0dBm link=0%
+2026-07-31 10:27:52 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022D01001300D40646EFB61499FE77B93C008305E8030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022D01001300D40646EFB61499FE77B93C008305E8030A00000000\r\n'}, 'id': 1704503682, 'rxSnr': -15.5, 'hopLimit': 1, 'rxRssi': -119, 'hopStart': 3, 'relayNode': 94, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022D01001300D40646EFB61499FE77B93C008305E8030A00000000\r\n"
+  bitfield: 0
+}
+id: 1704503682
+rx_snr: -15.5
+hop_limit: 1
+rx_rssi: -119
+hop_start: 3
+relay_node: 94
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:27:52 | TM Received: telemetry src=1 lat=34.75331 lon=-118.33184 alt=60m gs=14.1m/s bat=10.00V rssi=0dBm link=0%
+2026-07-31 10:28:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022E010013000247FDEBB6145ADC77B93C003306F7030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022E010013000247FDEBB6145ADC77B93C003306F7030A00000000\r\n'}, 'id': 3684071812, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -74, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022E010013000247FDEBB6145ADC77B93C003306F7030A00000000\r\n"
+  bitfield: 0
+}
+id: 3684071812
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -74
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:28:17 | TM Received: telemetry src=1 lat=34.75323 lon=-118.33271 alt=60m gs=15.9m/s bat=10.15V rssi=0dBm link=0%
+2026-07-31 10:28:46 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022F0100130060F8D7C7B6141BD177B93C005A06FD030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022F0100130060F8D7C7B6141BD177B93C005A06FD030A00000000\r\n'}, 'id': 1331513734, 'rxSnr': -0.5, 'hopLimit': 3, 'rxRssi': -92, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022F0100130060F8D7C7B6141BD177B93C005A06FD030A00000000\r\n"
+  bitfield: 0
+}
+id: 1331513734
+rx_snr: -0.5
+hop_limit: 3
+rx_rssi: -92
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:28:46 | TM Received: telemetry src=1 lat=34.75230 lon=-118.33300 alt=60m gs=16.3m/s bat=10.21V rssi=0dBm link=0%
+2026-07-31 10:29:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023001001300368098B8B6146DF877B93C005D05FE030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023001001300368098B8B6146DF877B93C005D05FE030A00000000\r\n'}, 'id': 1342381448, 'rxSnr': 4.75, 'hopLimit': 3, 'rxRssi': -84, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023001001300368098B8B6146DF877B93C005D05FE030A00000000\r\n"
+  bitfield: 0
+}
+id: 1342381448
+rx_snr: 4.75
+hop_limit: 3
+rx_rssi: -84
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:29:17 | TM Received: telemetry src=1 lat=34.75191 lon=-118.33200 alt=60m gs=13.7m/s bat=10.22V rssi=0dBm link=0%
+2026-07-31 10:29:56 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023101001300132E66CDB6147F1178B93E00600432040A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023101001300132E66CDB6147F1178B93E00600432040A00000000\r\n'}, 'id': 1922359690, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -73, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023101001300132E66CDB6147F1178B93E00600432040A00000000\r\n"
+  bitfield: 0
+}
+id: 1922359690
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -73
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:29:56 | TM Received: telemetry src=1 lat=34.75245 lon=-118.33135 alt=62m gs=11.2m/s bat=10.74V rssi=0dBm link=0%
+2026-07-31 10:30:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023201001300FF5755E8B614270878B93D00D20417040A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023201001300FF5755E8B614270878B93D00D20417040A00000000\r\n'}, 'id': 1275442572, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -81, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023201001300FF5755E8B614270878B93D00D20417040A00000000\r\n"
+  bitfield: 0
+}
+id: 1275442572
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -81
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:30:17 | TM Received: telemetry src=1 lat=34.75313 lon=-118.33159 alt=61m gs=12.3m/s bat=10.47V rssi=0dBm link=0%
+2026-07-31 10:30:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023301001300D5F30AEDB614C3DD77B93E00C60508040A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023301001300D5F30AEDB614C3DD77B93E00C60508040A00000000\r\n'}, 'id': 1311555982, 'rxSnr': 5.0, 'hopLimit': 3, 'rxRssi': -70, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023301001300D5F30AEDB614C3DD77B93E00C60508040A00000000\r\n"
+  bitfield: 0
+}
+id: 1311555982
+rx_snr: 5
+hop_limit: 3
+rx_rssi: -70
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:30:47 | TM Received: telemetry src=1 lat=34.75326 lon=-118.33268 alt=62m gs=14.8m/s bat=10.32V rssi=0dBm link=0%
+2026-07-31 10:31:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023401001300D1916EC4B614B2D277B93C004006D6030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023401001300D1916EC4B614B2D277B93C004006D6030A00000000\r\n'}, 'id': 3404659088, 'rxSnr': 3.5, 'hopLimit': 3, 'rxRssi': -77, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023401001300D1916EC4B614B2D277B93C004006D6030A00000000\r\n"
+  bitfield: 0
+}
+id: 3404659088
+rx_snr: 3.5
+hop_limit: 3
+rx_rssi: -77
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:31:17 | TM Received: telemetry src=1 lat=34.75222 lon=-118.33296 alt=60m gs=16.0m/s bat=9.82V rssi=0dBm link=0%
+2026-07-31 10:31:55 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023501001300F74DE7B8B61405FB77B93C00F104F3030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023501001300F74DE7B8B61405FB77B93C00F104F3030A00000000\r\n'}, 'id': 3185351058, 'rxSnr': 3.25, 'hopLimit': 3, 'rxRssi': -81, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023501001300F74DE7B8B61405FB77B93C00F104F3030A00000000\r\n"
+  bitfield: 0
+}
+id: 3185351058
+rx_snr: 3.25
+hop_limit: 3
+rx_rssi: -81
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:31:55 | TM Received: telemetry src=1 lat=34.75192 lon=-118.33193 alt=60m gs=12.7m/s bat=10.11V rssi=0dBm link=0%
+2026-07-31 10:32:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002360100130042637BE8B61422B877B93A001E07A8030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002360100130042637BE8B61422B877B93A001E07A8030A00000000\r\n'}, 'id': 4009131412, 'rxSnr': 5.0, 'hopLimit': 3, 'rxRssi': -75, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002360100130042637BE8B61422B877B93A001E07A8030A00000000\r\n"
+  bitfield: 0
+}
+id: 4009131412
+rx_snr: 5
+hop_limit: 3
+rx_rssi: -75
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:32:17 | TM Received: telemetry src=1 lat=34.75314 lon=-118.33364 alt=58m gs=18.2m/s bat=9.36V rssi=0dBm link=0%
+2026-07-31 10:32:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023701001300C6A9F8FAB61464E677B93B00C5058A030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023701001300C6A9F8FAB61464E677B93B00C5058A030A00000000\r\n'}, 'id': 3832569238, 'rxSnr': 2.5, 'hopLimit': 3, 'rxRssi': -86, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023701001300C6A9F8FAB61464E677B93B00C5058A030A00000000\r\n"
+  bitfield: 0
+}
+id: 3832569238
+rx_snr: 2.5
+hop_limit: 3
+rx_rssi: -86
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:32:47 | TM Received: telemetry src=1 lat=34.75361 lon=-118.33246 alt=59m gs=14.8m/s bat=9.06V rssi=0dBm link=0%
+2026-07-31 10:33:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023801001300CF9910F2B614460778B93900160684030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023801001300CF9910F2B614460778B93900160684030A00000000\r\n'}, 'id': 1213974936, 'rxSnr': -15.25, 'hopLimit': 3, 'rxRssi': -85, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023801001300CF9910F2B614460778B93900160684030A00000000\r\n"
+  bitfield: 0
+}
+id: 1213974936
+rx_snr: -15.25
+hop_limit: 3
+rx_rssi: -85
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:33:17 | TM Received: telemetry src=1 lat=34.75338 lon=-118.33162 alt=57m gs=15.6m/s bat=9.00V rssi=0dBm link=0%
+2026-07-31 10:33:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023901001300C9A7D9F2B614A7EA77B93C00210496030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023901001300C9A7D9F2B614A7EA77B93C00210496030A00000000\r\n'}, 'id': 1200120218, 'rxSnr': 3.25, 'hopLimit': 3, 'rxRssi': -79, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023901001300C9A7D9F2B614A7EA77B93C00210496030A00000000\r\n"
+  bitfield: 0
+}
+id: 1200120218
+rx_snr: 3.25
+hop_limit: 3
+rx_rssi: -79
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:33:47 | TM Received: telemetry src=1 lat=34.75340 lon=-118.33235 alt=60m gs=10.6m/s bat=9.18V rssi=0dBm link=0%
+2026-07-31 10:34:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023A010013006591EBF3B614EF1578B94200BE0487030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023A010013006591EBF3B614EF1578B94200BE0487030A00000000\r\n'}, 'id': 1929528732, 'rxSnr': 4.0, 'hopLimit': 3, 'rxRssi': -80, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023A010013006591EBF3B614EF1578B94200BE0487030A00000000\r\n"
+  bitfield: 0
+}
+id: 1929528732
+rx_snr: 4
+hop_limit: 3
+rx_rssi: -80
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:34:17 | TM Received: telemetry src=1 lat=34.75343 lon=-118.33124 alt=66m gs=12.1m/s bat=9.03V rssi=0dBm link=0%
+2026-07-31 10:34:54 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023B01001300CF40E001B714381B78B93D006004EB030000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023B01001300CF40E001B714381B78B93D006004EB030000000000\r\n'}, 'id': 440699294, 'rxSnr': 2.5, 'hopLimit': 3, 'rxRssi': -82, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023B01001300CF40E001B714381B78B93D006004EB030000000000\r\n"
+  bitfield: 0
+}
+id: 440699294
+rx_snr: 2.5
+hop_limit: 3
+rx_rssi: -82
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:34:54 | TM Received: telemetry src=1 lat=34.75379 lon=-118.33110 alt=61m gs=11.2m/s bat=10.03V rssi=0dBm link=0%
+2026-07-31 10:35:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023C0100130075DD99DEB61416DB77B940001507BF030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023C0100130075DD99DEB61416DB77B940001507BF030A00000000\r\n'}, 'id': 319743392, 'rxSnr': 4.25, 'hopLimit': 3, 'rxRssi': -78, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023C0100130075DD99DEB61416DB77B940001507BF030A00000000\r\n"
+  bitfield: 0
+}
+id: 319743392
+rx_snr: 4.25
+hop_limit: 3
+rx_rssi: -78
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:35:17 | TM Received: telemetry src=1 lat=34.75289 lon=-118.33275 alt=64m gs=18.1m/s bat=9.59V rssi=0dBm link=0%
+2026-07-31 10:35:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023D010013004D6272DEB614B9C177B93C002D05C0030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023D010013004D6272DEB614B9C177B93C002D05C0030A00000000\r\n'}, 'id': 453765538, 'rxSnr': -12.5, 'hopLimit': 3, 'rxRssi': -82, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023D010013004D6272DEB614B9C177B93C002D05C0030A00000000\r\n"
+  bitfield: 0
+}
+id: 453765538
+rx_snr: -12.5
+hop_limit: 3
+rx_rssi: -82
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:35:47 | TM Received: telemetry src=1 lat=34.75288 lon=-118.33340 alt=60m gs=13.2m/s bat=9.60V rssi=0dBm link=0%
+2026-07-31 10:36:17 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023E01001300BA98FAF9B614DE0878B93D00BA04B0030A00000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023E01001300BA98FAF9B614DE0878B93D00BA04B0030A00000000\r\n'}, 'id': 365973924, 'rxSnr': -0.25, 'hopLimit': 3, 'rxRssi': -85, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023E01001300BA98FAF9B614DE0878B93D00BA04B0030A00000000\r\n"
+  bitfield: 0
+}
+id: 365973924
+rx_snr: -0.25
+hop_limit: 3
+rx_rssi: -85
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:36:17 | TM Received: telemetry src=1 lat=34.75359 lon=-118.33157 alt=61m gs=12.1m/s bat=9.44V rssi=0dBm link=0%
+2026-07-31 10:36:47 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100023F010013000C539000B714CD2178B91000FC0512040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100023F010013000C539000B714CD2178B91000FC0512040500000000\r\n'}, 'id': 2563686822, 'rxSnr': -12.25, 'hopLimit': 3, 'rxRssi': -81, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100023F010013000C539000B714CD2178B91000FC0512040500000000\r\n"
+  bitfield: 0
+}
+id: 2563686822
+rx_snr: -12.25
+hop_limit: 3
+rx_rssi: -81
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:36:47 | TM Received: telemetry src=1 lat=34.75376 lon=-118.33094 alt=16m gs=15.3m/s bat=10.42V rssi=0dBm link=0%
+2026-07-31 10:49:48 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000201010013000259AC14B714E8EA77B900000100DB040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000201010013000259AC14B714E8EA77B900000100DB040000000000\r\n'}, 'id': 1308517126, 'rxSnr': 6.5, 'hopLimit': 3, 'rxRssi': -68, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000201010013000259AC14B714E8EA77B900000100DB040000000000\r\n"
+  bitfield: 0
+}
+id: 1308517126
+rx_snr: 6.5
+hop_limit: 3
+rx_rssi: -68
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:49:48 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33234 alt=0m gs=0.0m/s bat=12.43V rssi=0dBm link=0%
+2026-07-31 10:50:18 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020201001300168FA214B714EEEA77B900000200DB040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020201001300168FA214B714EEEA77B900000200DB040000000000\r\n'}, 'id': 2055072521, 'rxSnr': 6.25, 'hopLimit': 3, 'rxRssi': -62, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020201001300168FA214B714EEEA77B900000200DB040000000000\r\n"
+  bitfield: 0
+}
+id: 2055072521
+rx_snr: 6.25
+hop_limit: 3
+rx_rssi: -62
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:50:18 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33234 alt=0m gs=0.0m/s bat=12.43V rssi=0dBm link=0%
+2026-07-31 10:50:48 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000203010013002E37FC13B71414EC77B901005400DA040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000203010013002E37FC13B71414EC77B901005400DA040000000000\r\n'}, 'id': 1129911051, 'rxSnr': 6.25, 'hopLimit': 3, 'rxRssi': -73, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000203010013002E37FC13B71414EC77B901005400DA040000000000\r\n"
+  bitfield: 0
+}
+id: 1129911051
+rx_snr: 6.25
+hop_limit: 3
+rx_rssi: -73
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:50:48 | TM Received: telemetry src=1 lat=34.75425 lon=-118.33231 alt=1m gs=0.8m/s bat=12.42V rssi=0dBm link=0%
+2026-07-31 10:51:18 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002040100130034033A13B71411ED77B900000000DA040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002040100130034033A13B71411ED77B900000000DA040000000000\r\n'}, 'id': 1656366861, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -78, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002040100130034033A13B71411ED77B900000000DA040000000000\r\n"
+  bitfield: 0
+}
+id: 1656366861
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -78
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:51:18 | TM Received: telemetry src=1 lat=34.75423 lon=-118.33229 alt=0m gs=0.0m/s bat=12.42V rssi=0dBm link=0%
+2026-07-31 10:51:48 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000205010013007036C812B7140DED77B900000500D9040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000205010013007036C812B7140DED77B900000500D9040000000000\r\n'}, 'id': 1499409167, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -68, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000205010013007036C812B7140DED77B900000500D9040000000000\r\n"
+  bitfield: 0
+}
+id: 1499409167
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -68
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:51:48 | TM Received: telemetry src=1 lat=34.75422 lon=-118.33229 alt=0m gs=0.1m/s bat=12.41V rssi=0dBm link=0%
+2026-07-31 10:52:39 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002010100130089E900000000000000000000000000001000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002010100130089E900000000000000000000000000001000000000\r\n'}, 'id': 1926133659, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -63, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002010100130089E900000000000000000000000000001000000000\r\n"
+  bitfield: 0
+}
+id: 1926133659
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -63
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:52:39 | TM Received: telemetry src=1 lat=0.00000 lon=0.00000 alt=0m gs=0.0m/s bat=0.00V rssi=0dBm link=0%
+2026-07-31 10:53:09 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002020100130076E0E112B71460ED77B900000500DA040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002020100130076E0E112B71460ED77B900000500DA040000000000\r\n'}, 'id': 955132830, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -70, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002020100130076E0E112B71460ED77B900000500DA040000000000\r\n"
+  bitfield: 0
+}
+id: 955132830
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -70
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:53:09 | TM Received: telemetry src=1 lat=34.75422 lon=-118.33228 alt=0m gs=0.1m/s bat=12.42V rssi=0dBm link=0%
+2026-07-31 10:53:39 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000203010013004CC5E312B714F4EC77B900000100D9040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000203010013004CC5E312B714F4EC77B900000100D9040000000000\r\n'}, 'id': 420976544, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -75, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000203010013004CC5E312B714F4EC77B900000100D9040000000000\r\n"
+  bitfield: 0
+}
+id: 420976544
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -75
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:53:39 | TM Received: telemetry src=1 lat=34.75422 lon=-118.33229 alt=0m gs=0.0m/s bat=12.41V rssi=0dBm link=0%
+2026-07-31 10:54:09 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020401001300F9FABF12B714F3EC77B900000000D9040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020401001300F9FABF12B714F3EC77B900000000D9040000000000\r\n'}, 'id': 3602599842, 'rxSnr': 7.0, 'hopLimit': 3, 'rxRssi': -73, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020401001300F9FABF12B714F3EC77B900000000D9040000000000\r\n"
+  bitfield: 0
+}
+id: 3602599842
+rx_snr: 7
+hop_limit: 3
+rx_rssi: -73
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:54:09 | TM Received: telemetry src=1 lat=34.75422 lon=-118.33229 alt=0m gs=0.0m/s bat=12.41V rssi=0dBm link=0%
+2026-07-31 10:54:39 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020501001300C077D014B71434EA77B900000B00D8040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020501001300C077D014B71434EA77B900000B00D8040000000000\r\n'}, 'id': 1674430372, 'rxSnr': 6.5, 'hopLimit': 3, 'rxRssi': -35, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020501001300C077D014B71434EA77B900000B00D8040000000000\r\n"
+  bitfield: 0
+}
+id: 1674430372
+rx_snr: 6.5
+hop_limit: 3
+rx_rssi: -35
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:54:39 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33236 alt=0m gs=0.1m/s bat=12.40V rssi=0dBm link=0%
+2026-07-31 10:55:09 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002060100130035CD9B15B714CBEA77B900000200D8040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002060100130035CD9B15B714CBEA77B900000200D8040000000000\r\n'}, 'id': 3296154534, 'rxSnr': 6.25, 'hopLimit': 3, 'rxRssi': -31, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002060100130035CD9B15B714CBEA77B900000200D8040000000000\r\n"
+  bitfield: 0
+}
+id: 3296154534
+rx_snr: 6.25
+hop_limit: 3
+rx_rssi: -31
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:55:09 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33234 alt=0m gs=0.0m/s bat=12.40V rssi=0dBm link=0%
+2026-07-31 10:55:39 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020701001300EEA81916B7146FEB77B900003500D8040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020701001300EEA81916B7146FEB77B900003500D8040000000000\r\n'}, 'id': 4106432424, 'rxSnr': 6.5, 'hopLimit': 3, 'rxRssi': -52, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020701001300EEA81916B7146FEB77B900003500D8040000000000\r\n"
+  bitfield: 0
+}
+id: 4106432424
+rx_snr: 6.5
+hop_limit: 3
+rx_rssi: -52
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:55:39 | TM Received: telemetry src=1 lat=34.75431 lon=-118.33233 alt=0m gs=0.5m/s bat=12.40V rssi=0dBm link=0%
+2026-07-31 10:56:09 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002080100130002400817B7148AD877B900000E00D1040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002080100130002400817B7148AD877B900000E00D1040000000000\r\n'}, 'id': 1622269866, 'rxSnr': 3.75, 'hopLimit': 3, 'rxRssi': -93, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002080100130002400817B7148AD877B900000E00D1040000000000\r\n"
+  bitfield: 0
+}
+id: 1622269866
+rx_snr: 3.75
+hop_limit: 3
+rx_rssi: -93
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:56:09 | TM Received: telemetry src=1 lat=34.75433 lon=-118.33281 alt=0m gs=0.1m/s bat=12.33V rssi=0dBm link=0%
+2026-07-31 10:56:39 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000209010013007DD1E016B71440D877B900000100D4040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000209010013007DD1E016B71440D877B900000100D4040000000000\r\n'}, 'id': 3833524140, 'rxSnr': 6.5, 'hopLimit': 3, 'rxRssi': -77, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000209010013007DD1E016B71440D877B900000100D4040000000000\r\n"
+  bitfield: 0
+}
+id: 3833524140
+rx_snr: 6.5
+hop_limit: 3
+rx_rssi: -77
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:56:39 | TM Received: telemetry src=1 lat=34.75433 lon=-118.33282 alt=0m gs=0.0m/s bat=12.36V rssi=0dBm link=0%
+2026-07-31 10:57:09 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020A010013004F488315B7142CDE77B900006000D4040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020A010013004F488315B7142CDE77B900006000D4040000000000\r\n'}, 'id': 3860778926, 'rxSnr': 6.5, 'hopLimit': 3, 'rxRssi': -70, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020A010013004F488315B7142CDE77B900006000D4040000000000\r\n"
+  bitfield: 0
+}
+id: 3860778926
+rx_snr: 6.5
+hop_limit: 3
+rx_rssi: -70
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:57:09 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33267 alt=0m gs=1.0m/s bat=12.36V rssi=0dBm link=0%
+2026-07-31 10:57:39 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020B01001300A0D69614B71462E877B900001200D3040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020B01001300A0D69614B71462E877B900001200D3040000000000\r\n'}, 'id': 190758832, 'rxSnr': 5.5, 'hopLimit': 3, 'rxRssi': -60, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020B01001300A0D69614B71462E877B900001200D3040000000000\r\n"
+  bitfield: 0
+}
+id: 190758832
+rx_snr: 5.5
+hop_limit: 3
+rx_rssi: -60
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 10:57:39 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33241 alt=0m gs=0.2m/s bat=12.35V rssi=0dBm link=0%
+2026-07-31 11:00:36 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020101001300FF1A8614B71454E977B900000100D4040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020101001300FF1A8614B71454E977B900000100D4040500000000\r\n'}, 'id': 2011694982, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -67, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020101001300FF1A8614B71454E977B900000100D4040500000000\r\n"
+  bitfield: 0
+}
+id: 2011694982
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -67
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:00:36 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33238 alt=0m gs=0.0m/s bat=12.36V rssi=0dBm link=0%
+2026-07-31 11:01:07 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000202010013005BC5CC12B714DAE977B901003000D3040500000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000202010013005BC5CC12B714DAE977B901003000D3040500000000\r\n'}, 'id': 4234762121, 'rxSnr': 6.75, 'hopLimit': 3, 'rxRssi': -66, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000202010013005BC5CC12B714DAE977B901003000D3040500000000\r\n"
+  bitfield: 0
+}
+id: 4234762121
+rx_snr: 6.75
+hop_limit: 3
+rx_rssi: -66
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:01:07 | TM Received: telemetry src=1 lat=34.75422 lon=-118.33237 alt=1m gs=0.5m/s bat=12.35V rssi=0dBm link=0%
+2026-07-31 11:01:37 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020301001300C5CC9214B71479E877B900000200D3040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020301001300C5CC9214B71479E877B900000200D3040500000000\r\n'}, 'id': 2659990411, 'rxSnr': 7.5, 'hopLimit': 3, 'rxRssi': -74, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020301001300C5CC9214B71479E877B900000200D3040500000000\r\n"
+  bitfield: 0
+}
+id: 2659990411
+rx_snr: 7.5
+hop_limit: 3
+rx_rssi: -74
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:01:37 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33240 alt=0m gs=0.0m/s bat=12.35V rssi=0dBm link=0%
+2026-07-31 11:02:28 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020101001300EC23F013B71491E877B900000200D2040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020101001300EC23F013B71491E877B900000200D2040500000000\r\n'}, 'id': 3851187260, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -76, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020101001300EC23F013B71491E877B900000200D2040500000000\r\n"
+  bitfield: 0
+}
+id: 3851187260
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -76
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:02:28 | TM Received: telemetry src=1 lat=34.75425 lon=-118.33240 alt=0m gs=0.0m/s bat=12.34V rssi=0dBm link=0%
+2026-07-31 11:02:58 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020201001300F4993014B714F5E877B900000500CF040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020201001300F4993014B714F5E877B900000500CF040500000000\r\n'}, 'id': 551545919, 'rxSnr': 7.75, 'hopLimit': 3, 'rxRssi': -57, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020201001300F4993014B714F5E877B900000500CF040500000000\r\n"
+  bitfield: 0
+}
+id: 551545919
+rx_snr: 7.75
+hop_limit: 3
+rx_rssi: -57
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:02:58 | TM Received: telemetry src=1 lat=34.75426 lon=-118.33239 alt=0m gs=0.1m/s bat=12.31V rssi=0dBm link=0%
+2026-07-31 11:03:29 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020301001300EBF3F713B7140BE977B900000800D0040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020301001300EBF3F713B7140BE977B900000800D0040500000000\r\n'}, 'id': 496652353, 'rxSnr': 5.5, 'hopLimit': 3, 'rxRssi': -56, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020301001300EBF3F713B7140BE977B900000800D0040500000000\r\n"
+  bitfield: 0
+}
+id: 496652353
+rx_snr: 5.5
+hop_limit: 3
+rx_rssi: -56
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:03:29 | TM Received: telemetry src=1 lat=34.75425 lon=-118.33239 alt=0m gs=0.1m/s bat=12.32V rssi=0dBm link=0%
+2026-07-31 11:03:58 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020401001300A4852414B71401E977B900000300CB040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020401001300A4852414B71401E977B900000300CB040500000000\r\n'}, 'id': 1783423043, 'rxSnr': 5.75, 'hopLimit': 3, 'rxRssi': -59, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020401001300A4852414B71401E977B900000300CB040500000000\r\n"
+  bitfield: 0
+}
+id: 1783423043
+rx_snr: 5.75
+hop_limit: 3
+rx_rssi: -59
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:03:58 | TM Received: telemetry src=1 lat=34.75426 lon=-118.33239 alt=0m gs=0.0m/s bat=12.27V rssi=0dBm link=0%
+2026-07-31 11:04:28 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020501001300C9ED0714B714F3E877B900000600CD040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020501001300C9ED0714B714F3E877B900000600CD040500000000\r\n'}, 'id': 3853959237, 'rxSnr': 7.5, 'hopLimit': 3, 'rxRssi': -62, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020501001300C9ED0714B714F3E877B900000600CD040500000000\r\n"
+  bitfield: 0
+}
+id: 3853959237
+rx_snr: 7.5
+hop_limit: 3
+rx_rssi: -62
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:04:28 | TM Received: telemetry src=1 lat=34.75425 lon=-118.33239 alt=0m gs=0.1m/s bat=12.29V rssi=0dBm link=0%
+2026-07-31 11:07:44 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002010100130030B64714B71410E977B900000200CB040500000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002010100130030B64714B71410E977B900000200CB040500000000\r\n'}, 'id': 3779079919, 'rxSnr': 6.0, 'hopLimit': 3, 'rxRssi': -60, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002010100130030B64714B71410E977B900000200CB040500000000\r\n"
+  bitfield: 0
+}
+id: 3779079919
+rx_snr: 6
+hop_limit: 3
+rx_rssi: -60
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:07:44 | TM Received: telemetry src=1 lat=34.75426 lon=-118.33239 alt=0m gs=0.0m/s bat=12.27V rssi=0dBm link=0%
+2026-07-31 11:08:13 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000202010013009189C912B71490E977B900005200C8040500000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000202010013009189C912B71490E977B900005200C8040500000000\r\n'}, 'id': 2896436978, 'rxSnr': 7.0, 'hopLimit': 3, 'rxRssi': -66, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000202010013009189C912B71490E977B900005200C8040500000000\r\n"
+  bitfield: 0
+}
+id: 2896436978
+rx_snr: 7
+hop_limit: 3
+rx_rssi: -66
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:08:13 | TM Received: telemetry src=1 lat=34.75422 lon=-118.33238 alt=0m gs=0.8m/s bat=12.24V rssi=0dBm link=0%
+2026-07-31 11:08:43 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020301001300AA7CC70AB71486D977B9FFFF0600C6040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020301001300AA7CC70AB71486D977B9FFFF0600C6040500000000\r\n'}, 'id': 1304005364, 'rxSnr': 4.25, 'hopLimit': 3, 'rxRssi': -93, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020301001300AA7CC70AB71486D977B9FFFF0600C6040500000000\r\n"
+  bitfield: 0
+}
+id: 1304005364
+rx_snr: 4.25
+hop_limit: 3
+rx_rssi: -93
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:08:43 | TM Received: telemetry src=1 lat=34.75402 lon=-118.33279 alt=65535m gs=0.1m/s bat=12.22V rssi=0dBm link=0%
+2026-07-31 11:12:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000201010013007C9C4614B7145CEF77B900000000B2040500000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000201010013007C9C4614B7145CEF77B900000000B2040500000000\r\n'}, 'id': 2048441024, 'rxSnr': 3.75, 'hopLimit': 3, 'rxRssi': -82, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000201010013007C9C4614B7145CEF77B900000000B2040500000000\r\n"
+  bitfield: 0
+}
+id: 2048441024
+rx_snr: 3.75
+hop_limit: 3
+rx_rssi: -82
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:12:40 | TM Received: telemetry src=1 lat=34.75426 lon=-118.33223 alt=0m gs=0.0m/s bat=12.02V rssi=0dBm link=0%
+2026-07-31 11:13:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000202010013004179AA14B714A9EF77B900000300B6040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000202010013004179AA14B714A9EF77B900000300B6040000000000\r\n'}, 'id': 2462037699, 'rxSnr': 1.75, 'hopLimit': 3, 'rxRssi': -80, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000202010013004179AA14B714A9EF77B900000300B6040000000000\r\n"
+  bitfield: 0
+}
+id: 2462037699
+rx_snr: 1.75
+hop_limit: 3
+rx_rssi: -80
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:13:10 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33222 alt=0m gs=0.0m/s bat=12.06V rssi=0dBm link=0%
+2026-07-31 11:13:33 | Opened Meshtastic node on COM8
+2026-07-31 11:13:34 | Meshtastic connection established
+2026-07-31 11:13:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020301001300465A8114B714E7EF77B900000000B4040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020301001300465A8114B714E7EF77B900000000B4040000000000\r\n'}, 'id': 737318597, 'rxSnr': 4.75, 'hopLimit': 3, 'rxRssi': -79, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020301001300465A8114B714E7EF77B900000000B4040000000000\r\n"
+  bitfield: 0
+}
+id: 737318597
+rx_snr: 4.75
+hop_limit: 3
+rx_rssi: -79
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:13:40 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33221 alt=0m gs=0.0m/s bat=12.04V rssi=0dBm link=0%
+2026-07-31 11:14:18 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020401001300D7828914B714B6EF77B900000400B5040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020401001300D7828914B714B6EF77B900000400B5040500000000\r\n'}, 'id': 60406471, 'hopLimit': 3, 'rxRssi': -90, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020401001300D7828914B714B6EF77B900000400B5040500000000\r\n"
+  bitfield: 0
+}
+id: 60406471
+hop_limit: 3
+rx_rssi: -90
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:14:18 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33222 alt=0m gs=0.0m/s bat=12.05V rssi=0dBm link=0%
+2026-07-31 11:14:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002050100130094D9E212B714ECEC77B900001900B3040500000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002050100130094D9E212B714ECEC77B900001900B3040500000000\r\n'}, 'id': 2906117833, 'rxSnr': -2.0, 'hopLimit': 3, 'rxRssi': -70, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002050100130094D9E212B714ECEC77B900001900B3040500000000\r\n"
+  bitfield: 0
+}
+id: 2906117833
+rx_snr: -2
+hop_limit: 3
+rx_rssi: -70
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:14:40 | TM Received: telemetry src=1 lat=34.75422 lon=-118.33229 alt=0m gs=0.2m/s bat=12.03V rssi=0dBm link=0%
+2026-07-31 11:15:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002070100130084F72BE0B61406FC77B92A005D058B040500000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002070100130084F72BE0B61406FC77B92A005D058B040500000000\r\n'}, 'id': 4214937293, 'rxSnr': 2.75, 'hopLimit': 3, 'rxRssi': -86, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002070100130084F72BE0B61406FC77B92A005D058B040500000000\r\n"
+  bitfield: 0
+}
+id: 4214937293
+rx_snr: 2.75
+hop_limit: 3
+rx_rssi: -86
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:15:40 | TM Received: telemetry src=1 lat=34.75293 lon=-118.33190 alt=42m gs=13.7m/s bat=11.63V rssi=0dBm link=0%
+2026-07-31 11:16:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002080100130039C6A6F1B614EDD477B92200250588040000000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002080100130039C6A6F1B614EDD477B92200250588040000000000\r\n'}, 'id': 927504079, 'rxSnr': -7.75, 'hopLimit': 3, 'rxRssi': -77, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002080100130039C6A6F1B614EDD477B92200250588040000000000\r\n"
+  bitfield: 0
+}
+id: 927504079
+rx_snr: -7.75
+hop_limit: 3
+rx_rssi: -77
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:16:10 | TM Received: telemetry src=1 lat=34.75337 lon=-118.33290 alt=34m gs=13.2m/s bat=11.60V rssi=0dBm link=0%
+2026-07-31 11:16:56 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020901001300E26E16EAB614F81278B91800AF048D040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020901001300E26E16EAB614F81278B91800AF048D040000000000\r\n'}, 'id': 227831505, 'rxSnr': -4.75, 'hopLimit': 3, 'rxRssi': -73, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020901001300E26E16EAB614F81278B91800AF048D040000000000\r\n"
+  bitfield: 0
+}
+id: 227831505
+rx_snr: -4.75
+hop_limit: 3
+rx_rssi: -73
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:16:56 | TM Received: telemetry src=1 lat=34.75318 lon=-118.33132 alt=24m gs=12.0m/s bat=11.65V rssi=0dBm link=0%
+2026-07-31 11:17:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020A0100130051A27913B714E8CB77B90F006B0399040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020A0100130051A27913B714E8CB77B90F006B0399040000000000\r\n'}, 'id': 502271699, 'rxSnr': -12.75, 'hopLimit': 3, 'rxRssi': -82, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020A0100130051A27913B714E8CB77B90F006B0399040000000000\r\n"
+  bitfield: 0
+}
+id: 502271699
+rx_snr: -12.75
+hop_limit: 3
+rx_rssi: -82
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:17:10 | TM Received: telemetry src=1 lat=34.75424 lon=-118.33314 alt=15m gs=8.8m/s bat=11.77V rssi=0dBm link=0%
+2026-07-31 11:18:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020C01001300B14D530BB714CDDA77B91300EE039C040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020C01001300B14D530BB714CDDA77B91300EE039C040000000000\r\n'}, 'id': 3359412951, 'rxSnr': -8.0, 'hopLimit': 3, 'rxRssi': -77, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020C01001300B14D530BB714CDDA77B91300EE039C040000000000\r\n"
+  bitfield: 0
+}
+id: 3359412951
+rx_snr: -8
+hop_limit: 3
+rx_rssi: -77
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:18:10 | TM Received: telemetry src=1 lat=34.75403 lon=-118.33275 alt=19m gs=10.1m/s bat=11.80V rssi=0dBm link=0%
+2026-07-31 11:18:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020D0100130013BCD614B71457C577B91100DE048D040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020D0100130013BCD614B71457C577B91100DE048D040000000000\r\n'}, 'id': 1331549913, 'rxSnr': -11.75, 'hopLimit': 3, 'rxRssi': -80, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020D0100130013BCD614B71457C577B91100DE048D040000000000\r\n"
+  bitfield: 0
+}
+id: 1331549913
+rx_snr: -11.75
+hop_limit: 3
+rx_rssi: -80
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:18:40 | TM Received: telemetry src=1 lat=34.75427 lon=-118.33330 alt=17m gs=12.5m/s bat=11.65V rssi=0dBm link=0%
+2026-07-31 11:19:26 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100020E0100130094137EE4B61480E777B91900EE0480040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100020E0100130094137EE4B61480E777B91900EE0480040000000000\r\n'}, 'id': 927590107, 'rxSnr': -14.25, 'hopLimit': 3, 'rxRssi': -84, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100020E0100130094137EE4B61480E777B91900EE0480040000000000\r\n"
+  bitfield: 0
+}
+id: 927590107
+rx_snr: -14.25
+hop_limit: 3
+rx_rssi: -84
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:19:26 | TM Received: telemetry src=1 lat=34.75304 lon=-118.33243 alt=25m gs=12.6m/s bat=11.52V rssi=0dBm link=0%
+2026-07-31 11:20:26 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021001001300241A2803B71465EA77B910008C0488040500000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021001001300241A2803B71465EA77B910008C0488040500000000\r\n'}, 'id': 1770772191, 'rxSnr': -6.5, 'hopLimit': 3, 'rxRssi': -76, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021001001300241A2803B71465EA77B910008C0488040500000000\r\n"
+  bitfield: 0
+}
+id: 1770772191
+rx_snr: -6.5
+hop_limit: 3
+rx_rssi: -76
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:20:26 | TM Received: telemetry src=1 lat=34.75382 lon=-118.33235 alt=16m gs=11.6m/s bat=11.60V rssi=0dBm link=0%
+2026-07-31 11:20:56 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021101001300A0A3660FB714DB1378B90600FA033D040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021101001300A0A3660FB714DB1378B90600FA033D040000000000\r\n'}, 'id': 188804833, 'rxSnr': -18.25, 'hopLimit': 3, 'rxRssi': -87, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021101001300A0A3660FB714DB1378B90600FA033D040000000000\r\n"
+  bitfield: 0
+}
+id: 188804833
+rx_snr: -18.25
+hop_limit: 3
+rx_rssi: -87
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:20:56 | TM Received: telemetry src=1 lat=34.75413 lon=-118.33129 alt=6m gs=10.2m/s bat=10.85V rssi=0dBm link=0%
+2026-07-31 11:21:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021201001300C269930BB714F1BE77B92300C50473040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021201001300C269930BB714F1BE77B92300C50473040000000000\r\n'}, 'id': 2708438755, 'rxSnr': -15.5, 'hopLimit': 3, 'rxRssi': -85, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021201001300C269930BB714F1BE77B92300C50473040000000000\r\n"
+  bitfield: 0
+}
+id: 2708438755
+rx_snr: -15.5
+hop_limit: 3
+rx_rssi: -85
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:21:10 | TM Received: telemetry src=1 lat=34.75404 lon=-118.33347 alt=35m gs=12.2m/s bat=11.39V rssi=0dBm link=0%
+2026-07-31 11:21:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000213010013007A76E22DB7145DE677B90C00B90374040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000213010013007A76E22DB7145DE677B90C00B90374040000000000\r\n'}, 'id': 4065835749, 'rxSnr': -20.25, 'hopLimit': 3, 'rxRssi': -89, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000213010013007A76E22DB7145DE677B90C00B90374040000000000\r\n"
+  bitfield: 0
+}
+id: 4065835749
+rx_snr: -20.25
+hop_limit: 3
+rx_rssi: -89
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:21:40 | TM Received: telemetry src=1 lat=34.75492 lon=-118.33246 alt=12m gs=9.5m/s bat=11.40V rssi=0dBm link=0%
+2026-07-31 11:22:26 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021401001300E6C129E7B61450C977B9140071036C040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021401001300E6C129E7B61450C977B9140071036C040000000000\r\n'}, 'id': 2594164455, 'rxSnr': -16.75, 'hopLimit': 3, 'rxRssi': -85, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021401001300E6C129E7B61450C977B9140071036C040000000000\r\n"
+  bitfield: 0
+}
+id: 2594164455
+rx_snr: -16.75
+hop_limit: 3
+rx_rssi: -85
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:22:26 | TM Received: telemetry src=1 lat=34.75310 lon=-118.33320 alt=20m gs=8.8m/s bat=11.32V rssi=0dBm link=0%
+2026-07-31 11:22:40 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021501001300D9195215B7144DD277B90A00ED0376040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021501001300D9195215B7144DD277B90A00ED0376040000000000\r\n'}, 'id': 886030057, 'rxSnr': -14.75, 'hopLimit': 3, 'rxRssi': -84, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021501001300D9195215B7144DD277B90A00ED0376040000000000\r\n"
+  bitfield: 0
+}
+id: 886030057
+rx_snr: -14.75
+hop_limit: 3
+rx_rssi: -84
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:22:40 | TM Received: telemetry src=1 lat=34.75429 lon=-118.33297 alt=10m gs=10.1m/s bat=11.42V rssi=0dBm link=0%
+2026-07-31 11:23:18 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021601001300B185BD12B71463C377B90D003B0369040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021601001300B185BD12B71463C377B90D003B0369040000000000\r\n'}, 'id': 1237946091, 'rxSnr': -12.5, 'hopLimit': 3, 'rxRssi': -82, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021601001300B185BD12B71463C377B90D003B0369040000000000\r\n"
+  bitfield: 0
+}
+id: 1237946091
+rx_snr: -12.5
+hop_limit: 3
+rx_rssi: -82
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:23:18 | TM Received: telemetry src=1 lat=34.75422 lon=-118.33335 alt=13m gs=8.3m/s bat=11.29V rssi=0dBm link=0%
+2026-07-31 11:23:41 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:03010002170100130076B34513B714EDD677B9060008046B040500000000\r\n', 'bitfield': 0, 'text': 'LINK:03010002170100130076B34513B714EDD677B9060008046B040500000000\r\n'}, 'id': 2877550317, 'rxSnr': -8.0, 'hopLimit': 3, 'rxRssi': -78, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:03010002170100130076B34513B714EDD677B9060008046B040500000000\r\n"
+  bitfield: 0
+}
+id: 2877550317
+rx_snr: -8
+hop_limit: 3
+rx_rssi: -78
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:23:41 | TM Received: telemetry src=1 lat=34.75423 lon=-118.33285 alt=6m gs=10.3m/s bat=11.31V rssi=0dBm link=0%
+2026-07-31 11:24:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021801001300229CDE15B7148CD577B90900F50361040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021801001300229CDE15B7148CD577B90900F50361040000000000\r\n'}, 'id': 1328885487, 'rxSnr': -13.25, 'hopLimit': 3, 'rxRssi': -83, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021801001300229CDE15B7148CD577B90900F50361040000000000\r\n"
+  bitfield: 0
+}
+id: 1328885487
+rx_snr: -13.25
+hop_limit: 3
+rx_rssi: -83
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:24:10 | TM Received: telemetry src=1 lat=34.75430 lon=-118.33289 alt=9m gs=10.1m/s bat=11.21V rssi=0dBm link=0%
+2026-07-31 11:24:41 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000219010013002E132B10B714C1EB77B90100590367040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000219010013002E132B10B714C1EB77B90100590367040000000000\r\n'}, 'id': 2688330481, 'rxSnr': -15.5, 'hopLimit': 3, 'rxRssi': -84, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000219010013002E132B10B714C1EB77B90100590367040000000000\r\n"
+  bitfield: 0
+}
+id: 2688330481
+rx_snr: -15.5
+hop_limit: 3
+rx_rssi: -84
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:24:41 | TM Received: telemetry src=1 lat=34.75415 lon=-118.33232 alt=1m gs=8.6m/s bat=11.27V rssi=0dBm link=0%
+2026-07-31 11:25:10 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021A01001300FE044C07B714C0F177B906008D0322040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021A01001300FE044C07B714C0F177B906008D0322040000000000\r\n'}, 'id': 3107417843, 'rxSnr': -13.5, 'hopLimit': 3, 'rxRssi': -83, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021A01001300FE044C07B714C0F177B906008D0322040000000000\r\n"
+  bitfield: 0
+}
+id: 3107417843
+rx_snr: -13.5
+hop_limit: 3
+rx_rssi: -83
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:25:10 | TM Received: telemetry src=1 lat=34.75393 lon=-118.33217 alt=6m gs=9.1m/s bat=10.58V rssi=0dBm link=0%
+2026-07-31 11:25:48 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021B010013005C116310B71489F577B90400D60366040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021B010013005C116310B71489F577B90400D60366040000000000\r\n'}, 'id': 3758718709, 'rxSnr': -6.75, 'hopLimit': 3, 'rxRssi': -76, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021B010013005C116310B71489F577B90400D60366040000000000\r\n"
+  bitfield: 0
+}
+id: 3758718709
+rx_snr: -6.75
+hop_limit: 3
+rx_rssi: -76
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:25:48 | TM Received: telemetry src=1 lat=34.75416 lon=-118.33207 alt=4m gs=9.8m/s bat=11.26V rssi=0dBm link=0%
+2026-07-31 11:26:11 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021C0100130079931A0BB714EFEB77B90B00E1036A040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021C0100130079931A0BB714EFEB77B90B00E1036A040000000000\r\n'}, 'id': 3477188343, 'rxSnr': -9.75, 'hopLimit': 3, 'rxRssi': -79, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021C0100130079931A0BB714EFEB77B90B00E1036A040000000000\r\n"
+  bitfield: 0
+}
+id: 3477188343
+rx_snr: -9.75
+hop_limit: 3
+rx_rssi: -79
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:26:11 | TM Received: telemetry src=1 lat=34.75402 lon=-118.33232 alt=11m gs=9.9m/s bat=11.30V rssi=0dBm link=0%
+2026-07-31 11:26:41 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021D010013005EA5B81DB71454E577B90200AB0370040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021D010013005EA5B81DB71454E577B90200AB0370040000000000\r\n'}, 'id': 2876229369, 'rxSnr': -1.25, 'hopLimit': 3, 'rxRssi': -90, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021D010013005EA5B81DB71454E577B90200AB0370040000000000\r\n"
+  bitfield: 0
+}
+id: 2876229369
+rx_snr: -1.25
+hop_limit: 3
+rx_rssi: -90
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:26:41 | TM Received: telemetry src=1 lat=34.75450 lon=-118.33248 alt=2m gs=9.4m/s bat=11.36V rssi=0dBm link=0%
+2026-07-31 11:27:19 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021E010013005B35BE32B71427CF77B90E009504F8030000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021E010013005B35BE32B71427CF77B90E009504F8030000000000\r\n'}, 'id': 2159303419, 'rxSnr': -7.5, 'hopLimit': 3, 'rxRssi': -77, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021E010013005B35BE32B71427CF77B90E009504F8030000000000\r\n"
+  bitfield: 0
+}
+id: 2159303419
+rx_snr: -7.5
+hop_limit: 3
+rx_rssi: -77
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:27:19 | TM Received: telemetry src=1 lat=34.75504 lon=-118.33305 alt=14m gs=11.7m/s bat=10.16V rssi=0dBm link=0%
+2026-07-31 11:27:49 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100021F01001300F095FE26B71474CE77B909000A046E040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100021F01001300F095FE26B71474CE77B909000A046E040000000000\r\n'}, 'id': 180604669, 'rxSnr': -5.25, 'hopLimit': 3, 'rxRssi': -74, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100021F01001300F095FE26B71474CE77B909000A046E040000000000\r\n"
+  bitfield: 0
+}
+id: 180604669
+rx_snr: -5.25
+hop_limit: 3
+rx_rssi: -74
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:27:49 | TM Received: telemetry src=1 lat=34.75474 lon=-118.33307 alt=9m gs=10.3m/s bat=11.34V rssi=0dBm link=0%
+2026-07-31 11:28:11 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000220010013006442B001B71480E777B907003E043C040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000220010013006442B001B71480E777B907003E043C040000000000\r\n'}, 'id': 3649097471, 'rxSnr': -9.75, 'hopLimit': 3, 'rxRssi': -79, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000220010013006442B001B71480E777B907003E043C040000000000\r\n"
+  bitfield: 0
+}
+id: 3649097471
+rx_snr: -9.75
+hop_limit: 3
+rx_rssi: -79
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:28:11 | TM Received: telemetry src=1 lat=34.75378 lon=-118.33243 alt=7m gs=10.9m/s bat=10.84V rssi=0dBm link=0%
+2026-07-31 11:28:49 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022101001300E4B90422B71416FA77B91100590453040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022101001300E4B90422B71416FA77B91100590453040000000000\r\n'}, 'id': 537938689, 'rxSnr': -10.0, 'hopLimit': 3, 'rxRssi': -79, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022101001300E4B90422B71416FA77B91100590453040000000000\r\n"
+  bitfield: 0
+}
+id: 537938689
+rx_snr: -10
+hop_limit: 3
+rx_rssi: -79
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:28:49 | TM Received: telemetry src=1 lat=34.75461 lon=-118.33195 alt=17m gs=11.1m/s bat=11.07V rssi=0dBm link=0%
+2026-07-31 11:29:11 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:0301000222010013006A4A9013B7145EE977B90700A40350040000000000\r\n', 'bitfield': 0, 'text': 'LINK:0301000222010013006A4A9013B7145EE977B90700A40350040000000000\r\n'}, 'id': 3055727363, 'rxSnr': -8.5, 'hopLimit': 3, 'rxRssi': -78, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:0301000222010013006A4A9013B7145EE977B90700A40350040000000000\r\n"
+  bitfield: 0
+}
+id: 3055727363
+rx_snr: -8.5
+hop_limit: 3
+rx_rssi: -78
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:29:11 | TM Received: telemetry src=1 lat=34.75424 lon=-118.33238 alt=7m gs=9.3m/s bat=11.04V rssi=0dBm link=0%
+2026-07-31 11:31:57 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022701001300AF41A0F2B6149FCF77B91F0030053B040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022701001300AF41A0F2B6149FCF77B91F0030053B040000000000\r\n'}, 'id': 3078371085, 'rxSnr': -9.5, 'hopLimit': 3, 'rxRssi': -79, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022701001300AF41A0F2B6149FCF77B91F0030053B040000000000\r\n"
+  bitfield: 0
+}
+id: 3078371085
+rx_snr: -9.5
+hop_limit: 3
+rx_rssi: -79
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:31:57 | TM Received: telemetry src=1 lat=34.75340 lon=-118.33304 alt=31m gs=13.3m/s bat=10.83V rssi=0dBm link=0%
+2026-07-31 11:32:11 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022801001300741FE02AB71490EF77B91800B70365040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022801001300741FE02AB71490EF77B91800B70365040000000000\r\n'}, 'id': 2109099791, 'rxSnr': -10.75, 'hopLimit': 3, 'rxRssi': -81, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022801001300741FE02AB71490EF77B91800B70365040000000000\r\n"
+  bitfield: 0
+}
+id: 2109099791
+rx_snr: -10.75
+hop_limit: 3
+rx_rssi: -81
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:32:11 | TM Received: telemetry src=1 lat=34.75484 lon=-118.33222 alt=24m gs=9.5m/s bat=11.25V rssi=0dBm link=0%
+2026-07-31 11:32:41 | {'from': 48934536, 'to': 4294967295, 'decoded': {'portnum': 'TEXT_MESSAGE_APP', 'payload': b'LINK:030100022901001300BFD3052AB7148EF277B90000670347040000000000\r\n', 'bitfield': 0, 'text': 'LINK:030100022901001300BFD3052AB7148EF277B90000670347040000000000\r\n'}, 'id': 2565427985, 'rxSnr': -13.5, 'hopLimit': 3, 'rxRssi': -83, 'hopStart': 3, 'relayNode': 136, 'transportMechanism': 'TRANSPORT_LORA', 'raw': from: 48934536
+to: 4294967295
+decoded {
+  portnum: TEXT_MESSAGE_APP
+  payload: "LINK:030100022901001300BFD3052AB7148EF277B90000670347040000000000\r\n"
+  bitfield: 0
+}
+id: 2565427985
+rx_snr: -13.5
+hop_limit: 3
+rx_rssi: -83
+hop_start: 3
+relay_node: 136
+transport_mechanism: TRANSPORT_LORA
+, 'fromId': '!02eaae88', 'toId': '^all'}
+2026-07-31 11:32:41 | TM Received: telemetry src=1 lat=34.75482 lon=-118.33215 alt=0m gs=8.7m/s bat=10.95V rssi=0dBm link=0%
+2026-07-31 11:33:23 | TX TEXT-MESHLINK COMMAND dst=^all seq=1 part=1/1
