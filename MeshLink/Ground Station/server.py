@@ -270,14 +270,18 @@ def update_vehicle_telemetry(meshlink_packet):
         'flight_path': [],
         'status': 'TELEMETRY',
     })
-    new_position = [telemetry['latitude'], telemetry['longitude']]
+    latitude = telemetry['latitude']
+    longitude = telemetry['longitude']
+    new_position = [latitude, longitude]
     flight_path = vehicle.setdefault('flight_path', [])
-    if not flight_path or flight_path[-1] != new_position:
+    if (latitude, longitude) != (0.0, 0.0) and (
+        not flight_path or flight_path[-1] != new_position
+    ):
         flight_path.append(new_position)
     vehicle.update({
         'id': source,
-        'lat': telemetry['latitude'],
-        'lon': telemetry['longitude'],
+        'lat': latitude,
+        'lon': longitude,
         'altitude_m': telemetry['altitude_m'],
         'battery_cV': telemetry['battery_cV'],
         'groundspeed_cms': telemetry['groundspeed_cms'],
@@ -593,7 +597,7 @@ def api_reconnect():
 
 @app.route('/api/command', methods=['POST'])
 def api_command():
-    """Send a MeshLink COMMAND packet to the selected vehicle."""
+    """Send a MeshLink COMMAND packet to the selected vehicle or all vehicles."""
     data = request.json or {}
     command_id = data.get('command_id')
     destination = data.get('destination', int(active_vehicle))
@@ -622,7 +626,7 @@ def api_send_text():
 
 @app.route('/api/guided_loiter', methods=['POST'])
 def api_guided_loiter():
-    """Send a GUIDED_LOITER command to the selected vehicle."""
+    """Send a GUIDED_LOITER command to the selected vehicle or all vehicles."""
     data = request.json or {}
     destination = data.get('destination', int(active_vehicle))
     try:
@@ -639,8 +643,10 @@ def api_guided_loiter():
 
 @app.route('/api/mission', methods=['POST'])
 def api_mission():
-    data = request.json
+    data = request.json or {}
     destination = data.get('destination', int(active_vehicle))
+    if isinstance(destination, str) and destination.lower() in {'all', 'broadcast'}:
+        return jsonify({'status': 'error', 'message': 'Broadcast mission upload is not allowed'}), 400
     waypoints = [
         (int(round(w['latitude'] * 1e7)), int(round(w['longitude'] * 1e7)), int(w.get('altitude_m', 100)), int(w.get('waypoint_type', 0)))
         for w in data['waypoints']

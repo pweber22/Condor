@@ -3,13 +3,27 @@
 
 #include <MAVLink.h>
 
+enum ArduPilotFlightMode {
+  AP_MODE_MANUAL = 0,
+  AP_MODE_CIRCLE = 1,
+  AP_MODE_STABILIZE = 2,
+  AP_MODE_TRAINING = 3,
+  AP_MODE_ACRO = 4,
+  AP_MODE_FLY_BY_WIRE_A = 5,
+  AP_MODE_FLY_BY_WIRE_B = 6,
+  AP_MODE_CRUISE = 7,
+  AP_MODE_AUTOTUNE = 8,
+  AP_MODE_AUTO = 10,
+  AP_MODE_RTL = 11,
+  AP_MODE_LOITER = 12,
+  AP_MODE_GUIDED = 15,
+};
+
 class VehicleStatus
 {
 public:
 
-    //-------------------------
     // Connection
-    //-------------------------
 
     bool connected = false;
     uint32_t lastHeartbeatMs = 0;
@@ -17,9 +31,7 @@ public:
     uint8_t systemID = 0;
     uint8_t componentID = 0;
 
-    //-------------------------
     // Flight Status
-    //-------------------------
 
     uint8_t baseMode = 0;
     uint32_t customMode = 0;
@@ -27,43 +39,33 @@ public:
 
     bool armed = false;
 
-    //-------------------------
     // GPS
-    //-------------------------
 
     int32_t latitude = 0;      // degrees * 1e7
     int32_t longitude = 0;     // degrees * 1e7
     int32_t altitudeMSL = 0;   // mm
     int32_t relativeAltitude = 0; // mm
 
-    //-------------------------
     // Attitude
-    //-------------------------
 
     float roll = 0;
     float pitch = 0;
     float yaw = 0;
 
-    //-------------------------
     // Airspeed
-    //-------------------------
 
     float airspeed = 0;
     float groundspeed = 0;
     int16_t heading = 0;
     float throttle = 0;
 
-    //-------------------------
     // Battery
-    //-------------------------
 
     uint16_t batteryVoltage = 0;     // mV
     int16_t batteryCurrent = 0;      // cA
     int8_t batteryRemaining = -1;    // %
 
-    //-------------------------
     // Update Functions
-    //-------------------------
 
     void updateHeartbeat(const mavlink_message_t& msg)
     {
@@ -126,9 +128,7 @@ public:
         batteryRemaining = sys.battery_remaining;
     }
 
-    //-------------------------
     // Generic Dispatcher
-    //-------------------------
 
     void update(mavlink_message_t& msg)
     {
@@ -159,18 +159,14 @@ public:
         }
     }
 
-    //-------------------------
     // Connection Check
-    //-------------------------
 
     bool isConnected() const
     {
         return connected;
     }
 
-    //-------------------------
     // Timeout Check
-    //-------------------------
 
     void updateTimeout(uint32_t timeoutMs = 3000)
     {

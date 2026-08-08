@@ -8,8 +8,8 @@
 
 const unsigned int MESH_BUF_SIZE = 256;
 const unsigned int MAV_BUF_SIZE = 280;
-static char meshBuf[MESH_BUF_SIZE];
-static char mavBuf[MAV_BUF_SIZE];
+static uint8_t meshBuf[MESH_BUF_SIZE];
+static uint8_t mavBuf[MAV_BUF_SIZE];
 
 const uint8_t MY_VEHICLE_ID = MESHLINK_VEHICLE_ID;
 const uint8_t GROUND_STATION_ID = 0x00;
@@ -36,9 +36,12 @@ bool mavSerialToBuffer();
 void processMavBuffer();
 int hexStringToBytes(const char*, uint8_t*, size_t);
 void rebootBridge();
+void sendCommandLong(uint16_t, float, float, float, float, float, float, float);
+void printCommandAck(const mavlink_message_t &msg);
 void RTL();
 void loiter();
 void FMAuto();
+void guidedLoiter(int32_t, int32_t, int32_t, uint16_t);
 void sendHeartbeat();
 
 
@@ -105,8 +108,8 @@ bool mavSerialToBuffer() {
     char c = (char)MAVLINK_SERIAL.read();
 
     if (mavlink_parse_char(MAVLINK_COMM_0, c, &mavMsg, &mavStatus)) {
-        Serial.print(F("MAVLink message received: ID "));
-        Serial.println(mavMsg.msgid);
+        //Serial.print(F("MAVLink message received: ID "));
+        //Serial.println(mavMsg.msgid);
         return true;
       }
     }
@@ -202,9 +205,12 @@ void processMeshBuffer() {
   
   if (packet.type == MESHLINK_MSG_GUIDED_LOITER) {
     Serial.println(F("Guided loiter command received"));
-    base_latitude = (uint16_t)packetBytes[11] | ((uint16_t)packetBytes[12] << 8) | ((uint16_t)packetBytes[13] << 16) | ((uint16_t)packetBytes[14] << 24);
-    base_longitude = (uint16_t)packetBytes[15] | ((uint16_t)packetBytes[16] << 8) | ((uint16_t)packetBytes[17] << 16) | ((uint16_t)packetBytes[18] << 24);
-  }
+    int32_t lat = packetBytes[11] | ((int32_t)packetBytes[12] << 8) | ((int32_t)packetBytes[13] << 16) | ((int32_t)packetBytes[14] << 24);
+    int32_t lon = packetBytes[15] | ((int32_t)packetBytes[16] << 8) | ((int32_t)packetBytes[17] << 16) | ((int32_t)packetBytes[18] << 24);
+    int16_t alt = (int16_t)(packetBytes[19] | ((int16_t)packetBytes[20] << 8));
+    uint16_t radius = (uint16_t)(packetBytes[21] | ((uint16_t)packetBytes[22] << 8));
+    guidedLoiter(lat, lon, alt, radius);
+    }
 
   if (packet.type == MESHLINK_MSG_COMMAND) {
     if (byteCount > 11) {
@@ -230,7 +236,30 @@ void processMeshBuffer() {
   }
 }
 
+void printCommandAck(const mavlink_message_t &msg) {
+  if (msg.msgid != MAVLINK_MSG_ID_COMMAND_ACK) {
+    return;
+  }
+
+  mavlink_command_ack_t ack;
+  mavlink_msg_command_ack_decode(&msg, &ack);
+
+  Serial.print(F("MAVLink ACK: cmd="));
+  Serial.print(ack.command);
+  Serial.print(F(" result="));
+  Serial.print(ack.result);
+  Serial.print(F(" progress="));
+  Serial.print(ack.progress);
+  Serial.print(F(" target_system="));
+  Serial.print(ack.target_system);
+  Serial.print(F(" target_component="));
+  Serial.println(ack.target_component);
+}
+
 void processMavBuffer(){
+      if (mavMsg.msgid == MAVLINK_MSG_ID_COMMAND_ACK) {
+        printCommandAck(mavMsg);
+      }
       vehicle.update(mavMsg);
 }
 
@@ -410,20 +439,144 @@ void rebootBridge(){
   delay(100);
 }
 
-void RTL(){     // Return to launch
-  Serial.println("Return To Launch");
+void sendCommandLong(uint16_t command, float p1, float p2, float p3, float p4, float p5, float p6, float p7) {
+  uint8_t targetSystem = (vehicle.systemID != 0) ? vehicle.systemID : 1;
+  uint8_t targetComponent = (vehicle.componentID != 0) ? vehicle.componentID : MAV_COMP_ID_AUTOPILOT1;
+
+  mavlink_message_t msg;
+  mavlink_msg_command_long_pack(
+    MAVLINK_BRIDGE_SYS_ID,
+    MAVLINK_BRIDGE_COMP_ID,
+    &msg,
+    targetSystem,
+    targetComponent,
+    command,
+    0,
+    p1,
+    p2,
+    p3,
+    p4,
+    p5,
+    p6,
+    p7
+  );
+
+  uint16_t len = mavlink_msg_to_send_buffer(mavBuf, &msg);
+  MAVLINK_SERIAL.write(mavBuf, len);
 }
 
-void loiter(){  // Start loiter
+void RTL(){     // Return to launch
+  Serial.println("Return To Launch");
+  sendCommandLong(
+    MAV_CMD_NAV_RETURN_TO_LAUNCH,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f
+  );
+}
+
+void loiter(){  // Start loiter at current position and altitude
   Serial.println("Loiter");
+  sendCommandLong(
+    MAV_CMD_DO_SET_MODE,
+    (float)MAV_MODE_FLAG_CUSTOM_MODE_ENABLED,
+    (float)AP_MODE_LOITER,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f
+  );
 }
 
 void FMAuto(){  // Auto flight mode
   Serial.println("Flight Mode Auto");
+  sendCommandLong(
+    MAV_CMD_DO_SET_MODE,
+    (float)MAV_MODE_FLAG_CUSTOM_MODE_ENABLED,
+    (float)AP_MODE_AUTO,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f
+  );
 }
 
+void guidedLoiter(int32_t latitude, int32_t longitude, int32_t altitude, uint16_t radius){  // Guided waypoint target for fixed-wing aircraft
+  const float latDeg = (float)latitude / 1.0e7f;
+  const float lonDeg = (float)longitude / 1.0e7f;
+  const float altM = (float)altitude;
+
+  Serial.print(F("Guided waypoint received: lat="));
+  Serial.print(latDeg, 7);
+  Serial.print(F(" lon="));
+  Serial.print(lonDeg, 7);
+  Serial.print(F(" alt="));
+  Serial.print(altM, 2);
+  Serial.print(F(" m radius="));
+  Serial.println((float)radius);
+
+  sendCommandLong(
+    MAV_CMD_DO_SET_MODE,
+    (float)MAV_MODE_FLAG_CUSTOM_MODE_ENABLED,
+    (float)AP_MODE_GUIDED,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f
+  );
+
+  uint8_t targetSystem = (vehicle.systemID != 0) ? vehicle.systemID : 1;
+  uint8_t targetComponent = (vehicle.componentID != 0) ? vehicle.componentID : MAV_COMP_ID_AUTOPILOT1;
+
+  mavlink_message_t missionCountMsg;
+  mavlink_msg_mission_count_pack(
+    MAVLINK_BRIDGE_SYS_ID,
+    MAVLINK_BRIDGE_COMP_ID,
+    &missionCountMsg,
+    targetSystem,
+    targetComponent,
+    1,
+    MAV_MISSION_TYPE_MISSION,
+    0
+  );
+  uint16_t countLen = mavlink_msg_to_send_buffer(mavBuf, &missionCountMsg);
+  MAVLINK_SERIAL.write(mavBuf, countLen);
+
+  mavlink_message_t waypointMsg;
+  mavlink_msg_mission_item_int_pack(
+    MAVLINK_BRIDGE_SYS_ID,
+    MAVLINK_BRIDGE_COMP_ID,
+    &waypointMsg,
+    targetSystem,
+    targetComponent,
+    0,
+    MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,
+    MAV_CMD_NAV_WAYPOINT,
+    2,
+    1,
+    0.0f,
+    0.0f,
+    0.0f,
+    0.0f,
+    (int32_t)(latDeg * 1.0e7f),
+    (int32_t)(lonDeg * 1.0e7f),
+    altM,
+    MAV_MISSION_TYPE_MISSION
+  );
+
+  uint16_t waypointLen = mavlink_msg_to_send_buffer(mavBuf, &waypointMsg);
+  MAVLINK_SERIAL.write(mavBuf, waypointLen);
+}
 
 void sendHeartbeat(){
+  //Serial.println("Heartbeat Sent");
   mavlink_message_t msg;
   mavlink_msg_heartbeat_pack(MAVLINK_BRIDGE_SYS_ID, MAV_COMP_ID_AUTOPILOT1, &msg, MAV_TYPE_QUADROTOR, MAV_AUTOPILOT_GENERIC, MAV_MODE_FLAG_MANUAL_INPUT_ENABLED, 0, MAV_STATE_STANDBY);
   uint16_t len = mavlink_msg_to_send_buffer(mavBuf, &msg);

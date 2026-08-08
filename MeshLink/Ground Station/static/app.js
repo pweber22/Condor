@@ -17,6 +17,25 @@ let activeMode = 'waypoint';
 let activeVehicleId = null;
 let lastIncomingMessageId = 0;
 
+function getAltitudeInputValue() {
+    const input = document.getElementById('altitude-input');
+    if (!input) return 100;
+    const value = Number(input.value);
+    return Number.isFinite(value) && value >= 0 ? value : 100;
+}
+
+function isBroadcastSelection() {
+    return activeVehicleId === 'all';
+}
+
+function getSelectedTargetLabel() {
+    return isBroadcastSelection() ? 'all vehicles' : `vehicle ${activeVehicleId}`;
+}
+
+function getSelectedDestination() {
+    return isBroadcastSelection() ? 'all' : activeVehicleId;
+}
+
 function createVehicleIcon(id) {
     const colors = ['#ff4757', '#1e90ff', '#2ed573', '#ffa502', '#eccc68', '#ff6b81'];
     const color = colors[(id - 1) % colors.length];
@@ -228,8 +247,19 @@ function updateVehicles(vehicleData) {
 }
 
 function updateVehicleInfo(vehicleData, activeId) {
-    const info = vehicleData[activeId];
     const container = document.getElementById('vehicle-info');
+    if (activeId === 'all') {
+        container.innerHTML = `
+            <div class="vehicle-summary">
+                <div class="vehicle-summary-title">All Vehicles</div>
+                <div>Broadcast mode enabled</div>
+                <div>Commands and guided loiter will be sent to all vehicles.</div>
+            </div>
+        `;
+        return;
+    }
+
+    const info = vehicleData[activeId];
     if (!info) {
         container.textContent = 'No active vehicle data';
         return;
@@ -256,6 +286,22 @@ function updateVehicleInfo(vehicleData, activeId) {
 function updateVehicleList(vehicleData) {
     const list = document.getElementById('vehicle-list');
     list.innerHTML = '';
+
+    const allItem = document.createElement('div');
+    allItem.className = `vehicle-item ${isBroadcastSelection() ? 'active' : ''}`;
+    allItem.innerHTML = `
+        <div class="vehicle-item-id">All</div>
+        <div class="vehicle-item-body">
+            <div>Broadcast commands</div>
+        </div>
+    `;
+    allItem.addEventListener('click', () => {
+        activeVehicleId = 'all';
+        updateVehicleInfo(vehicleData, 'all');
+        updateVehicleList(vehicleData);
+    });
+    list.appendChild(allItem);
+
     Object.keys(vehicleData).forEach(id => {
         const v = vehicleData[id];
         const item = document.createElement('div');
@@ -287,8 +333,9 @@ function updateWaypoints(list) {
     list.forEach((wp, idx) => {
         const lat = wp.latitude;
         const lon = wp.longitude;
+        const alt = Number(wp.altitude_m ?? 100);
         const item = document.createElement('div');
-        item.textContent = `WP${idx + 1}: ${lat.toFixed(5)}, ${lon.toFixed(5)}`;
+        item.textContent = `WP${idx + 1}: ${lat.toFixed(5)}, ${lon.toFixed(5)} @ ${alt} m`;
         container.appendChild(item);
         const marker = L.marker([lat, lon], { icon: waypointIcon }).addTo(map);
         waypointMarkers.push(marker);
@@ -332,19 +379,21 @@ function onMapClick(event) {
 
 function addWaypoint(lat, lon) {
     // Add a mission waypoint locally and update the map.
-    waypoints.push({ latitude: lat, longitude: lon, altitude_m: 100, waypoint_type: 0 });
+    const altitude_m = getAltitudeInputValue();
+    waypoints.push({ latitude: lat, longitude: lon, altitude_m, waypoint_type: 0 });
     updateWaypoints(waypoints);
-    log(`Waypoint added: ${lat.toFixed(5)}, ${lon.toFixed(5)}`);
+    log(`Waypoint added: ${lat.toFixed(5)}, ${lon.toFixed(5)} @ ${altitude_m} m`);
 }
 
 function guidedLoiter(lat, lon) {
     // Ask the user to confirm and send a guided loiter command via backend API.
-    const confirmed = confirm(`Send GUIDED_LOITER to ${lat.toFixed(5)}, ${lon.toFixed(5)}?`);
+    const altitude_m = getAltitudeInputValue();
+    const confirmed = confirm(`Send GUIDED_LOITER to ${lat.toFixed(5)}, ${lon.toFixed(5)} @ ${altitude_m} m for ${getSelectedTargetLabel()}?`);
     if (!confirmed) return;
     fetch('/api/guided_loiter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ latitude: lat, longitude: lon, altitude_m: 100, radius_m: 50 })
+        body: JSON.stringify({ latitude: lat, longitude: lon, altitude_m, radius_m: 50, destination: getSelectedDestination() })
     })
         .then(response => response.json().then(data => ({ status: response.status, data })))
         .then(({ status, data }) => {
@@ -362,12 +411,16 @@ function uploadMission() {
         alert('No waypoints to upload.');
         return;
     }
-    const confirmed = confirm(`Upload mission with ${waypoints.length} waypoint(s)?`);
+    if (isBroadcastSelection()) {
+        alert('Broadcast mission upload is not allowed. Select a single vehicle instead.');
+        return;
+    }
+    const confirmed = confirm(`Upload mission with ${waypoints.length} waypoint(s) to vehicle ${activeVehicleId}?`);
     if (!confirmed) return;
     fetch('/api/mission', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ waypoints })
+        body: JSON.stringify({ waypoints, destination: activeVehicleId })
     })
         .then(response => response.json().then(data => ({ status: response.status, data })))
         .then(({ status, data }) => {
@@ -397,9 +450,9 @@ function sendCommand(command_id) {
         5: 'REQUEST TELEMETRY',
         6: 'REBOOT BRIDGE'
     };
-    const confirmed = confirm(`Send command ${labels[command_id]} to vehicle ${activeVehicleId}?`);
+    const destination = getSelectedDestination();
+    const confirmed = confirm(`Send command ${labels[command_id]} to ${getSelectedTargetLabel()}?`);
     if (!confirmed) return;
-    const destination = activeVehicleId;
     fetch('/api/command', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
