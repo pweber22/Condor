@@ -122,8 +122,11 @@ public:
     {
         mavlink_sys_status_t sys;
         mavlink_msg_sys_status_decode(&msg, &sys);
-
-        batteryVoltage = sys.voltage_battery;
+        if (batteryVoltage == 0) {
+            batteryVoltage = sys.voltage_battery;
+        } else {
+            batteryVoltage = batteryVoltage * 0.9 + sys.voltage_battery * 0.1;
+        }
         batteryCurrent = sys.current_battery;
         batteryRemaining = sys.battery_remaining;
     }
