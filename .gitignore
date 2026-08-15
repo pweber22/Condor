@@ -3,3 +3,6 @@ __pycache__/
 *.pyo
 *.pyd
 MeshLink/Ground Station/logs/
+Condor 1/Flight Data/Flight 06/Onboard/00000014.log
+Condor 1/Flight Data/Flight 07/Onboard/00000015.log
+Condor 1/Flight Data/Flight 07/Onboard/00000015.BIN
