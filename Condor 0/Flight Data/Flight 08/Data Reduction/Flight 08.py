@@ -139,7 +139,7 @@ dataframes["AOA"]["timestamp"] = pd.to_numeric(dataframes["AOA"]["timestamp"], e
 AOA_Flight = dataframes["AOA"][(dataframes["AOA"]["timestamp"] >= 370) & (dataframes["AOA"]["timestamp"] <= 770)]
 
 plt.figure(figsize=(16, 9))
-plt.plot(AOA_Flight["AOA"], AOA_Flight["SSA"])
+plt.plot(AOA_Flight["SSA"], AOA_Flight["AOA"])
 plt.xlim(-22,22)
 plt.ylim(-22,32)
 plt.xlabel("Beta (deg)")
