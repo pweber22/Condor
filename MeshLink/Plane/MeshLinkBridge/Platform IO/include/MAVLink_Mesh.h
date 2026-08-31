@@ -1,5 +1,5 @@
-#define MAX_MAVLINK_BUF_SIZE 263;
-#define MAX_MESHLINK_BUF_SIZE 256;
+#define MAX_MAVLINK_BUF_SIZE 263
+#define MAX_MESHLINK_BUF_SIZE 256
 
 #include <MAVLink.h>
 
@@ -30,6 +30,7 @@ public:
 
     uint8_t systemID = 0;
     uint8_t componentID = 0;
+    uint64_t timeUnixUsec = 0;
 
     // Flight Status
 
@@ -65,6 +66,10 @@ public:
     int16_t batteryCurrent = 0;      // cA
     int8_t batteryRemaining = -1;    // %
 
+    // Meshtastic metadata
+
+    int8_t radioRssi = 0x7F;          // dBm; 0x7F means unavailable
+
     // Update Functions
 
     void updateHeartbeat(const mavlink_message_t& msg)
@@ -97,6 +102,13 @@ public:
         heading = gps.hdg;
     }
 
+    void updateSystemTime(const mavlink_message_t& msg)
+    {
+        mavlink_system_time_t systemTime;
+        mavlink_msg_system_time_decode(&msg, &systemTime);
+        timeUnixUsec = systemTime.time_unix_usec;
+    }
+
     void updateAttitude(const mavlink_message_t& msg)
     {
         mavlink_attitude_t att;
@@ -115,7 +127,6 @@ public:
         airspeed = hud.airspeed;
         groundspeed = hud.groundspeed;
         throttle = hud.throttle;
-        heading = hud.heading;
     }
 
     void updateBattery(const mavlink_message_t& msg)
@@ -131,6 +142,13 @@ public:
         batteryRemaining = sys.battery_remaining;
     }
 
+    void updateRadioRssi(int32_t rssi)
+    {
+        if (rssi < -127) rssi = -127;
+        if (rssi > 127) rssi = 127;
+        radioRssi = (int8_t)rssi;
+    }
+
     // Generic Dispatcher
 
     void update(mavlink_message_t& msg)
@@ -143,6 +161,10 @@ public:
 
             case MAVLINK_MSG_ID_GLOBAL_POSITION_INT:
                 updateGPS(msg);
+                break;
+
+            case MAVLINK_MSG_ID_SYSTEM_TIME:
+                updateSystemTime(msg);
                 break;
 
             case MAVLINK_MSG_ID_ATTITUDE:

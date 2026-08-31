@@ -2,8 +2,9 @@ from dataclasses import dataclass
 from enum import IntEnum
 import struct
 
-PROTOCOL_VERSION = 3
+PROTOCOL_VERSION = 4
 MAX_PAYLOAD = 120
+HEARTBEAT_INTERVAL = 60  # seconds
 HEADER_FMT = "<BBBBBBBHH"
 HEADER_SIZE = struct.calcsize(HEADER_FMT)
 
@@ -142,10 +143,11 @@ def build_command_payload(command_id: int, parameter: int = 0) -> bytes:
 def parse_telemetry_payload(payload: bytes) -> dict:
     if len(payload) != 19:
         raise ValueError(f"Telemetry payload must be 19 bytes, got {len(payload)}")
-    latitude, longitude, altitude_m, groundspeed_cms, battery_cV, flight_mode, current_waypoint, rssi, link_quality = struct.unpack(
+    latitude, longitude, altitude_m, groundspeed_cms, battery_cV, flight_mode, current_waypoint, rssi, heading_step = struct.unpack(
         "<iiHHHBHbB",
         payload,
     )
+    heading_deg = heading_step * 5.0
     return {
         'latitude': latitude / 1e7,
         'longitude': longitude / 1e7,
@@ -155,7 +157,8 @@ def parse_telemetry_payload(payload: bytes) -> dict:
         'flight_mode': flight_mode,
         'current_waypoint': current_waypoint,
         'rssi': rssi,
-        'link_quality': link_quality,
+        'heading_step': heading_step,
+        'heading_deg': heading_deg,
     }
 
 

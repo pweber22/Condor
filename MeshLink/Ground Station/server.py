@@ -1,7 +1,9 @@
 import os
 import json
 import logging
+import threading
 from datetime import datetime
+from typing import Any, cast
 
 """MeshLink Ground Station backend.
 
@@ -37,6 +39,7 @@ from meshlink_protocol import (
     PacketHeader,
     MeshLinkPacket,
     PROTOCOL_VERSION,
+    HEARTBEAT_INTERVAL,
 )
 
 os.makedirs("MeshLink\\Ground Station\\logs", exist_ok=True)
@@ -75,12 +78,14 @@ subscribed = False
 sequence = 0
 active_vehicle = 1
 mission_waypoints = []
+heartbeat_stop = None
+heartbeat_thread = None
 
-# Current MeshLink version for this text-over-Meshtastic scheme.
-MESH_LINK_VERSION = '3'
-
-# Prefix applied to text messages carrying MeshLink hex packets.
+# Current MeshLink version over Meshtastic custom app packets.
+MESH_LINK_VERSION = '4'
+MESHLINK_PORTNUM: int = 369
 MESHLINK_TEXT_PREFIX = 'LINK:'
+
 vehicles = {
 }
 
@@ -101,17 +106,13 @@ class MeshtasticTransport:
         self.iface = SerialInterface(devPath=port, connectNow=True)
 
     def write(self, data: bytes, destination):
-        # Send a raw Meshtastic application payload.
-        #
-        # SerialInterface maintains the underlying pyserial stream at
-        # self.iface.stream, and sendData() handles packet framing,
-        # packet IDs, acks, and dispatching through the Meshtastic link.
-        # Directly writing bytes to the raw serial stream would bypass the
-        # Meshtastic protocol, so use sendData() for app-layer payloads.
+        # Send a raw Meshtastic application payload using the custom MeshLink
+        # port. This carries the compact binary MeshLink packet directly rather
+        # than wrapping it in a text-message hex string.
         self.iface.sendData(
             data,
             destinationId=destination,
-            portNum=256, # type: ignore
+            portNum=cast(Any, MESHLINK_PORTNUM),
             channelIndex=0,
             wantAck=True,
         )
@@ -181,44 +182,124 @@ def connect_serial(port=None):
         return None
 
 
-def is_app_packet(decoded):
-    """Detect whether a decoded Meshtastic packet is application-layer traffic."""
-    portnum = decoded.get('portnum')
+def coerce_portnum(portnum):
+    """Normalize a Meshtastic port number to an int when possible."""
     if portnum is None:
+        return None
+    if isinstance(portnum, str):
+        portnum = portnum.strip()
+        if not portnum:
+            return None
+        try:
+            return int(portnum)
+        except (TypeError, ValueError):
+            return None
+    try:
+        return int(portnum)
+    except (TypeError, ValueError):
+        return None
+
+
+def extract_raw_payload(decoded, packet=None):
+    """Pull the earliest payload-like field out of a Meshtastic decoded packet."""
+    if decoded is None:
+        return None
+    data = decoded.get('data', {}) or {}
+    if isinstance(data, dict):
+        for key in ('payload', 'text'):
+            if key in data and data[key] is not None:
+                return data[key]
+    for key in ('payload', 'raw', 'data'):
+        if key in decoded and decoded[key] is not None:
+            return decoded[key]
+    if packet is not None and isinstance(packet, dict):
+        for key in ('payload', 'raw'):
+            if key in packet and packet[key] is not None:
+                return packet[key]
+    return None
+
+
+def looks_like_meshlink_payload(raw_payload):
+    """Return True when the payload bytes or text can be decoded as a MeshLink packet."""
+    if raw_payload is None:
         return False
-    if isinstance(portnum, int):
-        return portnum == 256
-    portname = str(portnum).upper()
-    excluded = ['TELEMETRY', 'POSITION', 'BEACON', 'NODEINFO', 'LINK', 'ACK', 'NAK', 'ROUTE']
-    return not any(token in portname for token in excluded)
+    if isinstance(raw_payload, str):
+        cleaned = raw_payload.strip()
+        if cleaned.upper().startswith(('LINK:', 'MESH:')):
+            return parse_meshlink_text(cleaned) is not None
+        try:
+            return parse_meshlink_packet(bytes.fromhex(cleaned)) is not None
+        except Exception:
+            return False
+    return parse_meshlink_packet(raw_payload) is not None
+
+
+def packet_debug(message, packet=None, **extra):
+    """Compatibility stub for packet debug output; intentionally silent."""
+    return
+
+
+def is_app_packet(decoded):
+    """Detect whether a decoded Meshtastic packet is a MeshLink app message."""
+    if decoded is None:
+        return False
+    portnum = decoded.get('portnum')
+    portnum_value = coerce_portnum(portnum)
+    portname = str(portnum).upper() if portnum is not None else ''
+    packet_debug('is_app_packet check', decoded=decoded, portnum=portnum, portnum_value=portnum_value, expected_port=MESHLINK_PORTNUM)
+
+    if portnum_value == MESHLINK_PORTNUM:
+        return True
+
+    payload = extract_raw_payload(decoded)
+    if payload is not None and looks_like_meshlink_payload(payload):
+        if portnum_value is None or portname in ('PRIVATE_APP', 'MESHLINK', ''):
+            packet_debug('accepted MeshLink payload despite generic/private port label', portnum=portnum, portname=portname)
+            return True
+
+    # Only accept a generic PRIVATE_APP packet when the payload actually matches
+    # this MeshLink protocol; do not accept all private app traffic indiscriminately.
+    if portnums_pb2 is not None and portnum_value == getattr(portnums_pb2.PortNum, 'PRIVATE_APP', -1):
+        if payload is not None and looks_like_meshlink_payload(payload):
+            packet_debug('PRIVATE_APP payload matches MeshLink packet', portnum=portnum_value)
+            return True
+
+    return False
 
 
 def is_text_message_packet(decoded):
     """Detect whether a decoded Meshtastic packet was received on TEXT_MESSAGE_APP."""
     if decoded is None:
         return False
-    portnum = decoded.get('portnum')
+    portnum = coerce_portnum(decoded.get('portnum'))
     if portnum is None:
+        packet_debug('is_text_message_packet: unable to coerce portnum', decoded=decoded)
         return False
-    if isinstance(portnum, int):
-        return (
-            portnums_pb2 is not None and
-            portnum in (
-                portnums_pb2.PortNum.TEXT_MESSAGE_APP,
-                portnums_pb2.PortNum.TEXT_MESSAGE_COMPRESSED_APP,
-            )
+    result = (
+        portnums_pb2 is not None and
+        portnum in (
+            portnums_pb2.PortNum.TEXT_MESSAGE_APP,
+            portnums_pb2.PortNum.TEXT_MESSAGE_COMPRESSED_APP,
         )
-    portname = str(portnum).upper()
-    return portname in ('TEXT_MESSAGE_APP', 'TEXT_MESSAGE_COMPRESSED_APP')
+    )
+    packet_debug('is_text_message_packet check', decoded=decoded, portnum=portnum, result=result)
+    return result
+
+
+def parse_meshlink_packet(raw_payload):
+    """Parse a raw binary MeshLink packet from a Meshtastic payload."""
+    if isinstance(raw_payload, memoryview):
+        raw_payload = raw_payload.tobytes()
+    if not isinstance(raw_payload, (bytes, bytearray)):
+        return None
+    try:
+        return MeshLinkPacket.unpack(bytes(raw_payload))
+    except Exception:
+        return None
 
 
 def parse_meshlink_text(text):
-    """Detect and parse a MeshLink hex packet embedded in a text message.
-
-    When using MeshLink-over-text, the binary packet is encoded as hex ASCII
-    and prefixed with a constant string so it can be distinguished from
-    ordinary plain-text chat messages.
-    """
+    """Backward-compatible parser for legacy hex payloads wrapped in text."""
     if isinstance(text, bytes):
         try:
             text = text.decode('utf-8', errors='replace')
@@ -288,7 +369,8 @@ def update_vehicle_telemetry(meshlink_packet):
         'flight_mode': telemetry['flight_mode'],
         'current_waypoint': telemetry['current_waypoint'],
         'rssi': telemetry['rssi'],
-        'link_quality': telemetry['link_quality'],
+        'heading_step': telemetry['heading_step'],
+        'heading_deg': telemetry['heading_deg'],
         'status': 'TELEMETRY',
         'last_update': datetime.now().timestamp(),
     })
@@ -301,10 +383,12 @@ def summarize_meshtastic_packet(packet):
     raw fields. This summary is used by the UI log to show incoming traffic.
     """
     if not isinstance(packet, dict):
+        packet_debug('summarize_meshtastic_packet: non-dict packet', packet=packet)
         return str(packet)
     decoded = packet.get('decoded')
-    telemetry_log.info(packet)
+    packet_debug('summarize_meshtastic_packet start', packet=packet, decoded_type=type(decoded).__name__ if decoded is not None else None)
     if not decoded:
+        packet_debug('summarize_meshtastic_packet: no decoded payload', packet=packet)
         return ''
 
     def format_value(value):
@@ -320,6 +404,7 @@ def summarize_meshtastic_packet(packet):
     data = decoded.get('data', {}) or {}
     text = data.get('text')
     payload = data.get('payload')
+    packet_debug('packet decode fields', packet=packet, portnum=decoded.get('portnum'), data_type=type(data).__name__, text_type=type(text).__name__ if text is not None else None, payload_type=type(payload).__name__ if payload is not None else None)
 
     if isinstance(text, bytes):
         try:
@@ -327,30 +412,31 @@ def summarize_meshtastic_packet(packet):
         except Exception:
             text = text.hex()
 
-    if text is None and is_text_message_packet(decoded):
-        raw_payload = payload or decoded.get('payload') or packet.get('payload')
-        if isinstance(raw_payload, (bytes, bytearray)):
-            try:
-                text = raw_payload.decode('utf-8', errors='replace')
-            except Exception:
-                text = raw_payload.hex()
-        elif raw_payload is not None:
-            text = str(raw_payload)
+    raw_payload = payload or data.get('payload') or decoded.get('payload') or packet.get('payload')
+    packet_debug('raw payload inspection', raw_payload_type=type(raw_payload).__name__ if raw_payload is not None else None, raw_payload_preview=str(raw_payload)[:200] if raw_payload is not None else None)
+    meshlink_packet = parse_meshlink_packet(raw_payload) if raw_payload is not None else None
+    if meshlink_packet is None and text is not None:
+        packet_debug('trying legacy text hex decode', text=text[:200])
+        meshlink_packet = parse_meshlink_text(text)
+    if meshlink_packet is None:
+        packet_debug('MeshLink parse failed: not a valid MeshLink packet', raw_payload_type=type(raw_payload).__name__ if raw_payload is not None else None, text_preview=text[:200] if isinstance(text, str) else None)
+    else:
+        packet_debug('MeshLink parse succeeded', header=meshlink_packet.header, payload_len=len(meshlink_packet.payload), payload_preview=meshlink_packet.payload.hex()[:200])
 
-    meshlink_packet = parse_meshlink_text(text) if text is not None else None
     if meshlink_packet is not None:
         if meshlink_packet.header.type == MessageType.TELEMETRY:
             update_vehicle_telemetry(meshlink_packet)
 
             try:
                 telemetry = parse_telemetry_payload(meshlink_packet.payload)
+                heading_deg = telemetry['heading_deg']
                 return (
                     f"telemetry src={meshlink_packet.header.source} "
                     f"flight_mode={telemetry['flight_mode']} wp={telemetry['current_waypoint']} "
                     f"lat={telemetry['latitude']:.5f} lon={telemetry['longitude']:.5f} "
                     f"alt={telemetry['altitude_m']}m gs={telemetry['groundspeed_cms']/100:.1f}m/s "
                     f"bat={telemetry['battery_cV']/100:.2f}V "
-                    f"rssi={telemetry['rssi']}dBm link={telemetry['link_quality']}%"
+                    f"rssi={telemetry['rssi']}dBm heading={heading_deg:.1f}°"
                 )
             except Exception:
                 pass
@@ -401,12 +487,19 @@ def add_meshtastic_message(packet, topic='meshtastic.receive'):
     if topic != 'meshtastic.receive':
         return
 
+    packet_debug('received mesh packet callback', packet=packet)
     decoded = packet.get('decoded') if isinstance(packet, dict) else None
-    if not is_text_message_packet(decoded):
+    if decoded is None:
+        packet_debug('dropping packet: no decoded payload', packet=packet)
+        return
+    packet_debug('incoming decoded packet', decoded=decoded, portnum=decoded.get('portnum'))
+    if not is_app_packet(decoded):
+        packet_debug('dropping packet: not MeshLink app port', decoded=decoded, portnum=decoded.get('portnum'))
         return
 
     text = summarize_meshtastic_packet(packet)
     if not text:
+        packet_debug('dropping packet: summarize_meshtastic_packet returned empty', packet=packet)
         return
 
     telemetry_log.info(f"TM Received: {text}")
@@ -421,6 +514,51 @@ def add_meshtastic_message(packet, topic='meshtastic.receive'):
         incoming_messages.pop(0)
 
 
+def send_heartbeat():
+    """Broadcast a MeshLink heartbeat to the mesh."""
+    if transport is None:
+        return
+    try:
+        send_packet(int(VehicleID.BROADCAST), MessageType.HEARTBEAT, b'')
+        incoming_messages.append({
+            'id': len(incoming_messages) + 1,
+            'timestamp': datetime.now().isoformat(timespec='seconds'),
+            'topic': 'meshlink.heartbeat',
+            'text': f"TX HEARTBEAT interval={HEARTBEAT_INTERVAL}s",
+        })
+        while len(incoming_messages) > MAX_INCOMING_MESSAGES:
+            incoming_messages.pop(0)
+        telemetry_log.info(f"TX HEARTBEAT interval={HEARTBEAT_INTERVAL}s")
+    except Exception as exc:
+        telemetry_log.info(f"Failed to send MeshLink heartbeat: {exc}")
+
+
+def heartbeat_loop():
+    """Background loop that periodically sends a heartbeat packet."""
+    while heartbeat_stop is not None and not heartbeat_stop.is_set():
+        send_heartbeat()
+        heartbeat_stop.wait(HEARTBEAT_INTERVAL)
+
+
+def start_heartbeat_loop():
+    """Start a background heartbeat thread if one is not already running."""
+    global heartbeat_stop, heartbeat_thread
+    if heartbeat_thread is not None and heartbeat_thread.is_alive():
+        return
+    heartbeat_stop = threading.Event()
+    heartbeat_thread = threading.Thread(target=heartbeat_loop, daemon=True)
+    heartbeat_thread.start()
+
+
+def stop_heartbeat_loop():
+    """Stop the heartbeat thread."""
+    global heartbeat_stop, heartbeat_thread
+    if heartbeat_stop is not None:
+        heartbeat_stop.set()
+        heartbeat_stop = None
+    heartbeat_thread = None
+
+
 def on_meshtastic_receive(packet, interface=None):
     """Meshtastic pubsub callback for received packets."""
     add_meshtastic_message(packet, topic='meshtastic.receive')
@@ -431,6 +569,7 @@ def on_connection_established(interface=None, topic=pub.AUTO_TOPIC):
     global meshtastic_error
     telemetry_log.info('Meshtastic connection established')
     meshtastic_error = None
+    start_heartbeat_loop()
 
 
 def on_connection_lost(interface=None, topic=pub.AUTO_TOPIC):
@@ -438,6 +577,7 @@ def on_connection_lost(interface=None, topic=pub.AUTO_TOPIC):
     global transport, meshtastic_error
     telemetry_log.info('Meshtastic connection lost')
     meshtastic_error = 'Meshtastic connection lost'
+    stop_heartbeat_loop()
     if transport is not None:
         try:
             transport.close()
@@ -519,13 +659,14 @@ def send_packet(destination, type_, payload, total_parts=1, part=1):
     )
     packet = MeshLinkPacket(header, payload)
     text_payload = MESHLINK_TEXT_PREFIX + packet.pack().hex()
-    telemetry_log.info("attempting to send text payload:", text_payload)
+    meshlink_bytes = packet.pack()
+    telemetry_log.info(f"attempting to send MeshLink binary payload on port {MESHLINK_PORTNUM}: {meshlink_bytes.hex()}")
     try:
-        transport.send_text(text_payload, transport_destination)
+        transport.write(meshlink_bytes, transport_destination)
     except Exception as exc:
-        telemetry_log.info(f"Failed to send MeshLink text packet via Meshtastic: {exc}")
+        telemetry_log.info(f"Failed to send MeshLink binary packet via Meshtastic: {exc}")
         raise
-    telemetry_log.info(f"TX TEXT-MESHLINK {type_.name} dst={transport_destination} seq={header.sequence} part={part}/{total_parts}")
+    telemetry_log.info(f"TX MESHLINK port={MESHLINK_PORTNUM} dst={transport_destination} seq={header.sequence} part={part}/{total_parts} len={len(meshlink_bytes)}")
 
 
 def send_text_message(text, destination=None):
@@ -673,4 +814,8 @@ def api_mission():
 
 if __name__ == '__main__':
     transport = connect_serial()
-    app.run(host='127.0.0.1', port=5000, debug=True, use_reloader=False)
+    start_heartbeat_loop()
+    try:
+        app.run(host='127.0.0.1', port=5000, debug=True, use_reloader=False)
+    finally:
+        stop_heartbeat_loop()

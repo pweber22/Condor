@@ -17,6 +17,32 @@ let activeMode = 'waypoint';
 let activeVehicleId = null;
 let lastIncomingMessageId = 0;
 
+const FLIGHT_MODE_NAMES = {
+    0: 'Manual',
+    1: 'Circle',
+    2: 'Stabilize',
+    3: 'Training',
+    4: 'Acro',
+    5: 'FBWA',
+    6: 'FBWB',
+    7: 'Cruise',
+    8: 'Autotune',
+    10: 'Auto',
+    11: 'RTL',
+    12: 'Loiter',
+    13: 'Takeoff',
+    14: 'Avoid ADSB',
+    15: 'Guided',
+    16: 'Initializing',
+    26: 'AutoLand',
+};
+
+function decodeFlightMode(mode) {
+    if (mode == null) return 'Unknown';
+    if (FLIGHT_MODE_NAMES[mode] !== undefined) return FLIGHT_MODE_NAMES[mode];
+    return `Unknown (${mode})`;
+}
+
 function getAltitudeInputValue() {
     const input = document.getElementById('altitude-input');
     if (!input) return 100;
@@ -213,8 +239,8 @@ function updateVehicles(vehicleData) {
         const v = vehicleData[id];
         const groundspeed = v.groundspeed_cms != null ? (v.groundspeed_cms / 100).toFixed(1) : 'N/A';
         const rssi = v.rssi != null ? `${v.rssi} dBm` : 'N/A';
-        const linkQuality = v.link_quality != null ? `${v.link_quality}%` : 'N/A';
-        const markerText = `Vehicle ${id}\nBattery: ${v.battery_cV / 100} V\nAltitude: ${v.altitude_m} m\nGroundspeed: ${groundspeed} m/s\nRSSI: ${rssi}\nLink: ${linkQuality}\nStatus: ${v.status}`;
+        const heading = v.heading_deg != null ? `${v.heading_deg.toFixed(1)}°` : 'N/A';
+        const markerText = `Vehicle ${id}\nBattery: ${v.battery_cV / 100} V\nAltitude: ${v.altitude_m} m\nGroundspeed: ${groundspeed} m/s\nFlight Mode: ${decodeFlightMode(v.flight_mode)}\nRSSI: ${rssi}\nHeading: ${heading}\nStatus: ${v.status}`;
             const coords = [v.lat, v.lon];
         if (Array.isArray(v.flight_path) && v.flight_path.length > 0) {
             vehiclePaths[id] = v.flight_path.map(point => [point[0], point[1]]);
@@ -266,15 +292,16 @@ function updateVehicleInfo(vehicleData, activeId) {
     }
     const groundspeed = info.groundspeed_cms != null ? (info.groundspeed_cms / 100).toFixed(1) : 'N/A';
     const rssi = info.rssi != null ? `${info.rssi} dBm` : 'N/A';
-    const linkQuality = info.link_quality != null ? `${info.link_quality}%` : 'N/A';
+    const heading = info.heading_deg != null ? `${info.heading_deg.toFixed(1)}°` : 'N/A';
     container.innerHTML = `
         <div class="vehicle-summary">
             <div class="vehicle-summary-title">Vehicle ${activeId}</div>
             <div>Status: ${info.status}</div>
-            <div>Flight Mode: ${info.flight_mode}</div>
+            <div>Flight Mode: ${decodeFlightMode(info.flight_mode)}</div>
             <div>Battery: ${info.battery_cV / 100} V</div>
             <div>Altitude: ${info.altitude_m} m</div>
             <div>Groundspeed: ${groundspeed} m/s</div>
+            <div>Heading: ${heading}</div>
             <div>RSSI: ${rssi}</div>
             <div>Lat: ${info.lat.toFixed(5)}</div>
             <div>Lon: ${info.lon.toFixed(5)}</div>

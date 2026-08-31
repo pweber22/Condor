@@ -2,7 +2,7 @@
 
 ## Native MeshLink Ground Control Station Protocol
 
-**Version:** 2.1
+**Version:** 4
 **Date:** July 10, 2026
 **Purpose:** Define the native MeshLink protocol between a ground control station and airborne systems for long-range, low-bandwidth UAV fleet operations.
 
@@ -63,9 +63,8 @@ Used for all ground-to-air and air-to-ground exchanges:
 
 Used for packet transport only.
 
-MeshLink packets are encoded as hex ASCII and transmitted as Meshtastic text messages.
-This ensures the payload is visible on the Meshtastic text channel and avoids raw binary
-receive/decode issues on the primary text path.
+MeshLink packets are sent as raw binary payloads on Meshtastic custom port `369`.
+This keeps the protocol compact and avoids the previous text-message hex wrapper.
 
 Responsibilities:
 
@@ -73,7 +72,7 @@ Responsibilities:
 * Routing
 * Optional encryption
 * Delivery metadata
-* Text-channel transport for MeshLink hex packets
+* Binary MeshLink payload transport on custom port 369
 
 ---
 
@@ -114,7 +113,7 @@ struct PacketHeader
 
 ## 4.2 Header Field Definitions
 
-* `version`: MeshLink protocol version. Current value = 3.
+* `version`: MeshLink protocol version. Current value = 4.
 * `source`: logical sender Vehicle ID.
 * `destination`: logical recipient Vehicle ID.
 * `type`: packet type identifier.
@@ -132,8 +131,8 @@ Maximum payload: **120 bytes**
 
 Total maximum wire size: **131 bytes**
 
-> Note: When sent as Meshtastic text messages, the binary packet is encoded as
-> hex ASCII, which roughly doubles the payload size on the wire.
+> Note: MeshLink packets are sent directly as binary payloads on Meshtastic port 369,
+> so the payload remains compact and does not incur the previous hex-text encoding overhead.
 
 ---
 
@@ -233,13 +232,13 @@ struct TelemetryPayload
     uint8_t flight_mode;
     uint16_t current_waypoint;
     int8_t rssi;               // optional, dBm or 0x7F if unavailable
-    uint8_t link_quality;      // optional, 0–100 or 0xFF if unavailable
+    uint8_t heading_step;      // heading in 5° increments, 0..71 (0°..355°)
 };
 ```
 
 ### Size
 
-22 bytes
+19 bytes
 
 ### Reliability
 
@@ -249,7 +248,8 @@ struct TelemetryPayload
 ### Notes
 
 * `current_waypoint` indicates mission progress.
-* Optional link metrics may be omitted or set to reserved values.
+* `heading_step` stores heading in 5° increments, so `heading_step = 18` means 90.0°.
+* `rssi` remains optional and may be set to a reserved value when unavailable.
 
 ## 6.3 COMMAND Packet
 

@@ -27,8 +27,8 @@ struct PacketHeader
     uint16_t crc16;
 };
 
-String messageTypes[] = {"HEARTBEAT", "TLEMETRY", "COMMAND", "MISSION_UPLOAD", "GUIDED_LOITER", "ACK", "STATUS"};
-String commandIDs[] = {"RTL", "LOITER", "AUTO", "REQUEST_STATUS", "REQUEST_TELEMETRY", "REBOOT_BRIDGE"};
+extern String messageTypes[];
+extern String commandIDs[];
 
 
 struct telemetryPayload
@@ -41,7 +41,7 @@ struct telemetryPayload
     uint8_t flight_mode;
     uint16_t current_waypoint;
     int8_t rssi;               // optional, dBm or 0x7F if unavailable
-    uint8_t link_quality;      // optional, 0–100 or 0xFF if unavailable
+    uint8_t heading_step;      // heading in 5° increments, 0..71
 };
 
 struct CommandPayload
